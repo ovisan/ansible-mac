@@ -1,0 +1,101 @@
+---
+
+- name: Update all Homebrew packages
+  homebrew:
+    update_homebrew: yes
+
+- name: Install iterm2
+  homebrew_cask:
+    name: iterm2
+
+- name: Install Alfred
+  homebrew_cask:
+    name: alfred
+
+- name: Install Hazel
+  homebrew_cask:
+    name: hazel
+
+- name: Install MailButler
+  homebrew_cask:
+    name: mailbutler
+
+- name: Install Sublime Text Editor
+  homebrew_cask:
+    name: sublime-text
+
+- name: Make Sublime available in terminal
+  - file:
+    src: /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl
+    dest: /usr/local/bin/sublime
+    state: link
+
+- name: Copy Sublime Configuration
+- synchronize:
+    src: Sublime3/Packages/User
+    dest: ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+
+- name: Install Package Control in Sublime
+  copy:
+    src: Sublime3/Installed\ Packages/Package\ Control.sublime-package
+    dest: ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages/Package\ Control.sublime-package
+
+- name: Install BetterTouchTool
+  homebrew_cask:
+    name: bettertouchtool
+
+- name: Install Spectacle
+  homebrew_cask:
+    name: spectacle
+
+- name: Install AppCleaner
+  homebrew_cask:
+    name: appcleaner
+
+- name: Install CheatSheet
+  homebrew_cask:
+    name: cheatsheet
+
+- name: Install Docker
+  homebrew_cask:
+    name: docker
+
+- name: Install Dropbox
+  homebrew_cask:
+    name: dropbox
+
+- name: Install Dash
+  homebrew_cask:
+    name: dropbox
+
+- name: Install Double Commander
+  homebrew_cask:
+    name: double-commander
+
+- name: Install LibreOffice
+  homebrew_cask:
+    name: libreoffice
+
+- name: Install Skype
+  homebrew_cask:
+    name: skype
+
+- name: Install TeamViewer
+  homebrew_cask:
+    name: teamviewer
+
+- name: Install Telegram
+  homebrew_cask:
+    name: telegram
+
+- name: Install Transmission
+  homebrew_cask:
+    name: transmission
+
+- name: Install VLC
+  homebrew_cask:
+    name: vlc
+
+- name: Install Private Internet Access
+  homebrew_cask:
+    name: private-internet-access

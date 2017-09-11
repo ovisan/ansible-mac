@@ -1,0 +1,12 @@
+{
+	"color_scheme": "Packages/User/SublimeLinter/Monokai-HighFructose (SL).tmTheme",
+	"draw_white_space": "selection",
+	"font_size": 16,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"theme": "Boxy Tomorrow.sublime-theme",
+	"trim_trailing_white_space_on_save": true,
+	"vintageous_use_ctrl_keys": false
+}

@@ -1,0 +1,53 @@
+---
+
+- name: Update all Homebrew packages
+  homebrew:
+    update_homebrew: yes
+    upgrade_all: yes
+
+- name: Install cask
+  homebrew:
+    name: cask
+
+- name: Install tmux
+  homebrew:
+    name: tmux
+
+- name: Install vim
+  homebrew:
+    name: vim
+
+- name: Install wget
+  homebrew:
+    name: wget
+
+- name: Install tree
+  homebrew:
+    name: tree
+
+- name: Install htop
+  homebrew:
+    name: htop
+
+- name: Install openssl
+  homebrew:
+    name: openssl
+
+- name: Install jq
+  homebrew:
+    name: jq
+
+- name: Install Midnight Commander
+  homebrew:
+    name: midnight-commander
+
+# Go specific
+
+- name: Install Go
+  homebrew:
+    name: go
+    state: latest
+
+- name: Install glide
+  homebrew:
+    name: glide

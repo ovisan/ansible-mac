@@ -1,0 +1,18 @@
+---
+
+- name: Set up Bash profile
+  copy:
+    src: .bash_profile
+    dest: ~/.bash_profile
+    force: no
+
+- name: Load Bash profile
+  shell: "source ~/.bash_profile"
+
+- name: Copy .vimrc
+  get_url:
+    url: https://raw.github.com/ovisan/dotfiles/master/home/.vimrc
+    dest: ~/.vimrc
+
+
+
