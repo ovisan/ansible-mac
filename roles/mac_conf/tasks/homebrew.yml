@@ -21,6 +21,10 @@
   homebrew:
     name: wget
 
+- name: Install watch
+  homebrew:
+    name: watch
+
 - name: Install tree
   homebrew:
     name: tree
