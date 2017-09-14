@@ -1,4 +1,4 @@
-brew
+rew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ls ~/Dropbox/
 ls -lah ~/Dropbox/
@@ -44,11 +44,11 @@ grep -r atlaws ./bin/
 grep -r atlaws ./
 grep -r atlaws .
 l
-vim bin/build-ami.sh 
+vim bin/build-ami.sh
 make
 brew install go
 brew install glide
-./bin/build-ami.sh 
+./bin/build-ami.sh
 ./bin/build-ami.sh -p JIRA      -r eu-central-1 -v vpc-edc9a585 -s subnet-6be1cb03 -c -u
 ./bin/build-ami.sh -p JIRA -r eu-central-1 -v vpc-edc9a585 -s subnet-6be1cb03 -c -u
 export AWS_ACCESS_KEY=AKIAIO22IRMA5FLQ4XAA
@@ -88,42 +88,42 @@ Copy to us-east-1 started (AMI ID: ami-2b4d603d)
 Copy to us-east-2 started (AMI ID: ami-c881a7ad)
 Copy toCopy toCopy toCopy toCopy toCopy toCopy toCopy Copy toCopy toCopy toCopy toCopy -0c232975)
 Updating JIRA CloudFormation template AMI mapping(s)...
-ssh 52.58.133.244 -i ~/Downloads/jirainstance.pem.txt 
-chmod 0755 ~/Downloads/jirainstance.pem.txt 
-chmod 400 ~/Downloads/jirainstance.pem.txt 
+ssh 52.58.133.244 -i ~/Downloads/jirainstance.pem.txt
+chmod 0755 ~/Downloads/jirainstance.pem.txt
+chmod 400 ~/Downloads/jirainstance.pem.txt
 ssh -i ~/Downloads/jirainstance.pem.txt 52.58.133.244
 ssh -i ~/Downloads/jirainstance.pem.txt root@52.58.133.244
 ssh -i ~/Downloads/jirainstance.pem.txt ec2-user@52.58.133.244
 find  -name atl-init-10-volume.sh
 find . -name atl-init-10-volume.sh
 cd scripts/
-chmod+x write-product-config.sh 
-chmod +x write-product-config.sh 
-./write-product-config.sh 
+chmod+x write-product-config.sh
+chmod +x write-product-config.sh
+./write-product-config.sh
 cd te
 cd test/
-./testJiraDataCenter.sh 
+./testJiraDataCenter.sh
 export AWS_REGION=eu-central-1
-./test/testJiraDataCenter.sh 
+./test/testJiraDataCenter.sh
 /Users/ovidiuvisan/code/atlassian-aws-deployment/test/atl-aws-extensions.sh; exit;
-vim ./test/testJiraDataCenter.sh 
+vim ./test/testJiraDataCenter.sh
 ./test/testJiraDataCenter.sh JiraVersion=Software
 /Users/ovidiuvisan/code/atlassian-aws-deployment/test/testJiraDataCenter.sh; exit;
-cat ./test/testJiraDataCenter.sh 
+cat ./test/testJiraDataCenter.sh
 env
 ./test/create-stack.sh JiraDataCenter.template ParameterKey=AssociatePublicIpAddress,ParameterValue=true,UsePreviousValue=false~ParameterKey=JiraVersion,ParameterValue=7.3.0-SNAPSHOT,UsePreviousValue=false~ParameterKey=DBMasterUserPassword,ParameterValue=postgres,UsePreviousValue=false~ParameterKey=DBPassword,ParameterValue=jira,UsePreviousValue=false~ParameterKey=JiraProduct,ParameterValue=Software,UsePreviousValue=false
 /test/create-stack.sh JiraDataCenter.template ParameterKey=AssociatePublicIpAddress,ParameterValue=true,UsePreviousValue=false~ParameterKey=JiraVersion,ParameterValue=7.3.0-SNAPSHOT,UsePreviousValue=false~ParameterKey=DBMasterUserPassword,ParameterValue=postgres,UsePreviousValue=false~ParameterKey=DBPassword,ParameterValue=jira,UsePreviousValue=false
 ./test/create-stack.sh JiraDataCenter.template ParameterKey=AssociatePublicIpAddress,ParameterValue=true,UsePreviousValue=false~ParameterKey=JiraVersion,ParameterValue=7.3.0-SNAPSHOT,UsePreviousValue=false~ParameterKey=DBMasterUserPassword,ParameterValue=postgres,UsePreviousValue=false~ParameterKey=DBPassword,ParameterValue=jira,UsePreviousValue=false
 ls bin/
 cd bin/
-chmod +x atl-update-host-name.sh 
-./atl-update-host-name.sh 
+chmod +x atl-update-host-name.sh
+./atl-update-host-name.sh
 docker ps
 cp ~/Documents/jirainstance.pem .
 ssh -i jirainstance.pem 52.59.161.96
-chmod 400 jirainstance.pem 
+chmod 400 jirainstance.pem
 cp /Users/ovidiuvisan/Downloads/Plain\ Text\ Document/jirainstance.pem.txt .
-chmod 400 jirainstance.pem.txt 
+chmod 400 jirainstance.pem.txt
 ssh -i jirainstance.pem.txt 52.59.161.96
 ssh -i jirainstance.pem ec2-user@52.59.161.96
 ./bin/build-ami.sh -p JIRA -r eu-central-1b -v vpc-edc9a585 -s subnet-6be1cb03 -c -u
@@ -137,8 +137,8 @@ sudo su
 clear
 cd cpde
 cd code/
-vim ~/.bash_profile 
-source ~/.bash_profile 
+vim ~/.bash_profile
+source ~/.bash_profile
 ssh -i jirainstance.pem ec2-user@52.59.88.90
 git clone
 echo "This is a secret" | docker secret create my_secret_data -
@@ -157,17 +157,17 @@ docker images
 cd azde-deployment-automation/
 cd selenium/
 docker-compose
-docker-compose up docker-compose.yml 
-docker-compose build docker-compose.yml 
-docker-compose -f docker-compose.yml 
+docker-compose up docker-compose.yml
+docker-compose build docker-compose.yml
+docker-compose -f docker-compose.yml
 docker-compose -f docker-compose.yml build
-cat docker-compose.yml 
+cat docker-compose.yml
 cd selenium3-master/
-./build.sh 
+./build.sh
 docker history 3bee3060bfc8
 git pull
 cd azd-selenium/
-vim openshift-hub.yml 
+vim openshift-hub.yml
 cd  azd-selenium/
 find . -name entry_point
 find . -name entry_point.s
@@ -178,7 +178,7 @@ git clone https://github.com/CentOS/CentOS-Dockerfiles
 cd CentOS-Dockerfiles/
 cd httpd/
 cd centos7/
-vim Dockerfile 
+vim Dockerfile
 docker build
 docker build --rm -t <username>/httpd .
 docker build --rm -t httpd .
@@ -191,7 +191,7 @@ cd .
 cd sonarqube/
 git status
 rm -rf azd-selenium/
-git 
+git
 git remote -v
 git clone https://api-dev.allianz.de/azdcloud-ops/azd-selenium
 export GIT_SKIP_SSL_VERIFY=true
@@ -200,7 +200,7 @@ env GIT_SSL_NO_VERIFY=true it clone https://api-dev.allianz.de/zdcloud-ops/azd-s
 env GIT_SSL_NO_VERIFY=true git clone https://api-dev.allianz.de/zdcloud-ops/azd-selenium
 history | grep azd-selenium
 env GIT_SSL_NO_VERIFY=true git clone https://api-dev.allianz.de/GHE/zdcloud-ops/azd-selenium
-history | grep git clone 
+history | grep git clone
 history | grep "git clone"
 git clone https://api-dev.allianz.de/GHE/ADP-AZDE/deployment-automation
 rm -rf deploy
@@ -210,10 +210,10 @@ cd base
 docker build .
 wget --no-verbose https://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar -O /opt/selenium/selenium-server-standalone.jar
 brew install wget
-wget --no-verbose https://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar -0 
-wget --no-verbose https://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar 
+wget --no-verbose https://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar -0
+wget --no-verbose https://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar
 rm -rf
-rm -rf selenium-server-standalone-3.4.0.jar 
+rm -rf selenium-server-standalone-3.4.0.jar
 history | grep brew
 history | grep ssl
 history |grep SSL
@@ -228,7 +228,7 @@ git config --get user.email
 ;s
 git diff
 git log
-cat ./build.sh 
+cat ./build.sh
 mv a a.old
 mv -f a a.old
 mv --help
@@ -290,7 +290,7 @@ git log | grep 1cf26
 mkdir ~/code/testSelenium
 cp NodeBase/Dockerfile ~/code/testSelenium/
 cd ~/code/testSelenium/
-rm Dockerfile 
+rm Dockerfile
 cp ~/code/azd-selenium/Base/Dockerfile .
 docker build . base
 docker build --help
@@ -302,22 +302,22 @@ mkdir nodefirefox
 cd nodefirefox/
 cp ~/code/azd-selenium/NodeFirefox/Dockerfile .
 docker build -t ff .
-git reset HEAD NodeFirefox/.DS_Store 
-git reset HEAD .DS_Store 
+git reset HEAD NodeFirefox/.DS_Store
+git reset HEAD .DS_Store
 git config --global core.excludesfile ~/.gitignore_global
 vim ~/.gitigonore_gloval
-cat ../../azd-selenium/NodeFirefox/.DS_Store 
-vim ~/.gitigonore_gloval 
-mv ~/.gitigonore_gloval ~/.gitigonore_global 
-vim ~/.gitigonore_global 
-mv ~/.gitigonore_global ~/.gitignore_global 
+cat ../../azd-selenium/NodeFirefox/.DS_Store
+vim ~/.gitigonore_gloval
+mv ~/.gitigonore_gloval ~/.gitigonore_global
+vim ~/.gitigonore_global
+mv ~/.gitigonore_global ~/.gitignore_global
 cat ~/.gitignore_global
 git add =A
 git add -A
-rm -rf .DS_Store 
+rm -rf .DS_Store
 ls -lah NodeFirefox/
-ls -lah NodeFirefox/.DS_Store 
-rm -f NodeFirefox/.DS_Store 
+ls -lah NodeFirefox/.DS_Store
+rm -f NodeFirefox/.DS_Store
 cd testSelenium/
 docker start ff
 docker run -it ff /bin/bash
@@ -351,7 +351,7 @@ git commit -m "fix hub variable name in entry_point.sh and cleanup"
 git commit -m "fix entry_point script to correctly work with the environmental variables"
 git commit -m "install xvfb in nodebase"
 wget http://vault.centos.org/6.2/os/x86_64/Packages/xorg-x11-server-Xvfb-1.10.4-6.el6.x86_64.rpm
-rm xorg-x11-server-Xvfb-1.10.4-6.el6.x86_64.rpm 
+rm xorg-x11-server-Xvfb-1.10.4-6.el6.x86_64.rpm
 cd NodeChrome/
 mv generate_config generate_config.sh
 chmod +x *
@@ -364,7 +364,7 @@ selenium .
 git statsu
 cd dotfiles/
 rm -rf dotfiles/
-vim .bashrc 
+vim .bashrc
 git commit -m "make .bashrc universal"
 gut push origin master
 git log -S proxy-wget --source --all
@@ -373,24 +373,24 @@ git commit -m "readd proxy secrets"
 git pull && git add -A && git commit --amend --no-edit && git push origin master -f
 cd Downloads/
 sha256
-shasum LATEST_RELEASE 
-shasum chromedriver 
+shasum LATEST_RELEASE
+shasum chromedriver
 brew install sha1sum
 brew install sha*
-sha1dcsum chromedriver 
+sha1dcsum chromedriver
 java
 git commit -m "fix debug flag for debugging in ff"
 wget --no-verbose https://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar -O .
-wget --no-verbose https://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar -O 
-wget https://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar -O 
-wget https://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar 
-sha1dcsum selenium-server-standalone-3.4.0.jar 
-docker 
+wget --no-verbose https://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar -O
+wget https://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar -O
+wget https://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar
+sha1dcsum selenium-server-standalone-3.4.0.jar
+docker
 docker | grep container
 docker exec -ti 652e788f6400
 cd ~/code/azd-selenium/
 cd Base/
-git commit --amend 
+git commit --amend
 [A
 git commit -m "fix image name in openshift template"
 docker exec -ti 652e788f6400 bash
@@ -401,7 +401,7 @@ git clone https://api-dev.allianz.de/GHE/zdcloud-ops/azd-selenium
 it clone https://api-dev.allianz.de/GHE/azdcloud-ops/azd-selenium
 git clone https://api-dev.allianz.de/GHE/azdcloud-ops/azd-selenium
 ls -alh
-rm .vimrc .bash.tmp 
+rm .vimrc .bash.tmp
 git commit -m "remove tmp"
 htop
 brew install htop
@@ -412,7 +412,7 @@ cd selenium
 la
 git clone https://github.com/SeleniumHQ/docker-selenium
 cd  docker-selenium/
-./no-proxy-docker-compose.sh 
+./no-proxy-docker-compose.sh
 docker run -it centos:7 /bin/bash
 git push origin mater -f
 cd azd
@@ -420,7 +420,7 @@ ps au
 ps aux
 git push origin master 0f
 cd Pictures/
-cd /Volumes/Samsung_T3/Sfinx 
+cd /Volumes/Samsung_T3/Sfinx
 rm *.tif
 q
 rm *_result.tif
@@ -446,7 +446,7 @@ cp -r jiraconfluence jiraconfluence-backup
 rm -rf .git
 brew update packer
 brew upgrade packer
-cd 
+cd
 rm -rf selenium
 grep -r "yum.conf" .
 cat ./Base/scripts/setup-yum.sh
@@ -471,7 +471,7 @@ go get github.com/mitchellh/gox
 go get
 go -h
 gox
-ls packages/bin/gox 
+ls packages/bin/gox
 ls /usr/bin/ | grep go
 wc
 cp packages/bin/gox /usr/bin/gox
@@ -485,20 +485,20 @@ go get golang.org/x/text/secure/bidirule
 go get golang.org/x/tools/go/buildutil
 make install
 make release
-vim glide.yaml 
-vim Makefile 
+vim glide.yaml
+vim Makefile
 ;;
 glide
 go install saml2aws
 rm -rf saml2aws/
-vim /Applications/Notes.app/Contents/Resources/pad.css 
+vim /Applications/Notes.app/Contents/Resources/pad.css
 cd ~/code/
 git clone https://bitbucket.org/atlassian/atlassian-aws-deployment
-vim ami/jira.json 
+vim ami/jira.json
 grep -r epel
 grep -r epel .
 exit
-grep -r 
+grep -r
 grep -r "zfs"
 grep -r "zfs" .
 vim ./ami/jira.json
@@ -506,11 +506,11 @@ rm -rf atlassian-aws-deployment/
 git clone https://github.developer.allianz.io/ATLASSIAN-BVG2-E1/Atlassian
 git clone https://api-dev.allianz.de/GHE/ATLASSIAN-BVG2-E1/Atlassian
 cd Atlassian/
-cd Sonar_CFT.json 
+cd Sonar_CFT.json
 cat Sonar_CFT.jsonls
 cat Sonar_CFT.json
-vim Sonar_CFT.json 
-tmux 
+vim Sonar_CFT.json
+tmux
 tmux --help
 tmux
 tmux ls
@@ -536,9 +536,9 @@ ATL_JIRA_SERVICE_NAME="jira"
 set -e
 . /etc/init.d/atl-functions
 cd scripts/init.d/
-chmod +x atl-init-jira.sh 
-./atl-init-jira.sh 
-source atl-functions 
+chmod +x atl-init-jira.sh
+./atl-init-jira.sh
+source atl-functions
 JIRA_VERSION=$(cat $(atl_tempDir)/version)
 docker imahes
 docker create -it centos /bash
@@ -551,7 +551,7 @@ AWS_REGION="eu-central-1"
 export AWS_REGION="eu-central-1"
 cd templates/
 find . -name *ovidiu*
-./validate-template.sh 
+./validate-template.sh
 git reset --hard 8bc2c1f8563572f2f3d915a12ab44aedb617465f
 git clone https://api-dev.allianz.de/azdcloud-ops/sonarqube
 rm sonarqube
@@ -575,33 +575,33 @@ vim ansible.yml
 git clone https://github.com/configuresystems/ansible-jira
 git commit -m "changed deployment strategy"
 ls -l | awk '{k=0;for(i=0;i<=8;i++)k+=((substr($1,i+2,1)~/[rwx]/) *2^(8-i));if(k)printf("%0o ",k);print}'
-chmod +x atlassian-jira-software-7.4.2-x64.bin 
+chmod +x atlassian-jira-software-7.4.2-x64.bin
 stat -c "%a %n" *
 cd code/atlassian-aws-deployment/
-vim jira.json 
+vim jira.json
 ls ansible/
-vim SonarQubeMain.json 
+vim SonarQubeMain.json
 brew install aws
 aws cloudformation validate-template --template-body file://JiraMain.YAML
 npm install -g cfn-lint
 brew install npm
-cfn-lint validate JiraMain.YAML 
+cfn-lint validate JiraMain.YAML
 cfn-lint validate JiraMain.YAML --parameters key="JiraInstanceType"
 cfn-lint validate JiraMain.YAML --pseudo JiraInstanceType="c3.xlarge"
 cfn-lint validate JiraMain.YAML --parameters JiraInstanceType="c3.xlarge"
-vim JiraDataCenter.template 
+vim JiraDataCenter.template
 aws cloudformation validate-template --template-body file://JiraMain.YAML[A
 cd sonarqube/Sonar
-grep -r 53 
+grep -r 53
 grep -r 53 ;
 grep -r 53 .
 cd AWSCloudFormation-samples/
-sublime. 
+sublime.
 brew install speedtest_cli
-speedtest-cli 
+speedtest-cli
 cd ansible/roles/jira/files/
 cp ~/Downloads/jira.jks .
-rm jira.p12 
+rm jira.p12
 cp -r jira/ confluence/
 cd Cf
 cd CFT/
@@ -611,7 +611,7 @@ brew install rename
 rename 's/Jira/Confluence/g' *.YAML'
 rename 's/Jira/Confluence/g' *.YAML
 brew search sha256
-shasum -a 256 ~/Downloads/atlassian-confluence-6.3.3-x64.bin 
+shasum -a 256 ~/Downloads/atlassian-confluence-6.3.3-x64.bin
 keytool
 cd ~/Downloads/
 cd confluence.cc.azd.cloud.allianz/
@@ -621,7 +621,7 @@ brew install keytool
 keytool -importkeystore -srckeystore confluence.p12 -srcstoretype pkcs12 -srcalias confluence -destkeystore confluence.jks -deststoretype jks -deststorepass Allianz99 -destalias confluence
 cp confluence.jks ~/code/Atlassian/ansible/roles/confluence/files/
 mv ~/Downloads/confluence.jks ~/code/Atlassian/ansible/roles/confluence/files/
-keytool -list -keystore ansible/roles/confluence/files/confluence.jks 
+keytool -list -keystore ansible/roles/confluence/files/confluence.jks
 rm isalive/
 rm -rf isalive/
 rm -rf kraft-adp-conf/
@@ -637,7 +637,7 @@ ls -lSh . | head -5
 ls -lSh
 ls -lS
 docker exec -ti ebd137ca8db46e7261cbff9a5744a920abb656dbde04e916ea697a6fcb67e611 bash
-diskutil 
+diskutil
 diskutil info
 cd ~/Library/Application\ Support/Alfred\ 3/Alfred.alfredpreferences/workflows/
 cd ~/code/\
@@ -665,7 +665,7 @@ mkdir macconf
 cd macconf/
 cp ../Atlassian/ansible/roles/jira/ .
 cp -r ../Atlassian/ansible/roles/jira/ .
-ansible-playbook -t macconf macconf.yml 
+ansible-playbook -t macconf macconf.yml
 ansible-tower
 ansible-galaxy init homebrew
 rm homebrew/
@@ -676,8 +676,8 @@ ansible-galaxy --help
 mkdir macconf.sh
 rm -rf macconf.sh/
 vim macconf.sh
-chmod +x macconf.sh 
-./macconf.sh 
+chmod +x macconf.sh
+./macconf.sh
 brew upgrade atom
 brew update atom
 brew cask install mailbutler
@@ -701,7 +701,7 @@ brew cask install iterm2
 brew cask install pia
 brew cask install pia-manager
 brew cask install private
-vim .bash_profile 
+vim .bash_profile
 cp ~/.bash_profile roles/macconf/files/
 ls -lah ~/
 source /Users/ovidiuvisan/.bash_profile
@@ -716,8 +716,8 @@ cat ~/Library/Application Support/Sublime\ Text\ 3/Packages/User/Preferences.sub
 ls ~/Library/Application\ Support/Sublime\ Text\ 3/
 ls ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages/
 history | grep sublime
-ls ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings 
-cat ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings 
+ls ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
+cat ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
 ls ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/
 cd Application\ Support/
 cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/
@@ -735,7 +735,7 @@ vim .vimrc
 cp .vimrc ~/code/macconf/ansible/roles/macconf/files/
 wget https://raw.github.com/ovisan/dotfiles/blob/master/home/.vimrc
 wget https://raw.github.com/ovisan/dotfiles/master/home/.vimrc
-rm .vimrc.1 
+rm .vimrc.1
 git init
 git clone https://github.com/ovisan/ansible-mac
 cd ansible-mac/
