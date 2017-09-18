@@ -30,6 +30,9 @@
     dest: /usr/local/bin/code
     state: link
 
+- name: Install sync extention
+  command: code --install-extention Shan.code-settings-sync
+
 - name: Install BetterTouchTool
   homebrew_cask:
     name: bettertouchtool
