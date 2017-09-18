@@ -24,25 +24,11 @@
   homebrew_cask:
     name: visual-studio-code
 
-- name: Install Sublime Text Editor
-  homebrew_cask:
-    name: sublime-text
-
-- name: Make Sublime available in terminal
+- name: Make VSCode available in terminal
   file:
-    src: /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl
-    dest: /usr/local/bin/sublime
+    src: /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code
+    dest: /usr/local/bin/code
     state: link
-
-- name: Copy Sublime Configuration
-  synchronize:
-    src: Sublime3/Packages/User
-    dest: ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
-
-- name: Install Package Control in Sublime
-  copy:
-    src: Sublime3/Installed\ Packages/Package\ Control.sublime-package
-    dest: ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages/Package\ Control.sublime-package
 
 - name: Install BetterTouchTool
   homebrew_cask:
