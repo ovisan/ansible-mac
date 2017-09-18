@@ -20,18 +20,22 @@
   homebrew_cask:
     name: mailbutler
 
+- name: Install VisualStudio Code
+  homebrew_cask:
+    name: visual-studio-code
+
 - name: Install Sublime Text Editor
   homebrew_cask:
     name: sublime-text
 
 - name: Make Sublime available in terminal
-  - file:
+  file:
     src: /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl
     dest: /usr/local/bin/sublime
     state: link
 
 - name: Copy Sublime Configuration
-- synchronize:
+  synchronize:
     src: Sublime3/Packages/User
     dest: ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
 
