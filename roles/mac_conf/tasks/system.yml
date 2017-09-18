@@ -13,6 +13,3 @@
   get_url:
     url: https://raw.github.com/ovisan/dotfiles/master/home/.vimrc
     dest: ~/.vimrc
-
-
-
