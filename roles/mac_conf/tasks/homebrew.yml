@@ -45,6 +45,10 @@
   homebrew:
     name: midnight-commander
 
+- name: Install Mas
+  homebrew:
+    name: mas
+
 # Go specific
 
 - name: Install Go
