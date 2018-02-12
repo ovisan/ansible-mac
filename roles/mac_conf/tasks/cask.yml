@@ -1,32 +1,34 @@
 ---
-
-- name: Update all Homebrew packages
-  homebrew:
-    update_homebrew: yes
+#TODO: with ansible 2.5.0 the bug is fixed https://github.com/ansible/ansible/issues/33975
 
 - name: Install iterm2
   homebrew_cask:
     name: iterm2
+    state: present
 
 - name: Install Alfred
   homebrew_cask:
     name: alfred
+    state: present
 
 - name: Install Hazel
   homebrew_cask:
     name: hazel
+    state: present
 
 - name: Install MailButler
   homebrew_cask:
     name: mailbutler
+    state: present
 
 - name: Install VisualStudio Code
   homebrew_cask:
     name: visual-studio-code
+    state: present
 
 - name: Make VSCode available in terminal
   file:
-    src: /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code
+    src: "/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
     dest: /usr/local/bin/code
     state: link
 
@@ -36,59 +38,74 @@
 - name: Install BetterTouchTool
   homebrew_cask:
     name: bettertouchtool
+    state: present
 
 - name: Install Spectacle
   homebrew_cask:
     name: spectacle
+    state: present
 
 - name: Install AppCleaner
   homebrew_cask:
     name: appcleaner
+    state: present
 
 - name: Install CheatSheet
   homebrew_cask:
     name: cheatsheet
+    state: present
 
 - name: Install Docker
   homebrew_cask:
     name: docker
+    state: present
 
 - name: Install Dropbox
   homebrew_cask:
     name: dropbox
+    state: present
 
 - name: Install Dash
   homebrew_cask:
     name: dropbox
+    state: present
 
 - name: Install Double Commander
   homebrew_cask:
     name: double-commander
+    state: present
 
 - name: Install LibreOffice
   homebrew_cask:
     name: libreoffice
+    state: present
 
 - name: Install Skype
   homebrew_cask:
     name: skype
+    state: present
 
 - name: Install TeamViewer
   homebrew_cask:
     name: teamviewer
+    state: present
 
 - name: Install Telegram
   homebrew_cask:
     name: telegram
+    state: present
 
 - name: Install Transmission
   homebrew_cask:
     name: transmission
+    state: present
 
 - name: Install VLC
   homebrew_cask:
     name: vlc
+    state: present
 
 - name: Install Private Internet Access
   homebrew_cask:
     name: private-internet-access
+    state: present

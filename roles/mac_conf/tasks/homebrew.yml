@@ -1,45 +1,53 @@
 ---
 
-- name: Update all Homebrew packages
+- name: Update Homebrew
   homebrew:
     update_homebrew: yes
-    upgrade_all: yes
 
 - name: Install cask
   homebrew:
     name: cask
+    state: latest
 
 - name: Install tmux
   homebrew:
     name: tmux
+    state: latest
 
 - name: Install vim
   homebrew:
     name: vim
+    state: latest
 
 - name: Install wget
   homebrew:
     name: wget
+    state: latest
 
 - name: Install watch
   homebrew:
     name: watch
+    state: latest
 
 - name: Install tree
   homebrew:
     name: tree
+    state: latest
 
 - name: Install htop
   homebrew:
     name: htop
+    state: latest
 
 - name: Install openssl
   homebrew:
     name: openssl
+    state: latest
 
 - name: Install jq
   homebrew:
     name: jq
+    state: latest
 
 - name: Install Midnight Commander
   homebrew:
@@ -48,6 +56,7 @@
 - name: Install Mas
   homebrew:
     name: mas
+    state: latest
 
 # Go specific
 
@@ -59,7 +68,14 @@
 - name: Install glide
   homebrew:
     name: glide
+    state: latest
 
 - name: Install insect (complex calculator)
   homebrew:
     name: insect
+    state: latest
+
+- name: Install bash-completion
+  homebrew:
+    name: bash-completion
+    state: latest

@@ -4,6 +4,9 @@
 if [ -f /etc/bash_completion  ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+if [ -f $(brew --prefix)/etc/bash_completion.d/git-completion.bash ]; then
+  . $(brew --prefix)/etc/bash_completion.d/git-completion.bash
+fi
 export HISTCONTROL=ignoreboth:erasedups:ignoredups:ignorespace # no duplicate entries
 export HISTSIZE=10000000                 # big big history
 export HISTFILESIZE=10000000             # big big history

@@ -1,5 +1,5 @@
 ---
 
-- include: system.yml
 - include: homebrew.yml
 - include: cask.yml
+- include: system.yml
