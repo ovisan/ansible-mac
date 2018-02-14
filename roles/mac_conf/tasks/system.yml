@@ -5,17 +5,26 @@
     url: https://raw.github.com/ovisan/dotfiles/master/home/.vimrc
     dest: ~/.vimrc
 
+- name: Copy .zshrc
+  copy:
+    src: .zshrc
+    dest: ~/.zshrc
+    force: no
+
+- name: Load ZSH profile
+  shell: "source ~/.zshrc"
+
 - name: Download git-completion
   get_url:
     url: https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
     dest: /usr/local/etc/bash_completion.d/git-completion.bash
 
 # prerequisite for bash_profile is git-completion.bash and bash-completion brew module
-- name: Set up Bash profile
-  copy:
-    src: .bash_profile
-    dest: ~/.bash_profile
-    force: no
+# - name: Set up Bash profile
+#   copy:
+#     src: .bash_profile
+#     dest: ~/.bash_profile
+#     force: no
 
-- name: Load Bash profile
-  shell: "source ~/.bash_profile"
+# - name: Load Bash profile
+#   shell: "source ~/.bash_profile"
