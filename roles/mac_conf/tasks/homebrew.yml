@@ -4,6 +4,11 @@
   homebrew:
     update_homebrew: yes
 
+- name: Install bind
+  homebrew:
+    name: bind
+    state: latest
+
 - name: Install zsh
   homebrew:
     name: zsh
