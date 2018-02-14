@@ -4,6 +4,16 @@
   homebrew:
     update_homebrew: yes
 
+- name: Install zsh
+  homebrew:
+    name: zsh
+    state: latest
+
+- name: Install zsh-completions
+  homebrew:
+    name: zsh-completions
+    state: latest
+
 - name: Install cask
   homebrew:
     name: cask
