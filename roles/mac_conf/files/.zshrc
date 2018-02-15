@@ -60,11 +60,10 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  git-extras
+  gnu-utils
   osx
-  golang
-  aws
   docker
-  cask
   tmux
   tmuxinator
 )
@@ -76,10 +75,6 @@ export HISTCONTROL=ignoreboth:erasedups:ignoredups:ignorespace # no duplicate en
 export HISTSIZE=10000000                 # big big history
 export HISTFILESIZE=10000000             # big big history
 
-# History completion"
-bindkey "\e[A": history-search-backward
-bindkey "\e[B": history-search-forward
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -87,7 +82,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
