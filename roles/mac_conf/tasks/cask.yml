@@ -109,3 +109,8 @@
   homebrew_cask:
     name: private-internet-access
     state: present
+
+- name: Install SlowQuitApps
+  homebrew_cask:
+    name: slowquitapps
+    state: present
