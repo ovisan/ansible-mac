@@ -94,3 +94,8 @@
   homebrew:
     name: bash-completion
     state: latest
+
+- name: Install ctags
+  homebrew:
+    name: ctags
+    state: latest
