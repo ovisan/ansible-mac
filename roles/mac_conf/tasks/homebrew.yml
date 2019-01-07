@@ -73,6 +73,11 @@
     name: mas
     state: latest
 
+- name: Install ctags
+  homebrew:
+    name: ctags
+    state: latest
+
 # Go specific
 
 - name: Install Go
@@ -93,9 +98,4 @@
 - name: Install bash-completion
   homebrew:
     name: bash-completion
-    state: latest
-
-- name: Install ctags
-  homebrew:
-    name: ctags
     state: latest
