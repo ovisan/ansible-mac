@@ -73,8 +73,6 @@
     name: mas
     state: latest
 
-# Go specific
-
 - name: Install Go
   homebrew:
     name: go
@@ -93,4 +91,19 @@
 - name: Install bash-completion
   homebrew:
     name: bash-completion
+    state: latest
+
+- name: Install fzf
+  homebrew:
+    name: fzf
+    state: latest
+
+- name: Install bat
+  homebrew:
+    name: bat
+    state: latest
+
+- name: Install ripgrep
+  homebrew:
+    name: rg
     state: latest
