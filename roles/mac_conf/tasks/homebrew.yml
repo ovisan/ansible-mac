@@ -73,6 +73,11 @@
     name: mas
     state: latest
 
+- name: Install ctags
+  homebrew:
+    name: ctags
+    state: latest
+
 - name: Install Go
   homebrew:
     name: go
