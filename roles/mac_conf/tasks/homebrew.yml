@@ -4,9 +4,9 @@
   homebrew:
     update_homebrew: yes
 
-- name: Install bind
+- name: Install vifm
   homebrew:
-    name: bind
+    name: vifm
     state: latest
 
 - name: Install zsh

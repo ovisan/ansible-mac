@@ -881,7 +881,6 @@ fe() {
   IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0 --preview 'bat --color=always --line-range :500 {}'))
   [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
 }
-alias ffe='fe'
 
 # fd - cd to selected directory
 fd() {
