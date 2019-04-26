@@ -78,16 +78,6 @@
     name: ctags
     state: latest
 
-- name: Install Go
-  homebrew:
-    name: go
-    state: latest
-
-- name: Install glide
-  homebrew:
-    name: glide
-    state: latest
-
 - name: Install insect (complex calculator)
   homebrew:
     name: insect
