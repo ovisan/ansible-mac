@@ -9,7 +9,7 @@
 
 - name: Copy .zshrc
   copy:
-    src: .zshrc
+    url: https://raw.githubusercontent.com/ovisan/ansible-mac/master/roles/mac_conf/files/.zshrc
     dest: ~/.zshrc
     force: no
 
