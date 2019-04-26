@@ -1,6 +1,6 @@
 ---
 - name: Install Oh-My_Zsh
-  shell: "sh -c ''$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)'"
+  shell: "sh -c '$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)'"
 
 - name: Copy .vimrc
   get_url:
