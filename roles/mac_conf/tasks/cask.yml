@@ -64,11 +64,6 @@
     name: skype
     state: present
 
-- name: Install TeamViewer
-  homebrew_cask:
-    name: teamviewer
-    state: present
-
 - name: Install Telegram
   homebrew_cask:
     name: telegram
