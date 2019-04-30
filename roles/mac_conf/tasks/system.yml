@@ -1,6 +1,6 @@
 ---
 - name: Install Oh-My_Zsh
-  shell: "sh -c ''$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)'"
+  shell: "bash <(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 - name: Copy .vimrc
   get_url:
@@ -9,7 +9,7 @@
 
 - name: Copy .zshrc
   copy:
-    src: .zshrc
+    url: https://raw.github.com/ovisan/dotfiles/master/home/.zshrc
     dest: ~/.zshrc
     force: no
 
