@@ -1,6 +1,6 @@
 ---
 
 - include: homebrew_tap.yml
-- include: homebrew.yml
 - include: cask.yml
+- include: homebrew.yml
 - include: system.yml
