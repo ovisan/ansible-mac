@@ -102,3 +102,13 @@
   homebrew:
     name: rg
     state: latest
+
+- name: Install lsd (better ls)
+  homebrew:
+    name: lsd
+    state: latest
+
+- name: Install bat (better cat)
+  homebrew:
+    name: cat
+    state: latest
