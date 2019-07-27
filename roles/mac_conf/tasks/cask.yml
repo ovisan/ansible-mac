@@ -21,9 +21,6 @@
     name: mailbutler
     state: present
 
-- name: Install sync extension
-  command: code --install-extension Shan.code-settings-sync
-
 - name: Install BetterTouchTool
   homebrew_cask:
     name: bettertouchtool

@@ -8,7 +8,7 @@
     dest: ~/.vimrc
 
 - name: Copy .zshrc
-  copy:
+  get_url:
     url: https://raw.github.com/ovisan/dotfiles/master/home/.zshrc
     dest: ~/.zshrc
     force: no
