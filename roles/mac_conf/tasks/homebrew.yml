@@ -4,9 +4,9 @@
   homebrew:
     update_homebrew: yes
 
-- name: Install bind
+- name: Install vifm
   homebrew:
-    name: bind
+    name: vifm
     state: latest
 
 - name: Install zsh
@@ -88,15 +88,27 @@
     name: bash-completion
     state: latest
 
-# Go specific
-
-- name: Install Go
+- name: Install fzf
   homebrew:
-    name: go
+    name: fzf
     state: latest
 
-- name: Install glide
+- name: Install bat
   homebrew:
-    name: glide
+    name: bat
     state: latest
 
+- name: Install ripgrep
+  homebrew:
+    name: rg
+    state: latest
+
+- name: Install lsd (better ls)
+  homebrew:
+    name: lsd
+    state: latest
+
+- name: Install bat (better cat)
+  homebrew:
+    name: cat
+    state: latest
