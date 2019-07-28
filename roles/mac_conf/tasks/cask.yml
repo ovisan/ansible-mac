@@ -21,20 +21,6 @@
     name: mailbutler
     state: present
 
-- name: Install VisualStudio Code
-  homebrew_cask:
-    name: visual-studio-code
-    state: present
-
-- name: Make VSCode available in terminal
-  file:
-    src: "/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
-    dest: /usr/local/bin/code
-    state: link
-
-- name: Install sync extension
-  command: code --install-extension Shan.code-settings-sync
-
 - name: Install BetterTouchTool
   homebrew_cask:
     name: bettertouchtool
@@ -65,24 +51,9 @@
     name: dropbox
     state: present
 
-- name: Install Dash
-  homebrew_cask:
-    name: dropbox
-    state: present
-
-- name: Install Double Commander
-  homebrew_cask:
-    name: double-commander
-    state: present
-
 - name: Install LibreOffice
   homebrew_cask:
     name: libreoffice
-    state: present
-
-- name: Install Skype
-  homebrew_cask:
-    name: skype
     state: present
 
 - name: Install TeamViewer
@@ -113,4 +84,9 @@
 - name: Install SlowQuitApps
   homebrew_cask:
     name: slowquitapps
+    state: present
+
+- name: Install Inconsolata font patched
+  homebrew_cask:
+    name: homebrew/cask-fonts/font-inconsolata-nerd-font
     state: present

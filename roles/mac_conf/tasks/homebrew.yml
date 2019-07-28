@@ -78,6 +78,16 @@
     name: ctags
     state: latest
 
+- name: Install insect (complex calculator)
+  homebrew:
+    name: insect
+    state: latest
+
+- name: Install bash-completion
+  homebrew:
+    name: bash-completion
+    state: latest
+
 # Go specific
 
 - name: Install Go
@@ -90,12 +100,3 @@
     name: glide
     state: latest
 
-- name: Install insect (complex calculator)
-  homebrew:
-    name: insect
-    state: latest
-
-- name: Install bash-completion
-  homebrew:
-    name: bash-completion
-    state: latest
