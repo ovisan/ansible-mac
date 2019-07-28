@@ -85,13 +85,3 @@
   homebrew_cask:
     name: slowquitapps
     state: present
-
-- name: Install cask fonts
-  homebrew_cask:
-    name: homebrew/cask-fonts
-    state: present
-
-- name: Install cask fonts
-  homebrew_cask:
-    name: font-mononoki-nerd-font
-    state: present
