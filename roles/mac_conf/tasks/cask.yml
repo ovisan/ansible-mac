@@ -95,3 +95,11 @@
   homebrew_cask:
     name: font-mononoki-nerd-font
     state: present
+
+- homebrew_tap:
+    name: buo/cask-upgrade
+
+- name: Install brew-cask-upgrade
+  homebrew_cask:
+    name: brew-cask-upgrade
+    state: present

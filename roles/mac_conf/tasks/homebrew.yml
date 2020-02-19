@@ -112,3 +112,8 @@
   homebrew:
     name: cat
     state: latest
+
+- name: Install fdupes
+  homebrew:
+    name: fdupes
+    state: latest
