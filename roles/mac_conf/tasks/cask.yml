@@ -56,9 +56,9 @@
     name: libreoffice
     state: present
 
-- name: Install Skype
+- name: Install TeamViewer
   homebrew_cask:
-    name: skype
+    name: teamviewer
     state: present
 
 - name: Install Telegram
@@ -86,14 +86,9 @@
     name: slowquitapps
     state: present
 
-- name: Install cask fonts
+- name: Install Inconsolata font patched
   homebrew_cask:
-    name: homebrew/cask-fonts
-    state: present
-
-- name: Install cask fonts
-  homebrew_cask:
-    name: font-mononoki-nerd-font
+    name: homebrew/cask-fonts/font-inconsolata-nerd-font
     state: present
 
 - homebrew_tap:
