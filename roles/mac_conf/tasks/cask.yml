@@ -1,9 +1,9 @@
 ---
 #TODO: with ansible 2.5.0 the bug is fixed https://github.com/ansible/ansible/issues/33975
 
-- name: Install iterm2
+- name: Install alacritty
   homebrew_cask:
-    name: iterm2
+    name: alacritty
     state: present
 
 - name: Install Alfred
