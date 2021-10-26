@@ -9,9 +9,9 @@
     name: vifm
     state: latest
 
-- name: Install zsh
+- name: Install fish
   homebrew:
-    name: zsh
+    name: fish
     state: latest
 
 - name: Install zsh-completions
