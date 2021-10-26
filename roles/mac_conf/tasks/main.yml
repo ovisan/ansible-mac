@@ -1,6 +1,8 @@
 ---
 
-- include: homebrew_tap.yml
-- include: cask.yml
-- include: homebrew.yml
-- include: system.yml
+- include: "{{ item }}"
+  loop:
+    - homebrew_tap.yml
+    - cask.yml
+    - homebrew.yml
+    - system.yml

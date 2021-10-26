@@ -2,6 +2,6 @@
 
 - hosts: localhost
   roles:
-    - {role: 'mac_conf', tags: 'mac_conf'}
+    - mac_conf
   # vars:
   # environment:
