@@ -4,19 +4,24 @@
   homebrew:
     update_homebrew: yes
 
-- name: Install vifm
-  homebrew:
-    name: vifm
-    state: latest
-
-- name: Install fish
-  homebrew:
-    name: fish
-    state: latest
-
 - name: Install zsh-completions
   homebrew:
     name: zsh-completions
+    state: latest
+
+- name: Install yabai (i3 for MacOS)
+  homebrew:
+    name: koekeishiya/formulae/yabai
+    state: latest
+
+- name: Install skhd (hotkey daemon)
+  homebrew:
+    name: koekeishiya/formulae/skhd
+    state: latest
+
+- name: Install Starship (Rust prompt)
+  homebrew:
+    name: starship
     state: latest
 
 - name: Install cask
@@ -103,14 +108,24 @@
     name: rg
     state: latest
 
-- name: Install lsd (better ls)
+- name: Install exa (better ls)
   homebrew:
-    name: lsd
+    name: exa
+    state: latest
+
+- name: Install fd (better find)
+  homebrew:
+    name: fd
     state: latest
 
 - name: Install bat (better cat)
   homebrew:
     name: cat
+    state: latest
+
+- name: Install dust (better du)
+  homebrew:
+    name: dust
     state: latest
 
 - name: Install fdupes

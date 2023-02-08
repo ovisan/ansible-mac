@@ -1,0 +1,46 @@
+# ~/.config/starship.toml
+
+# Use custom format
+format = '''
+[┌───────────────────](bold green)
+[│](bold green)$directory$git_branch$git_status$git_state$rust$package
+[└─>](bold green) '''
+
+# Wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 10
+
+# Disable the blank line at the start of the prompt
+add_newline = false
+
+# Set 'foo' as custom color palette
+palette = 'foo'
+
+# Define custom colors
+[palettes.foo]
+# Overwrite existing color
+blue = '21'
+# Define new color
+mustard = '#af8700'
+
+[git_branch]
+symbol = '🌱 '
+truncation_length = 4
+truncation_symbol = ''
+ignore_branches = ['master', 'main']
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+cherry_pick = '[🍒 PICKING](bold red)'
+
+[git_status]
+conflicted = '!!'
+ahead = 'ahead'
+behind = 'behind'
+diverged = 'diverged'
+up_to_date = '✓'
+untracked = 'untracked'
+stashed = 'stashed'
+modified = 'modified'
+staged = '[++\($count\)](green)'
+renamed = 'renamed'
+deleted = 'deleted'

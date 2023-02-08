@@ -1,9 +1,9 @@
 ---
 #TODO: with ansible 2.5.0 the bug is fixed https://github.com/ansible/ansible/issues/33975
 
-- name: Install alacritty
+- name: Install wezterm
   homebrew_cask:
-    name: alacritty
+    name: wezterm
     state: present
 
 - name: Install Alfred
@@ -16,29 +16,14 @@
     name: hazel
     state: present
 
-- name: Install MailButler
-  homebrew_cask:
-    name: mailbutler
-    state: present
-
 - name: Install BetterTouchTool
   homebrew_cask:
     name: bettertouchtool
     state: present
 
-- name: Install Spectacle
-  homebrew_cask:
-    name: spectacle
-    state: present
-
 - name: Install AppCleaner
   homebrew_cask:
     name: appcleaner
-    state: present
-
-- name: Install CheatSheet
-  homebrew_cask:
-    name: cheatsheet
     state: present
 
 - name: Install Docker
@@ -74,11 +59,6 @@
 - name: Install VLC
   homebrew_cask:
     name: vlc
-    state: present
-
-- name: Install Private Internet Access
-  homebrew_cask:
-    name: private-internet-access
     state: present
 
 - name: Install SlowQuitApps

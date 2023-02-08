@@ -1,0 +1,4636 @@
+9594eec95be70e7b1710f730fdda33d9|file:///Users/ovidiuvisan/code/infra.puml|10|24|v|plantuml
+	Blue
+b3365fcfad098b586494f3953c08cfa2|file:///Users/ovidiuvisan/code/infra.puml|1|1|V|plantuml
+	@startuml
+	skinparam titleBorderRoundCorner 15
+	skinparam titleBackgroundColor Aqua-CadetBlue
+	
+	skinparam component<<vm>> {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam node<<k8 cluster>> {
+	  backgroundColor LightGreen
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	title
+	  Dependency infra
+	end title
+	card vSphere {
+	
+	 ' SAP Hana
+	 folder "devqas-integrated-hana" {
+	   component devqasHanaDB as "Hana DB" <<vm>>
+	   component devqasHanaCockpit as "Hana Cockpit" <<vm>>
+	   devqasHanaDB -- devqasHanaCockpit
+	 }
+	 folder "prd-integrated-hana" {
+	   component prdHanaDB as "Hana DB" <<vm>>
+	   component prdHanaCockpit as "Hana Cockpit" <<vm>>
+	   prdHanaDB -- prdHanaCockpit
+	 }
+	
+	  ' Rancher clusters
+	  node local <<k8s cluster>> as "Local cluster"{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  node cluster1 <<k8s cluster>> as "ds-devqas-integrated"
+	  node cluster2 <<k8s cluster>> as "ds-devqas-isolated"
+	  node cluster3 <<k8s cluster>> as "infra-devqas-integrated"
+	  node cluster4 <<k8s cluster>> as "infra-devqas-isolated"
+	  node cluster5 <<k8s cluster>> as "infra-mgmt"
+	  node cluster6 <<k8s cluster>> as "infra-prd-integrated"
+	  node cluster7 <<k8s cluster>> as "sapdi-devqas-isolated"
+	  node cluster8 <<k8s cluster>> as "sapdi-prd-isolated"
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	}
+	@enduml
+4f149c5f5f8b2bca6955fc5ccc546827|file:///Users/ovidiuvisan/code/infra.puml|1|1|V|plantuml
+	@startuml
+	/' skinparam titleBorderRoundCorner 15 '/
+	/' skinparam titleBackgroundColor Aqua-CadetBlue '/
+	
+	skinparam component<<vm>> {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam node<<k8 cluster>> {
+	  backgroundColor LightGreen
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	title
+	  Dependency infra
+	end title
+	card vSphere {
+	
+	 ' SAP Hana
+	 folder "devqas-integrated-hana" {
+	   component devqasHanaDB as "Hana DB" <<vm>>
+	   component devqasHanaCockpit as "Hana Cockpit" <<vm>>
+	   devqasHanaDB -- devqasHanaCockpit
+	 }
+	 folder "prd-integrated-hana" {
+	   component prdHanaDB as "Hana DB" <<vm>>
+	   component prdHanaCockpit as "Hana Cockpit" <<vm>>
+	   prdHanaDB -- prdHanaCockpit
+	 }
+	
+	  ' Rancher clusters
+	  node local <<k8s cluster>> as "Local cluster"{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  node cluster1 <<k8s cluster>> as "ds-devqas-integrated"
+	  node cluster2 <<k8s cluster>> as "ds-devqas-isolated"
+	  node cluster3 <<k8s cluster>> as "infra-devqas-integrated"
+	  node cluster4 <<k8s cluster>> as "infra-devqas-isolated"
+	  node cluster5 <<k8s cluster>> as "infra-mgmt"
+	  node cluster6 <<k8s cluster>> as "infra-prd-integrated"
+	  node cluster7 <<k8s cluster>> as "sapdi-devqas-isolated"
+	  node cluster8 <<k8s cluster>> as "sapdi-prd-isolated"
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	}
+	@enduml
+ead5bbef11bd4f3531293c8289b69454|file:///Users/ovidiuvisan/code/infra.puml|1|1|V|plantuml
+	@startuml
+	/' skinparam titleBorderRoundCorner 15 '/
+	/' skinparam titleBackgroundColor Aqua-CadetBlue '/
+	
+	skinparam component<<vm>> {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam node<<k8 cluster>> {
+	  backgroundColor LightGreen
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	title
+	  Dependency infra
+	end title
+	card vSphere {
+	
+	 ' SAP Hana
+	 folder "devqas-integrated-hana" {
+	   component devqasHanaDB as "Hana DB" <<vm>>
+	   component devqasHanaCockpit as "Hana Cockpit" <<vm>>
+	   devqasHanaDB -- devqasHanaCockpit
+	 }
+	 folder "prd-integrated-hana" {
+	   component prdHanaDB as "Hana DB" <<vm>>
+	   component prdHanaCockpit as "Hana Cockpit" <<vm>>
+	   prdHanaDB -- prdHanaCockpit
+	 }
+	
+	  ' Rancher clusters
+	  node local <<k8s cluster>> as "Local cluster"{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  node cluster1 <<k8s cluster>> as "ds-devqas-integrated"
+	  node cluster2 <<k8s cluster>> as "ds-devqas-isolated"
+	  node cluster3 <<k8s cluster>> as "infra-devqas-integrated"
+	  node cluster4 <<k8s cluster>> as "infra-devqas-isolated"
+	  node cluster5 <<k8s cluster>> as "infra-mgmt"
+	  node cluster6 <<k8s cluster>> as "infra-prd-integrated"
+	  node cluster7 <<k8s cluster>> as "sapdi-devqas-isolated"
+	  node cluster8 <<k8s cluster>> as "sapdi-prd-isolated"
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	}
+	@enduml
+	
+1f12fa13d31c1e5093e47417909982f2|file:///Users/ovidiuvisan/code/infra.puml|18|6|v|plantuml
+	<<vsphere>>
+b5628fbf267ac5d857755a35d8c3576c|file:///Users/ovidiuvisan/code/infra.puml|34|1|V|plantuml
+	    prdHanaDB --> hananfsbackup
+62ec21442e36107c4f8169ae11d482f2|file:///Users/ovidiuvisan/code/infra.puml|37|1|V|plantuml
+	  ' NFS
+	  folder "sap-hana-nfs-backup" {
+	    component hananfsbackup as "NFS" <<vm>>
+	  }
+2b27c7de8d848a96399bc7457486ec55|file:///Users/ovidiuvisan/code/infra.puml|1|1|V|plantuml
+	@startuml
+	skinparam title {
+	  backgroundColor Aqua
+	}
+	
+	skinparam component<<vm>> {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam node<<k8s cluster>> {
+	  backgroundColor LightGreen
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	title
+	  Dependency infra
+	end title
+	
+	card vSphere {
+	  ' NFS
+	  folder "sap-hana-nfs-backup" {
+	    component hananfsbackup as "NFS" <<vm>>
+	  }
+	
+	  ' SAP Hana
+	  folder "devqas-integrated-hana" {
+	    component devqasHanaDB as "Hana DB" <<vm>>
+	    component devqasHanaCockpit as "Hana Cockpit" <<vm>>
+	    devqasHanaDB -- devqasHanaCockpit
+	    devqasHanaDB --> hananfsbackup
+	  }
+	  folder "prd-integrated-hana" {
+	    component prdHanaDB as "Hana DB" <<vm>>
+	    component prdHanaCockpit as "Hana Cockpit" <<vm>>
+	    prdHanaDB -- prdHanaCockpit
+	    prdHanaDB --> hananfsbackup
+	  }
+	
+	  ' Rancher clusters
+	  node local <<k8s cluster>> as "Local cluster"{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  node cluster1 <<k8s cluster>> as "ds-devqas-integrated"
+	  node cluster2 <<k8s cluster>> as "ds-devqas-isolated"
+	  node cluster3 <<k8s cluster>> as "infra-devqas-integrated"
+	  node cluster4 <<k8s cluster>> as "infra-devqas-isolated"
+	  node cluster5 <<k8s cluster>> as "infra-mgmt"
+	  node cluster6 <<k8s cluster>> as "infra-prd-integrated"
+	  node cluster7 <<k8s cluster>> as "sapdi-devqas-isolated"
+	  node cluster8 <<k8s cluster>> as "sapdi-prd-isolated"
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	}
+	@enduml
+	
+255f1b952b2c4d5566ade29c3460b3ba|file:///Users/ovidiuvisan/code/infra.puml|3|19|v|plantuml
+	Aqua
+5dd2199ad68327cc76d583b057aee7d5|file:///Users/ovidiuvisan/code/infra.puml|22|1|v|plantuml
+	card
+8e5b948a454515dbabfc7eb718daa52f|file:///Users/ovidiuvisan/code/infra.puml|66|3|v|plantuml
+	artifact
+55a9d6aa251e3c334db4ab4055a4a004|file:///Users/ovidiuvisan/code/infra.puml|71|8|v|plantuml
+	above
+f3886e470aabd2ad35b0ebdc677d68df|file:///Users/ovidiuvisan/code/infra.puml|1|1|V|plantuml
+	@startuml
+	skinparam title {
+	  backgroundColor APPLICATION
+	}
+	
+	skinparam component<<vm>> {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam node<<k8s cluster>> {
+	  backgroundColor LightGreen
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	skinparam package<<helm chart>> {
+	  backgroundColor LightCyan
+	}
+	
+	title
+	  Dependency infra
+	end title
+	
+	storage vSphere {
+	  ' NFS
+	  folder "sap-hana-nfs-backup" {
+	    component hananfsbackup as "NFS" <<vm>>
+	  }
+	
+	  ' SAP Hana
+	  folder "devqas-integrated-hana" {
+	    component devqasHanaDB as "Hana DB" <<vm>>
+	    component devqasHanaCockpit as "Hana Cockpit" <<vm>>
+	    devqasHanaDB -- devqasHanaCockpit
+	    devqasHanaDB --> hananfsbackup
+	  }
+	  folder "prd-integrated-hana" {
+	    component prdHanaDB as "Hana DB" <<vm>>
+	    component prdHanaCockpit as "Hana Cockpit" <<vm>>
+	    prdHanaDB -- prdHanaCockpit
+	    prdHanaDB --> hananfsbackup
+	  }
+	
+	  ' Rancher clusters
+	  node local <<k8s cluster>> as "Local cluster"{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  node cluster1 <<k8s cluster>> as "ds-devqas-integrated"
+	  node cluster2 <<k8s cluster>> as "ds-devqas-isolated"
+	  node cluster3 <<k8s cluster>> as "infra-devqas-integrated"
+	  node cluster4 <<k8s cluster>> as "infra-devqas-isolated"
+	  node cluster5 <<k8s cluster>> as "infra-mgmt"
+	  node cluster6 <<k8s cluster>> as "infra-prd-integrated"
+	  node cluster7 <<k8s cluster>> as "sapdi-devqas-isolated"
+	  node cluster8 <<k8s cluster>> as "sapdi-prd-isolated"
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	
+	  ' Helm charts
+	  package vault<<helm chart>>
+	  note top of vault: https://vault.infra.mgmt.fdz.tir.bdr.de
+	  vault --> cluster5
+	  package minio<<helm chart>>
+	  minio --> cluster5
+	  package postgresql<<helm chart>>
+	  postgresql --> cluster5
+	}
+	@enduml
+	
+3977dd0623177b2de6767c372dc9c8c9|file:///Users/ovidiuvisan/code/infra.puml|22|1|V|plantuml
+	collections {
+	  scale 1.5
+	}
+00d9378343af0a1fea210bb8ba24d687|file:///Users/ovidiuvisan/code/infra.puml|49|13|V|plantuml
+	    scale 1.5
+aab70a87255ae2ac0561aa8444ac46f6|file:///Users/ovidiuvisan/code/infra.puml|48|11|V|plantuml
+	    scale 180*90
+51d916c79acc21bfd6a36da135b69382|file:///Users/ovidiuvisan/code/infra.puml|23|3|v|plantuml
+	scale 1.5
+cfc402d882ef88cf09f3f465d79fc464|file:///Users/ovidiuvisan/code/infra.puml|23|3|v|plantuml
+	FontSize 18
+5ecdaa53b42ed781bbe0c6d6d0e8c31a|file:///Users/ovidiuvisan/code/infra.puml|21|1|V|plantuml
+	<style>
+	collections {
+	  LineThickness 1
+	  FontSize 18
+	}
+	</style>
+064ab45ae6894e7fbe1c05d019322552|file:///Users/ovidiuvisan/code/infra.puml|1|1|V|plantuml
+	@startuml
+	<style>
+	collections {
+	  LineThickness 2
+	  LineColor Black
+	  BackgroundColor RoyalBlue
+	  FontSize 18
+	}
+	</style>
+	
+	skinparam title {
+	  backgroundColor APPLICATION
+	}
+	
+	skinparam component<<vm>> {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam node<<k8s cluster>> {
+	  backgroundColor LightGreen
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	skinparam package<<helm chart>> {
+	  backgroundColor LightCyan
+	}
+	
+	title
+	  Dependency infra
+	end title
+	
+	storage vSphere {
+	  ' NFS
+	  folder "sap-hana-nfs-backup" {
+	    component hananfsbackup as "NFS" <<vm>>
+	  }
+	
+	  ' SAP Hana
+	  folder "devqas-integrated-hana" {
+	    component devqasHanaDB as "Hana DB" <<vm>>
+	    component devqasHanaCockpit as "Hana Cockpit" <<vm>>
+	    devqasHanaDB -- devqasHanaCockpit
+	    devqasHanaDB --> hananfsbackup
+	  }
+	  folder "prd-integrated-hana" {
+	    component prdHanaDB as "Hana DB" <<vm>>
+	    component prdHanaCockpit as "Hana Cockpit" <<vm>>
+	    prdHanaDB -- prdHanaCockpit
+	    prdHanaDB --> hananfsbackup
+	  }
+	
+	  ' Rancher clusters
+	  node local <<k8s cluster>> as "Local cluster"{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  node cluster1 <<k8s cluster>> as "ds-devqas-integrated"
+	  node cluster2 <<k8s cluster>> as "ds-devqas-isolated"
+	  node cluster3 <<k8s cluster>> as "infra-devqas-integrated"
+	  node cluster4 <<k8s cluster>> as "infra-devqas-isolated"
+	  node cluster5 <<k8s cluster>> as "infra-mgmt"
+	  node cluster6 <<k8s cluster>> as "infra-prd-integrated"
+	  node cluster7 <<k8s cluster>> as "sapdi-devqas-isolated"
+	  node cluster8 <<k8s cluster>> as "sapdi-prd-isolated"
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	
+	  ' Helm charts
+	  package vault<<helm chart>>
+	  note top of vault: https://vault.infra.mgmt.fdz.tir.bdr.de
+	  vault --> cluster5
+	  package minio<<helm chart>>
+	  minio --> cluster5
+	  package postgresql<<helm chart>>
+	  postgresql --> cluster5
+	}
+	@enduml
+	
+cabd918c96be205ddce7047d1bf0b40e|file:///Users/ovidiuvisan/code/diagrams/README.md|2|1|v|markdown
+	
+	
+	
+	## Getting started
+	
+	To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+	
+	Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+	
+	## Add your files
+	
+	- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
+	- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+	
+	```
+	cd existing_repo
+	git remote add origin https://partner.bdr.de/gitlab/fdz/infra/diagrams.git
+	git branch -M master
+	git push -uf origin master
+	```
+	
+	## Integrate with your tools
+	
+	- [ ] [Set up project integrations](https://partner.bdr.de/gitlab/fdz/infra/diagrams/-/settings/integrations)
+	
+	## Collaborate with your team
+	
+	- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
+	- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
+	- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
+	- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
+	- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+	
+	## Test and Deploy
+	
+	Use the built-in continuous integration in GitLab.
+	
+	- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
+	- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
+	- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
+	- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
+	- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+	
+	***
+	
+	# Editing this README
+	
+	When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+	
+	## Suggestions for a good README
+	Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+	
+	## Name
+	Choose a self-explaining name for your project.
+	
+	## Description
+	Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+	
+	## Badges
+	On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+	
+	## Visuals
+	Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+	
+	## Installation
+	Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+	
+	## Usage
+	Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+	
+	## Support
+	Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+	
+	## Roadmap
+	If you have ideas for releases in the future, it is a good idea to list them in the README.
+	
+	## Contributing
+	State if you are open to contributions and what your requirements are for accepting them.
+	
+	For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+	
+	You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+	
+	## Authors and acknowledgment
+	Show your appreciation to those who have contributed to the project.
+	
+	## License
+	For open source projects, say how it is licensed.
+	
+	## Project status
+	I
+52dc36c94e5e97fff6dcf875415b991d|file:///Users/ovidiuvisan/code/diagrams/README.md|2|1|v|markdown
+	f you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+e98f7b44dd18f2c51a817a934826fec3|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|1|1|v|plantuml
+	@startuml
+b6b4f4cac59905796bf246e48f2d114c|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|90|18|v|plantuml
+	.Isilon.
+f29ebd49d47b2deafa5bd9431cd97ea8|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|37|13|v|plantuml
+	BDRITS3
+42b119f2ea818bf617d4c676a41de5f7|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|1|1|V|plantuml
+	@startuml
+	<style>
+	collections {
+	  LineThickness 2
+	  LineColor Black
+	  BackgroundColor RoyalBlue
+	  FontSize 18
+	}
+	</style>
+	
+	skinparam title {
+	  backgroundColor APPLICATION
+	}
+	
+	skinparam component<<vm>> {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam node<<k8s cluster>> {
+	  backgroundColor LightGreen
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	skinparam package<<helm chart>> {
+	  backgroundColor LightCyan
+	}
+	
+	skinparam storage<<bucket>> {
+	  backgroundColor LightSteelBlue
+	}
+	
+	title
+	  Dependency infra
+	end title
+	
+	storage BDRIT as "BDR IT"{
+	  folder Isilon as "BDR IT Isilon S3"{
+	    storage s3prd <<bucket>> as "s3-fdz-prd-public"
+	  }
+	}
+	
+	storage vSphere {
+	  ' NFS
+	  folder "sap-hana-nfs-backup" {
+	    component hananfsbackup as "NFS" <<vm>>
+	  }
+	
+	  ' SAP Hana
+	  folder "devqas-integrated-hana" {
+	    component devqasHanaDB as "Hana DB" <<vm>>
+	    component devqasHanaCockpit as "Hana Cockpit" <<vm>>
+	    devqasHanaDB -- devqasHanaCockpit
+	    devqasHanaDB --> hananfsbackup
+	  }
+	  folder "prd-integrated-hana" {
+	    component prdHanaDB as "Hana DB" <<vm>>
+	    component prdHanaCockpit as "Hana Cockpit" <<vm>>
+	    prdHanaDB -- prdHanaCockpit
+	    prdHanaDB --> hananfsbackup
+	  }
+	
+	  ' Rancher clusters
+	  node local <<k8s cluster>> as "Local cluster"{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  node cluster1 <<k8s cluster>> as "ds-devqas-integrated"
+	  node cluster2 <<k8s cluster>> as "ds-devqas-isolated"
+	  node cluster3 <<k8s cluster>> as "infra-devqas-integrated"
+	  node cluster4 <<k8s cluster>> as "infra-devqas-isolated"
+	  node cluster5 <<k8s cluster>> as "infra-mgmt"
+	  node cluster6 <<k8s cluster>> as "infra-prd-integrated"
+	  node cluster7 <<k8s cluster>> as "sapdi-devqas-isolated"
+	  node cluster8 <<k8s cluster>> as "sapdi-prd-isolated"
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	
+	  ' Helm charts
+	  package vault<<helm chart>>
+	  note top of vault: https://vault.infra.mgmt.fdz.tir.bdr.de
+	  vault --> cluster5
+	  package minio<<helm chart>>
+	  minio --> cluster5
+	  minio --> s3prd
+	  package postgresql<<helm chart>>
+	  postgresql --> cluster5
+	}
+	@enduml
+	
+983072a85cc087d6e40ed47129594032|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|11|19|v|plantuml
+	C10100
+77ddc7bc13a0cb617eafe4c8e679f0ed|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|50|26|v|plantuml
+	[hidden]
+c0481d308978041d95668c4aa6937c66|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|50|21|v|plantuml
+	tity
+bd5e2b5103d4b8cabebd57cc776a3fc1|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|104|5|V|plantuml
+	    minio --> s3prd
+132b6c5fc9193d6ae58027ae302ab67b|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|101|5|v|plantuml
+	minio
+91f2bdf4ae96c3867c1ea70200d62579|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|112|32|v|plantuml
+	 [DNS Server]
+18d314adfe0833d04326081710371a15|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|112|1|V|plantuml
+	  component ipa <<vm>> as "IPA DNS Server"
+	  note top of ipa: https://ipa.mgmt.fdz.tir.bdr.de
+16a48dbf0b92c062288b4c2fd350cb2a|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|115|33|v|plantuml
+	IPA DNS Server
+0ccebd1f83812b60840c5e1e46124bbe|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|116|48|V|plantuml
+	  note top of ipa: https://ipa.mgmt.fdz.tir.bdr.de
+6111ac7d2beb6b1365c1ccf2192fb01c|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|120|1|V|plantuml
+	  entity sapdiprdiso as "SAP DI"
+	  sapdiprdiso --> cluster8
+3aab049abf02b7a66d18f49cf2a0abbc|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|122|15|v|plantuml
+	prdiso
+02a808ac2672019e4a8061c5fdd11250|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|2|1|V|markdown
+	<style>
+	collections {
+	  LineThickness 2
+	  LineColor Black
+	  BackgroundColor RoyalBlue
+	  FontSize 18
+	}
+	</style>
+	
+	skinparam title {
+	  backgroundColor APPLICATION
+	}
+	
+	skinparam component<<vm>> {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam node<<k8s cluster>> {
+	  backgroundColor LightGreen
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	skinparam package<<helm chart>> {
+	  backgroundColor LightCyan
+	}
+	
+	title
+	  Dependency infra
+	end title
+	
+	storage vSphere {
+	  ' NFS
+	  folder "sap-hana-nfs-backup" {
+	    component hananfsbackup as "NFS" <<vm>>
+	  }
+	
+	  ' SAP Hana
+	  folder "devqas-integrated-hana" {
+	    component devqasHanaDB as "Hana DB" <<vm>>
+	    component devqasHanaCockpit as "Hana Cockpit" <<vm>>
+	    devqasHanaDB -- devqasHanaCockpit
+	    devqasHanaDB --> hananfsbackup
+	  }
+	  folder "prd-integrated-hana" {
+	    component prdHanaDB as "Hana DB" <<vm>>
+	    component prdHanaCockpit as "Hana Cockpit" <<vm>>
+	    prdHanaDB -- prdHanaCockpit
+	    prdHanaDB --> hananfsbackup
+	  }
+	
+	  ' Rancher clusters
+	  node local <<k8s cluster>> as "Local cluster"{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  node cluster1 <<k8s cluster>> as "ds-devqas-integrated"
+	  node cluster2 <<k8s cluster>> as "ds-devqas-isolated"
+	  node cluster3 <<k8s cluster>> as "infra-devqas-integrated"
+	  node cluster4 <<k8s cluster>> as "infra-devqas-isolated"
+	  node cluster5 <<k8s cluster>> as "infra-mgmt"
+	  node cluster6 <<k8s cluster>> as "infra-prd-integrated"
+	  node cluster7 <<k8s cluster>> as "sapdi-devqas-isolated"
+	  node cluster8 <<k8s cluster>> as "sapdi-prd-isolated"
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	
+	  ' Helm charts
+	  package vault<<helm chart>>
+	  note top of vault: https://vault.infra.mgmt.fdz.tir.bdr.de
+	  vault --> cluster5
+	  package minio<<helm chart>>
+	  minio --> cluster5
+	  package postgresql<<helm chart>>
+	  postgresql --> cluster5
+	}
+c27759e1d3a623170dcb94196e7d09f5|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|1|1|V|plantuml
+	@startuml
+	<style>
+	collections {
+	  LineThickness 2
+	  LineColor Black
+	  BackgroundColor RoyalBlue
+	  FontSize 18
+	}
+	</style>
+	
+	' Distancing between elements
+	skinparam nodesep 20
+	skinparam ranksep 350
+	
+	' Beautfy
+	skinparam title {
+	  backgroundColor APPLICATION
+	}
+	
+	skinparam component<<vm>> {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam node<<k8s cluster>> {
+	  backgroundColor LightGreen
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	skinparam package<<helm chart>> {
+	  backgroundColor LightCyan
+	}
+	
+	skinparam storage<<bucket>> {
+	  backgroundColor LightSteelBlue
+	}
+	
+	skinparam storage<<environment>> {
+	  backgroundColor Snow
+	}
+	
+	title
+	  Dependency infra
+	end title
+	
+	storage BDRIT <<environment>> as "BDR IT"{
+	  folder Isilon as "BDR IT Isilon S3"{
+	    storage s3prd <<bucket>> as "s3-fdz-prd-public"
+	  }
+	}
+	
+	storage TIR <<environment>> as "TIR"
+	
+	storage vSphere <<environment>> {
+	  ' NFS
+	  folder "sap-hana-nfs-backup" {
+	    component hananfsbackup as "NFS" <<vm>>
+	  }
+	
+	  ' SAP Hana
+	  folder "devqas-integrated-hana" {
+	    component devqasHanaDB as "Hana DB" <<vm>>
+	    component devqasHanaCockpit as "Hana Cockpit" <<vm>>
+	    devqasHanaDB -- devqasHanaCockpit
+	    devqasHanaDB --> hananfsbackup
+	  }
+	  folder "prd-integrated-hana" {
+	    component prdHanaDB as "Hana DB" <<vm>>
+	    component prdHanaCockpit as "Hana Cockpit" <<vm>>
+	    prdHanaDB -- prdHanaCockpit
+	    prdHanaDB --> hananfsbackup
+	  }
+	
+	  ' Rancher clusters
+	  node local <<k8s cluster>> as "Local cluster"{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  node cluster1 <<k8s cluster>> as "ds-devqas-integrated"
+	  node cluster2 <<k8s cluster>> as "ds-devqas-isolated"
+	  node cluster3 <<k8s cluster>> as "infra-devqas-integrated"
+	  node cluster4 <<k8s cluster>> as "infra-devqas-isolated"
+	  node cluster5 <<k8s cluster>> as "infra-mgmt"
+	  node cluster6 <<k8s cluster>> as "infra-prd-integrated"
+	  node cluster7 <<k8s cluster>> as "sapdi-devqas-isolated"
+	  node cluster8 <<k8s cluster>> as "sapdi-prd-isolated"
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	
+	  ' Helm charts
+	  together {
+	    package vault<<helm chart>>
+	    note top of vault: https://vault.infra.mgmt.fdz.tir.bdr.de
+	    vault --> s3prd : "backup"
+	    vault --> cluster5
+	    package minio<<helm chart>>
+	    minio --> cluster5
+	    package postgresql<<helm chart>>
+	    postgresql --> cluster5
+	  }
+	
+	  ' Individual components
+	  component ipa <<vm>> as "IPA DNS Server"
+	  note top of ipa: https://ipa.mgmt.fdz.tir.bdr.de
+	
+	  component firewall <<vm>> as "pfsense Firewall"
+	
+	  component gitlab <<vm>> as "Gitlab server"
+	  note top of gitlab: https://partner.bdr.de/gitlab
+	
+	  entity sapdiprdiso as "SAP DI"
+	  sapdiprdiso --> cluster8
+	  entity sapdidevqasiso as "SAP DI"
+	  sapdidevqasiso --> cluster7
+	}
+	@enduml
+	
+bc2f23b48b61d20a549ab0d326176ed6|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|127|3|V|markdown
+	@enduml
+dde2a1183231d5e531e2eb64e7a30648|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|3|3|V|markdown
+	@sstuml
+4ae53b73a09f1cfff54f1d1721636d5a|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|117|1|V|markdown
+	  component firewall <<vm>> as "pfsense Firewall"
+646f7ee71f5fb1d5b103c215e896bd1b|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|57|32|V|markdown
+	  note top of tirproxy: https://
+3adb29b9b78ca617e120a21767f975f7|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|124|3|V|markdown
+	  note top of 
+d7f3969d659c41b8387ba300e513c234|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|125|1|V|markdown
+	  component vdi1 <<vm>> as "fdz-dc1"
+68ad4a7b0a2e37c9cec920c53f743534|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|121|43|V|markdown
+	  note top of gitlab: https://partner.bdr.de/gitlab
+612f11ea81a2fa1f6b5627080a8b33f3|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|126|1|V|markdown
+	      component vdi1 <<vm>> as "fdz-tsdev01"
+	      component vdi2 <<vm>> as "fdz-tsdev02"
+0c273280f79cdc6f60c476bcd5fe6dfa|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|138|1|V|markdown
+	    component vdi5 <<vm>> as "fdz-ctxcon01"
+e4938fad12c5bd5277328ba9192a5b89|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|140|35|v|markdown
+	ctxcon
+9fd15902c1bc4220ec271be964467a2a|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|143|1|V|markdown
+	    component vdi8 <<vm>> as "fdz-tsprd01"
+532b56eb4870d48c87920b24f95f031c|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|2|1|V|markdown
+	<style>
+	collections {
+	  LineThickness 2
+	  LineColor Black
+	  BackgroundColor RoyalBlue
+	  FontSize 18
+	}
+	</style>
+	
+	' Distancing between elements
+	skinparam nodesep 20
+	skinparam ranksep 350
+	
+	' Beautfy
+	skinparam title {
+	  backgroundColor APPLICATION
+	}
+	
+	skinparam component<<vm>> {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam node<<k8s cluster>> {
+	  backgroundColor LightGreen
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	skinparam package<<helm chart>> {
+	  backgroundColor LightCyan
+	}
+	
+	skinparam storage<<bucket>> {
+	  backgroundColor LightSteelBlue
+	}
+	
+	skinparam storage<<environment>> {
+	  backgroundColor Snow
+	}
+	
+	title
+	  Dependency infra
+	end title
+	
+	storage BDRIT <<environment>> as "BDR IT"{
+	  folder Isilon as "BDR IT Isilon S3"{
+	    storage s3prd <<bucket>> as "s3-fdz-prd-public"
+	  }
+	}
+	
+	storage TIR <<environment>> as "TIR" {
+	  component tirfirewall <<vm>> as "pfsense Firewall"
+	  component tirproxy <<vm>> as "TIR Proxy"
+	}
+	
+	storage vSphere <<environment>> {
+	  ' NFS
+	  folder "sap-hana-nfs-backup" {
+	    component hananfsbackup as "NFS" <<vm>>
+	  }
+	
+	  ' SAP Hana
+	  folder "devqas-integrated-hana" {
+	    component devqasHanaDB as "Hana DB" <<vm>>
+	    component devqasHanaCockpit as "Hana Cockpit" <<vm>>
+	    devqasHanaDB -- devqasHanaCockpit
+	    devqasHanaDB --> hananfsbackup
+	  }
+	  folder "prd-integrated-hana" {
+	    component prdHanaDB as "Hana DB" <<vm>>
+	    component prdHanaCockpit as "Hana Cockpit" <<vm>>
+	    prdHanaDB -- prdHanaCockpit
+	    prdHanaDB --> hananfsbackup
+	  }
+	
+	  ' Rancher clusters
+	  node local <<k8s cluster>> as "Local cluster"{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  node cluster1 <<k8s cluster>> as "ds-devqas-integrated"
+	  node cluster2 <<k8s cluster>> as "ds-devqas-isolated"
+	  node cluster3 <<k8s cluster>> as "infra-devqas-integrated"
+	  node cluster4 <<k8s cluster>> as "infra-devqas-isolated"
+	  node cluster5 <<k8s cluster>> as "infra-mgmt"
+	  node cluster6 <<k8s cluster>> as "infra-prd-integrated"
+	  node cluster7 <<k8s cluster>> as "sapdi-devqas-isolated"
+	  node cluster8 <<k8s cluster>> as "sapdi-prd-isolated"
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	
+	  ' Helm charts
+	  together {
+	    package vault<<helm chart>>
+	    note top of vault: https://vault.infra.mgmt.fdz.tir.bdr.de
+	    vault --> s3prd : "backup"
+	    vault --> cluster5
+	    package minio<<helm chart>>
+	    minio --> cluster5
+	    package postgresql<<helm chart>>
+	    postgresql --> cluster5
+	  }
+	
+	  ' Individual components
+	  component ipa <<vm>> as "IPA DNS Server"
+	  note top of ipa: https://ipa.mgmt.fdz.tir.bdr.de
+	
+	  component firewall <<vm>> as "pfsense Firewall"
+	
+	  component gitlab <<vm>> as "Gitlab runner"
+	
+	  component reverseproxy <<vm>> as "Reverse Proxy"
+	
+	  ' VDI (Windows)
+	  together {
+	    folder "vdi-devqas" {
+	      folder "vdi-dev"{
+	        component vdi1 <<vm>> as "fdz-tsdev01"
+	        component vdi2 <<vm>> as "fdz-tsdev02"
+	      }
+	      folder "vdi-qas" {
+	        component vdi3 <<vm>> as "fdz-tsqas01"
+	        component vdi4 <<vm>> as "fdz-tsqas02"
+	      }
+	    }
+	    folder "vdi-domain" {
+	      component vdi5 <<vm>> as "fdz-subca01"
+	    }
+	    folder "vdi-infra" {
+	      component vdi5 <<vm>> as "fdz-ctxcon01"
+	      component vdi6 <<vm>> as "fdz-ctxcon02"
+	      component vdi7 <<vm>> as "fdz-file01"
+	    }
+	    folder "vdi-prd" {
+	      component vdi8 <<vm>> as "fdz-tsprd01"
+	      component vdi9 <<vm>> as "fdz-tsprd02"
+	    }
+	
+	    entity sapdiprdiso as "SAP DI"
+	    sapdiprdiso --> cluster8
+	    entity sapdidevqasiso as "SAP DI"
+	    sapdidevqasiso --> cluster7
+	  }
+	}
+1dd2b107229c21c34e6e53657d0efb23|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|1|1|V|plantuml
+	@startuml
+	<style>
+	collections {
+	  LineThickness 2
+	  LineColor Black
+	  BackgroundColor RoyalBlue
+	  FontSize 18
+	}
+	</style>
+	
+	' Distancing between elements
+	skinparam nodesep 20
+	skinparam ranksep 350
+	
+	' Beautfy
+	skinparam title {
+	  backgroundColor APPLICATION
+	}
+	
+	skinparam component<<vm>> {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam node<<k8s cluster>> {
+	  backgroundColor LightGreen
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	skinparam package<<helm chart>> {
+	  backgroundColor LightCyan
+	}
+	
+	skinparam storage<<bucket>> {
+	  backgroundColor LightSteelBlue
+	}
+	
+	skinparam storage<<environment>> {
+	  backgroundColor Snow
+	}
+	
+	title
+	  Dependency infra
+	end title
+	
+	storage BDRIT <<environment>> as "BDR IT"{
+	  folder Isilon as "BDR IT Isilon S3"{
+	    storage s3prd <<bucket>> as "s3-fdz-prd-public"
+	  }
+	}
+	
+	storage TIR <<environment>> as "TIR" {
+	  component tirfirewall <<vm>> as "pfsense Firewall"
+	  component tirproxy <<vm>> as "TIR Proxy"
+	}
+	
+	storage vSphere <<environment>> {
+	  ' NFS
+	  folder "sap-hana-nfs-backup" {
+	    component hananfsbackup as "NFS" <<vm>>
+	  }
+	
+	  ' SAP Hana
+	  folder "devqas-integrated-hana" {
+	    component devqasHanaDB as "Hana DB" <<vm>>
+	    component devqasHanaCockpit as "Hana Cockpit" <<vm>>
+	    devqasHanaDB -- devqasHanaCockpit
+	    devqasHanaDB --> hananfsbackup
+	  }
+	  folder "prd-integrated-hana" {
+	    component prdHanaDB as "Hana DB" <<vm>>
+	    component prdHanaCockpit as "Hana Cockpit" <<vm>>
+	    prdHanaDB -- prdHanaCockpit
+	    prdHanaDB --> hananfsbackup
+	  }
+	
+	  ' Rancher clusters
+	  node local <<k8s cluster>> as "Local cluster"{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  node cluster1 <<k8s cluster>> as "ds-devqas-integrated"
+	  node cluster2 <<k8s cluster>> as "ds-devqas-isolated"
+	  node cluster3 <<k8s cluster>> as "infra-devqas-integrated"
+	  node cluster4 <<k8s cluster>> as "infra-devqas-isolated"
+	  node cluster5 <<k8s cluster>> as "infra-mgmt"
+	  node cluster6 <<k8s cluster>> as "infra-prd-integrated"
+	  node cluster7 <<k8s cluster>> as "sapdi-devqas-isolated"
+	  node cluster8 <<k8s cluster>> as "sapdi-prd-isolated"
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	
+	  ' Helm charts
+	  together {
+	    package vault<<helm chart>>
+	    note top of vault: https://vault.infra.mgmt.fdz.tir.bdr.de
+	    vault --> s3prd : "backup"
+	    vault --> cluster5
+	    package minio<<helm chart>>
+	    minio --> cluster5
+	    package postgresql<<helm chart>>
+	    postgresql --> cluster5
+	  }
+	
+	  ' Individual components
+	  component ipa <<vm>> as "IPA DNS Server"
+	  note top of ipa: https://ipa.mgmt.fdz.tir.bdr.de
+	
+	  component firewall <<vm>> as "pfsense Firewall"
+	
+	  component gitlab <<vm>> as "Gitlab runner"
+	
+	  component reverseproxy <<vm>> as "Reverse Proxy"
+	
+	  ' VDI (Windows)
+	  together {
+	    folder "vdi-devqas" {
+	      folder "vdi-dev"{
+	        component vdi1 <<vm>> as "fdz-tsdev01"
+	        component vdi2 <<vm>> as "fdz-tsdev02"
+	      }
+	      folder "vdi-qas" {
+	        component vdi3 <<vm>> as "fdz-tsqas01"
+	        component vdi4 <<vm>> as "fdz-tsqas02"
+	      }
+	    }
+	    folder "vdi-domain" {
+	      component vdi5 <<vm>> as "fdz-subca01"
+	    }
+	    folder "vdi-infra" {
+	      component vdi5 <<vm>> as "fdz-ctxcon01"
+	      component vdi6 <<vm>> as "fdz-ctxcon02"
+	      component vdi7 <<vm>> as "fdz-file01"
+	    }
+	    folder "vdi-prd" {
+	      component vdi8 <<vm>> as "fdz-tsprd01"
+	      component vdi9 <<vm>> as "fdz-tsprd02"
+	    }
+	
+	    entity sapdiprdiso as "SAP DI"
+	    sapdiprdiso --> cluster8
+	    entity sapdidevqasiso as "SAP DI"
+	    sapdidevqasiso --> cluster7
+	  }
+	}
+	<style>
+	collections {
+	  LineThickness 2
+	  LineColor Black
+	  BackgroundColor RoyalBlue
+	  FontSize 18
+	}
+	</style>
+	
+	' Distancing between elements
+	skinparam nodesep 20
+	skinparam ranksep 350
+	
+	' Beautfy
+	skinparam title {
+	  backgroundColor APPLICATION
+	}
+	
+	skinparam component<<vm>> {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam node<<k8s cluster>> {
+	  backgroundColor LightGreen
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	skinparam package<<helm chart>> {
+	  backgroundColor LightCyan
+	}
+	
+	skinparam storage<<bucket>> {
+	  backgroundColor LightSteelBlue
+	}
+	
+	skinparam storage<<environment>> {
+	  backgroundColor Snow
+	}
+	
+	title
+	  Dependency infra
+	end title
+	
+	storage BDRIT <<environment>> as "BDR IT"{
+	  folder Isilon as "BDR IT Isilon S3"{
+	    storage s3prd <<bucket>> as "s3-fdz-prd-public"
+	  }
+	}
+	
+	storage TIR <<environment>> as "TIR"
+	
+	storage vSphere <<environment>> {
+	  ' NFS
+	  folder "sap-hana-nfs-backup" {
+	    component hananfsbackup as "NFS" <<vm>>
+	  }
+	
+	  ' SAP Hana
+	  folder "devqas-integrated-hana" {
+	    component devqasHanaDB as "Hana DB" <<vm>>
+	    component devqasHanaCockpit as "Hana Cockpit" <<vm>>
+	    devqasHanaDB -- devqasHanaCockpit
+	    devqasHanaDB --> hananfsbackup
+	  }
+	  folder "prd-integrated-hana" {
+	    component prdHanaDB as "Hana DB" <<vm>>
+	    component prdHanaCockpit as "Hana Cockpit" <<vm>>
+	    prdHanaDB -- prdHanaCockpit
+	    prdHanaDB --> hananfsbackup
+	  }
+	
+	  ' Rancher clusters
+	  node local <<k8s cluster>> as "Local cluster"{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  node cluster1 <<k8s cluster>> as "ds-devqas-integrated"
+	  node cluster2 <<k8s cluster>> as "ds-devqas-isolated"
+	  node cluster3 <<k8s cluster>> as "infra-devqas-integrated"
+	  node cluster4 <<k8s cluster>> as "infra-devqas-isolated"
+	  node cluster5 <<k8s cluster>> as "infra-mgmt"
+	  node cluster6 <<k8s cluster>> as "infra-prd-integrated"
+	  node cluster7 <<k8s cluster>> as "sapdi-devqas-isolated"
+	  node cluster8 <<k8s cluster>> as "sapdi-prd-isolated"
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	
+	  ' Helm charts
+	  together {
+	    package vault<<helm chart>>
+	    note top of vault: https://vault.infra.mgmt.fdz.tir.bdr.de
+	    vault --> s3prd : "backup"
+	    vault --> cluster5
+	    package minio<<helm chart>>
+	    minio --> cluster5
+	    package postgresql<<helm chart>>
+	    postgresql --> cluster5
+	  }
+	
+	  ' Individual components
+	  component ipa <<vm>> as "IPA DNS Server"
+	  note top of ipa: https://ipa.mgmt.fdz.tir.bdr.de
+	
+	  component firewall <<vm>> as "pfsense Firewall"
+	
+	  component gitlab <<vm>> as "Gitlab server"
+	  note top of gitlab: https://partner.bdr.de/gitlab
+	
+	  entity sapdiprdiso as "SAP DI"
+	  sapdiprdiso --> cluster8
+	  entity sapdidevqasiso as "SAP DI"
+	  sapdidevqasiso --> cluster7
+	}
+	@enduml
+	
+496b12d0df7d684aa8458ba5e3701be2|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|2|1|V|plantuml
+	<style>
+	collections {
+	  LineThickness 2
+	  LineColor Black
+	  BackgroundColor RoyalBlue
+	  FontSize 18
+	}
+	</style>
+	
+	' Distancing between elements
+	skinparam nodesep 20
+	skinparam ranksep 350
+	
+	' Beautfy
+	skinparam title {
+	  backgroundColor APPLICATION
+	}
+	
+	skinparam component<<vm>> {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam node<<k8s cluster>> {
+	  backgroundColor LightGreen
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	skinparam package<<helm chart>> {
+	  backgroundColor LightCyan
+	}
+	
+	skinparam storage<<bucket>> {
+	  backgroundColor LightSteelBlue
+	}
+	
+	skinparam storage<<environment>> {
+	  backgroundColor Snow
+	}
+	
+	title
+	  Dependency infra
+	end title
+	
+	storage BDRIT <<environment>> as "BDR IT"{
+	  folder Isilon as "BDR IT Isilon S3"{
+	    storage s3prd <<bucket>> as "s3-fdz-prd-public"
+	  }
+	}
+	
+	storage TIR <<environment>> as "TIR" {
+	  component tirfirewall <<vm>> as "pfsense Firewall"
+	  component tirproxy <<vm>> as "TIR Proxy"
+	}
+	
+	storage vSphere <<environment>> {
+	  ' NFS
+	  folder "sap-hana-nfs-backup" {
+	    component hananfsbackup as "NFS" <<vm>>
+	  }
+	
+	  ' SAP Hana
+	  folder "devqas-integrated-hana" {
+	    component devqasHanaDB as "Hana DB" <<vm>>
+	    component devqasHanaCockpit as "Hana Cockpit" <<vm>>
+	    devqasHanaDB -- devqasHanaCockpit
+	    devqasHanaDB --> hananfsbackup
+	  }
+	  folder "prd-integrated-hana" {
+	    component prdHanaDB as "Hana DB" <<vm>>
+	    component prdHanaCockpit as "Hana Cockpit" <<vm>>
+	    prdHanaDB -- prdHanaCockpit
+	    prdHanaDB --> hananfsbackup
+	  }
+	
+	  ' Rancher clusters
+	  node local <<k8s cluster>> as "Local cluster"{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  node cluster1 <<k8s cluster>> as "ds-devqas-integrated"
+	  node cluster2 <<k8s cluster>> as "ds-devqas-isolated"
+	  node cluster3 <<k8s cluster>> as "infra-devqas-integrated"
+	  node cluster4 <<k8s cluster>> as "infra-devqas-isolated"
+	  node cluster5 <<k8s cluster>> as "infra-mgmt"
+	  node cluster6 <<k8s cluster>> as "infra-prd-integrated"
+	  node cluster7 <<k8s cluster>> as "sapdi-devqas-isolated"
+	  node cluster8 <<k8s cluster>> as "sapdi-prd-isolated"
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	
+	  ' Helm charts
+	  together {
+	    package vault<<helm chart>>
+	    note top of vault: https://vault.infra.mgmt.fdz.tir.bdr.de
+	    vault --> s3prd : "backup"
+	    vault --> cluster5
+	    package minio<<helm chart>>
+	    minio --> cluster5
+	    package postgresql<<helm chart>>
+	    postgresql --> cluster5
+	  }
+	
+	  ' Individual components
+	  component ipa <<vm>> as "IPA DNS Server"
+	  note top of ipa: https://ipa.mgmt.fdz.tir.bdr.de
+	
+	  component firewall <<vm>> as "pfsense Firewall"
+	
+	  component gitlab <<vm>> as "Gitlab runner"
+	
+	  component reverseproxy <<vm>> as "Reverse Proxy"
+	
+	  ' VDI (Windows)
+	  together {
+	    folder "vdi-devqas" {
+	      folder "vdi-dev"{
+	        component vdi1 <<vm>> as "fdz-tsdev01"
+	        component vdi2 <<vm>> as "fdz-tsdev02"
+	      }
+	      folder "vdi-qas" {
+	        component vdi3 <<vm>> as "fdz-tsqas01"
+	        component vdi4 <<vm>> as "fdz-tsqas02"
+	      }
+	    }
+	    folder "vdi-domain" {
+	      component vdi5 <<vm>> as "fdz-subca01"
+	    }
+	    folder "vdi-infra" {
+	      component vdi5 <<vm>> as "fdz-ctxcon01"
+	      component vdi6 <<vm>> as "fdz-ctxcon02"
+	      component vdi7 <<vm>> as "fdz-file01"
+	    }
+	    folder "vdi-prd" {
+	      component vdi8 <<vm>> as "fdz-tsprd01"
+	      component vdi9 <<vm>> as "fdz-tsprd02"
+	    }
+	
+	    entity sapdiprdiso as "SAP DI"
+	    sapdiprdiso --> cluster8
+	    entity sapdidevqasiso as "SAP DI"
+	    sapdidevqasiso --> cluster7
+	  }
+	}
+	<style>
+	collections {
+	  LineThickness 2
+	  LineColor Black
+	  BackgroundColor RoyalBlue
+	  FontSize 18
+	}
+	</style>
+	
+	' Distancing between elements
+	skinparam nodesep 20
+	skinparam ranksep 350
+	
+	' Beautfy
+	skinparam title {
+	  backgroundColor APPLICATION
+	}
+	
+	skinparam component<<vm>> {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam node<<k8s cluster>> {
+	  backgroundColor LightGreen
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	skinparam package<<helm chart>> {
+	  backgroundColor LightCyan
+	}
+	
+	skinparam storage<<bucket>> {
+	  backgroundColor LightSteelBlue
+	}
+	
+	skinparam storage<<environment>> {
+	  backgroundColor Snow
+	}
+	
+	title
+	  Dependency infra
+	end title
+	
+	storage BDRIT <<environment>> as "BDR IT"{
+	  folder Isilon as "BDR IT Isilon S3"{
+	    storage s3prd <<bucket>> as "s3-fdz-prd-public"
+	  }
+	}
+	
+	storage TIR <<environment>> as "TIR"
+	
+	storage vSphere <<environment>> {
+	  ' NFS
+	  folder "sap-hana-nfs-backup" {
+	    component hananfsbackup as "NFS" <<vm>>
+	  }
+	
+	  ' SAP Hana
+	  folder "devqas-integrated-hana" {
+	    component devqasHanaDB as "Hana DB" <<vm>>
+	    component devqasHanaCockpit as "Hana Cockpit" <<vm>>
+	    devqasHanaDB -- devqasHanaCockpit
+	    devqasHanaDB --> hananfsbackup
+	  }
+	  folder "prd-integrated-hana" {
+	    component prdHanaDB as "Hana DB" <<vm>>
+	    component prdHanaCockpit as "Hana Cockpit" <<vm>>
+	    prdHanaDB -- prdHanaCockpit
+	    prdHanaDB --> hananfsbackup
+	  }
+	
+	  ' Rancher clusters
+	  node local <<k8s cluster>> as "Local cluster"{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  node cluster1 <<k8s cluster>> as "ds-devqas-integrated"
+	  node cluster2 <<k8s cluster>> as "ds-devqas-isolated"
+	  node cluster3 <<k8s cluster>> as "infra-devqas-integrated"
+	  node cluster4 <<k8s cluster>> as "infra-devqas-isolated"
+	  node cluster5 <<k8s cluster>> as "infra-mgmt"
+	  node cluster6 <<k8s cluster>> as "infra-prd-integrated"
+	  node cluster7 <<k8s cluster>> as "sapdi-devqas-isolated"
+	  node cluster8 <<k8s cluster>> as "sapdi-prd-isolated"
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	
+	  ' Helm charts
+	  together {
+	    package vault<<helm chart>>
+	    note top of vault: https://vault.infra.mgmt.fdz.tir.bdr.de
+	    vault --> s3prd : "backup"
+	    vault --> cluster5
+	    package minio<<helm chart>>
+	    minio --> cluster5
+	    package postgresql<<helm chart>>
+	    postgresql --> cluster5
+	  }
+	
+	  ' Individual components
+	  component ipa <<vm>> as "IPA DNS Server"
+	  note top of ipa: https://ipa.mgmt.fdz.tir.bdr.de
+	
+	  component firewall <<vm>> as "pfsense Firewall"
+	
+	  component gitlab <<vm>> as "Gitlab server"
+	  note top of gitlab: https://partner.bdr.de/gitlab
+	
+	  entity sapdiprdiso as "SAP DI"
+	  sapdiprdiso --> cluster8
+	  entity sapdidevqasiso as "SAP DI"
+	  sapdidevqasiso --> cluster7
+	}
+a5d4da4cde9763ebf4726c0044805b12|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|67|32|v|markdown
+	Hana DB
+470f368e0b926e6c9dea21e068a58759|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|2|1|V|markdown
+	<style>
+	collections {
+	  LineThickness 2
+	  LineColor Black
+	  BackgroundColor RoyalBlue
+	  FontSize 18
+	}
+	</style>
+	
+	' Distancing between elements
+	skinparam nodesep 20
+	skinparam ranksep 350
+	
+	' Beautfy
+	skinparam title {
+	  backgroundColor APPLICATION
+	}
+	
+	skinparam component<<vm>> {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam node<<k8s cluster>> {
+	  backgroundColor LightGreen
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	skinparam package<<helm chart>> {
+	  backgroundColor LightCyan
+	}
+	
+	skinparam storage<<bucket>> {
+	  backgroundColor LightSteelBlue
+	}
+	
+	skinparam storage<<environment>> {
+	  backgroundColor Snow
+	}
+	
+	title
+	  Dependency infra
+	end title
+	
+	storage BDRIT <<environment>> as "BDR IT"{
+	  folder Isilon as "BDR IT Isilon S3"{
+	    storage s3prd <<bucket>> as "s3-fdz-prd-public"
+	  }
+	}
+	
+	storage TIR <<environment>> as "TIR" {
+	  component tirfirewall <<vm>> as "pfsense Firewall"
+	  component tirproxy <<vm>> as "TIR Proxy"
+	}
+	
+	storage vSphere <<environment>> {
+	  ' NFS
+	  folder "sap-hana-nfs-backup" {
+	    component hananfsbackup as "fdz-nfs-02" <<vm>>
+	  }
+	
+	  ' SAP Hana
+	  folder "devqas-integrated-hana" {
+	    component devqasHanaCockpit as "fdz-hana-cockpit-devqas-int01" <<vm>>
+	    component devqasHanaDB as "fdz-hanadb-devqas-int01" <<vm>>
+	    devqasHanaDB -- devqasHanaCockpit
+	    devqasHanaDB --> hananfsbackup
+	  }
+	  folder "prd-integrated-hana" {
+	    component prdHanaCockpit as "fdz-hana-cockpit-prd-int01" <<vm>>
+	    component prdHanaDB as "fdz-hanadb-prd-int01" <<vm>>
+	    prdHanaDB -- prdHanaCockpit
+	    prdHanaDB --> hananfsbackup
+	  }
+	
+	  ' Rancher clusters
+	  node local <<k8s cluster>> as "Local cluster"{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  node cluster1 <<k8s cluster>> as "ds-devqas-integrated"
+	  node cluster2 <<k8s cluster>> as "ds-devqas-isolated"
+	  node cluster3 <<k8s cluster>> as "infra-devqas-integrated"
+	  node cluster4 <<k8s cluster>> as "infra-devqas-isolated"
+	  node cluster5 <<k8s cluster>> as "infra-mgmt"
+	  node cluster6 <<k8s cluster>> as "infra-prd-integrated"
+	  node cluster7 <<k8s cluster>> as "sapdi-devqas-isolated"
+	  node cluster8 <<k8s cluster>> as "sapdi-prd-isolated"
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	
+	  ' Helm charts
+	  together {
+	    package vault<<helm chart>>
+	    note top of vault: https://vault.infra.mgmt.fdz.tir.bdr.de
+	    vault --> s3prd : "backup"
+	    vault --> cluster5
+	    package minio<<helm chart>>
+	    minio --> cluster5
+	    package postgresql<<helm chart>>
+	    postgresql --> cluster5
+	  }
+	
+	  ' Individual components
+	  component ipa <<vm>> as "IPA DNS Server"
+	  note top of ipa: https://ipa.mgmt.fdz.tir.bdr.de
+	
+	  component firewall <<vm>> as "pfsense Firewall"
+	
+	  component gitlab <<vm>> as "Gitlab runner"
+	
+	  component reverseproxy <<vm>> as "Reverse Proxy"
+	
+	  ' VDI (Windows)
+	  together {
+	    folder "vdi-devqas" {
+	      folder "vdi-dev"{
+	        component vdi1 <<vm>> as "fdz-tsdev01"
+	        component vdi2 <<vm>> as "fdz-tsdev02"
+	      }
+	      folder "vdi-qas" {
+	        component vdi3 <<vm>> as "fdz-tsqas01"
+	        component vdi4 <<vm>> as "fdz-tsqas02"
+	      }
+	    }
+	    folder "vdi-domain" {
+	      component vdi5 <<vm>> as "fdz-subca01"
+	    }
+	    folder "vdi-infra" {
+	      component vdi5 <<vm>> as "fdz-ctxcon01"
+	      component vdi6 <<vm>> as "fdz-ctxcon02"
+	      component vdi7 <<vm>> as "fdz-file01"
+	    }
+	    folder "vdi-prd" {
+	      component vdi8 <<vm>> as "fdz-tsprd01"
+	      component vdi9 <<vm>> as "fdz-tsprd02"
+	    }
+	
+	    entity sapdiprdiso as "SAP DI"
+	    sapdiprdiso --> cluster8
+	    entity sapdidevqasiso as "SAP DI"
+	    sapdidevqasiso --> cluster7
+	  }
+	}
+2d25eb43841fd370a6d9fbb364eca95a|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|72|1|V|markdown
+	  folder "devqas-integrated-storage" {
+	    component devqasHanaStorage as "fdz-nfs-devqas-int-01"
+	  }
+62109857aeb13a59de1c42315a54ebfc|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|83|37|v|markdown
+	fdz-nfs-devqas-int-01
+ddf3b5e9e85f46f7dedb889ab6cd6e33|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|82|1|V|markdown
+	  folder "prd-integrated-storage" {
+	    component prdHanaStorage as "fdz-nfs-prd-int-01"
+	  }
+5358515ca5a5677a833f1e334e688231|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|73|22|v|markdown
+	hananfsbackup
+63be4447ec21e5cc0efd11b705f52a3a|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|2|1|V|markdown
+	<style>
+	collections {
+	  LineThickness 2
+	  LineColor Black
+	  BackgroundColor RoyalBlue
+	  FontSize 18
+	}
+	</style>
+	
+	' Distancing between elements
+	skinparam nodesep 20
+	skinparam ranksep 350
+	
+	' Beautfy
+	skinparam title {
+	  backgroundColor APPLICATION
+	}
+	
+	skinparam component<<vm>> {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam node<<k8s cluster>> {
+	  backgroundColor LightGreen
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	skinparam package<<helm chart>> {
+	  backgroundColor LightCyan
+	}
+	
+	skinparam storage<<bucket>> {
+	  backgroundColor LightSteelBlue
+	}
+	
+	skinparam storage<<environment>> {
+	  backgroundColor Snow
+	}
+	
+	title
+	  Dependency infra
+	end title
+	
+	storage BDRIT <<environment>> as "BDR IT"{
+	  folder Isilon as "BDR IT Isilon S3"{
+	    storage s3prd <<bucket>> as "s3-fdz-prd-public"
+	  }
+	}
+	
+	storage TIR <<environment>> as "TIR" {
+	  component tirfirewall <<vm>> as "pfsense Firewall"
+	  component tirproxy <<vm>> as "TIR Proxy"
+	}
+	
+	storage vSphere <<environment>> {
+	  ' NFS
+	  folder "sap-hana-nfs-backup" {
+	    component hananfsbackup as "fdz-nfs-02" <<vm>>
+	  }
+	
+	  ' SAP Hana
+	  folder "devqas-integrated-storage" {
+	    component devqasHanaStorage as "fdz-nfs-devqas-int-01"
+	  }
+	  folder "devqas-integrated-hana" {
+	    component devqasHanaCockpit as "fdz-hana-cockpit-devqas-int01" <<vm>>
+	    component devqasHanaDB as "fdz-hanadb-devqas-int01" <<vm>>
+	    devqasHanaDB -- devqasHanaCockpit
+	    devqasHanaDB --> devqasHanaStorage
+	  }
+	
+	  folder "prd-integrated-storage" {
+	    component prdHanaStorage as "fdz-nfs-prd-int-01"
+	  }
+	  folder "prd-integrated-hana" {
+	    component prdHanaCockpit as "fdz-hana-cockpit-prd-int01" <<vm>>
+	    component prdHanaDB as "fdz-hanadb-prd-int01" <<vm>>
+	    prdHanaDB -- prdHanaCockpit
+	    prdHanaDB --> prdHanaStorage
+	  }
+	
+	  ' Rancher clusters
+	  node local <<k8s cluster>> as "Local cluster"{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  node cluster1 <<k8s cluster>> as "ds-devqas-integrated"
+	  node cluster2 <<k8s cluster>> as "ds-devqas-isolated"
+	  node cluster3 <<k8s cluster>> as "infra-devqas-integrated"
+	  node cluster4 <<k8s cluster>> as "infra-devqas-isolated"
+	  node cluster5 <<k8s cluster>> as "infra-mgmt"
+	  node cluster6 <<k8s cluster>> as "infra-prd-integrated"
+	  node cluster7 <<k8s cluster>> as "sapdi-devqas-isolated"
+	  node cluster8 <<k8s cluster>> as "sapdi-prd-isolated"
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	
+	  ' Helm charts
+	  together {
+	    package vault<<helm chart>>
+	    note top of vault: https://vault.infra.mgmt.fdz.tir.bdr.de
+	    vault --> s3prd : "backup"
+	    vault --> cluster5
+	    package minio<<helm chart>>
+	    minio --> cluster5
+	    package postgresql<<helm chart>>
+	    postgresql --> cluster5
+	  }
+	
+	  ' Individual components
+	  component ipa <<vm>> as "IPA DNS Server"
+	  note top of ipa: https://ipa.mgmt.fdz.tir.bdr.de
+	
+	  component firewall <<vm>> as "pfsense Firewall"
+	
+	  component gitlab <<vm>> as "Gitlab runner"
+	
+	  component reverseproxy <<vm>> as "Reverse Proxy"
+	
+	  ' VDI (Windows)
+	  together {
+	    folder "vdi-devqas" {
+	      folder "vdi-dev"{
+	        component vdi1 <<vm>> as "fdz-tsdev01"
+	        component vdi2 <<vm>> as "fdz-tsdev02"
+	      }
+	      folder "vdi-qas" {
+	        component vdi3 <<vm>> as "fdz-tsqas01"
+	        component vdi4 <<vm>> as "fdz-tsqas02"
+	      }
+	    }
+	    folder "vdi-domain" {
+	      component vdi5 <<vm>> as "fdz-subca01"
+	    }
+	    folder "vdi-infra" {
+	      component vdi5 <<vm>> as "fdz-ctxcon01"
+	      component vdi6 <<vm>> as "fdz-ctxcon02"
+	      component vdi7 <<vm>> as "fdz-file01"
+	    }
+	    folder "vdi-prd" {
+	      component vdi8 <<vm>> as "fdz-tsprd01"
+	      component vdi9 <<vm>> as "fdz-tsprd02"
+	    }
+	
+	    entity sapdiprdiso as "SAP DI"
+	    sapdiprdiso --> cluster8
+	    entity sapdidevqasiso as "SAP DI"
+	    sapdidevqasiso --> cluster7
+	  }
+	}
+dc0ed8922024edd82811efa3c307d5c0|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|70|67|v|markdown
+	 <<vm>>
+	
+7d65b5925b08420dc2f05945ad11186d|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|65|1|V|markdown
+	  ' SAP Hana
+	  folder "devqas-integrated-storage" {
+	    component devqasHanaStorage as "fdz-nfs-devqas-int-01" <<vm>>
+	  }
+	  folder "devqas-integrated-hana" {
+	    component devqasHanaCockpit as "fdz-hana-cockpit-devqas-int01" <<vm>>
+	    component devqasHanaDB as "fdz-hanadb-devqas-int01" <<vm>>
+	    devqasHanaDB -- devqasHanaCockpit
+	    devqasHanaDB --> devqasHanaStorage
+	  }
+	
+	  folder "prd-integrated-storage" {
+	    component prdHanaStorage as "fdz-nfs-prd-int-01" <<vm>>
+	  }
+	  folder "prd-integrated-hana" {
+	    component prdHanaCockpit as "fdz-hana-cockpit-prd-int01" <<vm>>
+	    component prdHanaDB as "fdz-hanadb-prd-int01" <<vm>>
+	    prdHanaDB -- prdHanaCockpit
+	    prdHanaDB --> prdHanaStorage
+	  }
+4f74a91d3b28c20b5c655dd272f63094|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|85|1|V|plantuml
+	  ' SAP Hana
+	  folder "devqas-integrated-storage" {
+	    component devqasHanaStorage as "fdz-nfs-devqas-int-01"
+	  }
+	  folder "devqas-integrated-hana" {
+	    component devqasHanaCockpit as "fdz-hana-cockpit-devqas-int01" <<vm>>
+	    component devqasHanaDB as "fdz-hanadb-devqas-int01" <<vm>>
+	    devqasHanaDB -- devqasHanaCockpit
+	    devqasHanaDB --> devqasHanaStorage
+	  }
+	
+	  folder "prd-integrated-storage" {
+	    component prdHanaStorage as "fdz-nfs-prd-int-01"
+	  }
+	  folder "prd-integrated-hana" {
+	    component prdHanaCockpit as "fdz-hana-cockpit-prd-int01" <<vm>>
+	    component prdHanaDB as "fdz-hanadb-prd-int01" <<vm>>
+	    prdHanaDB -- prdHanaCockpit
+	    prdHanaDB --> prdHanaStorage
+	  }
+44588eaa047f3c6975d975fd68e54129|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|48|1|V|plantuml
+	storage BDRIT <<environment>> as "BDR IT"{
+	  folder Isilon as "BDR IT Isilon S3"{
+	    storage s3prd <<bucket>> as "s3-fdz-prd-public"
+	  }
+	}
+	
+	storage TIR <<environment>> as "TIR" {
+	  component tirfirewall <<vm>> as "pfsense Firewall"
+	  component tirproxy <<vm>> as "TIR Proxy"
+	}
+	
+3d23bdb18230fbb99cd3f967e088bc90|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|12|1|V|plantuml
+	' horizontal
+4505cad087312551a6fbbe6ebe163e0f|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|14|3|v|plantuml
+	horizontal
+40bc9cd1b260d6757971115368f9295b|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|15|1|V|plantuml
+	skinparam ranksep 350
+8d1ba810580ac029560e2130c9648ca9|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|16|11|v|plantuml
+	ranksep
+c2749ab1a5ad066cec2c16c8396b7114|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|11|1|V|plantuml
+	' Distancing between elements
+6988c320d536c0c1382b9345da836f13|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|11|10|v|plantuml
+	ing between elements
+184aa077df08b90ac9fe282cceaa325e|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|117|5|v|plantuml
+	vault
+d5c6f44a54d4c31426f67af57212ac69|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|2|1|V|plantuml
+	top to bottom direction
+2538b1b901cbd2b7e455e39bc3ab925e|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|95|55|V|plantuml
+	  node cluster1 <<k8s cluster>> as "ds-devqas-integrated"
+700c216fb376666eaeda0c892e8bdc09|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|59|3|v|plantuml
+	component
+61599d5c33d6b2590e85739fa8af4702|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|2|1|V|markdown
+	<style>
+	collections {
+	  LineThickness 2
+	  LineColor Black
+	  BackgroundColor RoyalBlue
+	  FontSize 18
+	}
+	</style>
+	
+	' Distancing between elements
+	skinparam nodesep 20
+	skinparam ranksep 350
+	
+	' Beautfy
+	skinparam title {
+	  backgroundColor APPLICATION
+	}
+	
+	skinparam component<<vm>> {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam node<<k8s cluster>> {
+	  backgroundColor LightGreen
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	skinparam package<<helm chart>> {
+	  backgroundColor LightCyan
+	}
+	
+	skinparam storage<<bucket>> {
+	  backgroundColor LightSteelBlue
+	}
+	
+	skinparam storage<<environment>> {
+	  backgroundColor Snow
+	}
+	
+	title
+	  Dependency infra
+	end title
+	
+	storage BDRIT <<environment>> as "BDR IT"{
+	  folder Isilon as "BDR IT Isilon S3"{
+	    storage s3prd <<bucket>> as "s3-fdz-prd-public"
+	  }
+	}
+	
+	storage TIR <<environment>> as "TIR" {
+	  component tirfirewall <<vm>> as "pfsense Firewall"
+	  component tirproxy <<vm>> as "TIR Proxy"
+	}
+	
+	storage vSphere <<environment>> {
+	  ' NFS
+	  folder "sap-hana-nfs-backup" {
+	    component hananfsbackup as "fdz-nfs-02" <<vm>>
+	  }
+	
+	  ' SAP Hana
+	  folder "devqas-integrated-storage" {
+	    component devqasHanaStorage as "fdz-nfs-devqas-int-01" <<vm>>
+	  }
+	  folder "devqas-integrated-hana" {
+	    component devqasHanaCockpit as "fdz-hana-cockpit-devqas-int01" <<vm>>
+	    component devqasHanaDB as "fdz-hanadb-devqas-int01" <<vm>>
+	    devqasHanaDB -- devqasHanaCockpit
+	    devqasHanaDB --> devqasHanaStorage
+	  }
+	
+	  folder "prd-integrated-storage" {
+	    component prdHanaStorage as "fdz-nfs-prd-int-01" <<vm>>
+	  }
+	  folder "prd-integrated-hana" {
+	    component prdHanaCockpit as "fdz-hana-cockpit-prd-int01" <<vm>>
+	    component prdHanaDB as "fdz-hanadb-prd-int01" <<vm>>
+	    prdHanaDB -- prdHanaCockpit
+	    prdHanaDB --> prdHanaStorage
+	  }
+	
+	  ' Rancher clusters
+	  node local <<k8s cluster>> as "Local cluster"{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  node cluster1 <<k8s cluster>> as "ds-devqas-integrated"
+	  node cluster2 <<k8s cluster>> as "ds-devqas-isolated"
+	  node cluster3 <<k8s cluster>> as "infra-devqas-integrated"
+	  node cluster4 <<k8s cluster>> as "infra-devqas-isolated"
+	  node cluster5 <<k8s cluster>> as "infra-mgmt"
+	  node cluster6 <<k8s cluster>> as "infra-prd-integrated"
+	  node cluster7 <<k8s cluster>> as "sapdi-devqas-isolated"
+	  node cluster8 <<k8s cluster>> as "sapdi-prd-isolated"
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	
+	  ' Helm charts
+	  together {
+	    package vault<<helm chart>>
+	    note top of vault: https://vault.infra.mgmt.fdz.tir.bdr.de
+	    vault --> s3prd : "backup"
+	    vault --> cluster5
+	    package minio<<helm chart>>
+	    minio --> cluster5
+	    package postgresql<<helm chart>>
+	    postgresql --> cluster5
+	  }
+	
+	  ' Individual components
+	  component ipa <<vm>> as "IPA DNS Server"
+	  note top of ipa: https://ipa.mgmt.fdz.tir.bdr.de
+	
+	  component firewall <<vm>> as "pfsense Firewall"
+	
+	  component gitlab <<vm>> as "Gitlab runner"
+	
+	  component reverseproxy <<vm>> as "Reverse Proxy"
+	
+	  ' VDI (Windows)
+	  together {
+	    folder "vdi-devqas" {
+	      folder "vdi-dev"{
+	        component vdi1 <<vm>> as "fdz-tsdev01"
+	        component vdi2 <<vm>> as "fdz-tsdev02"
+	      }
+	      folder "vdi-qas" {
+	        component vdi3 <<vm>> as "fdz-tsqas01"
+	        component vdi4 <<vm>> as "fdz-tsqas02"
+	      }
+	    }
+	    folder "vdi-domain" {
+	      component vdi5 <<vm>> as "fdz-subca01"
+	    }
+	    folder "vdi-infra" {
+	      component vdi5 <<vm>> as "fdz-ctxcon01"
+	      component vdi6 <<vm>> as "fdz-ctxcon02"
+	      component vdi7 <<vm>> as "fdz-file01"
+	    }
+	    folder "vdi-prd" {
+	      component vdi8 <<vm>> as "fdz-tsprd01"
+	      component vdi9 <<vm>> as "fdz-tsprd02"
+	    }
+	
+	    entity sapdiprdiso as "SAP DI"
+	    sapdiprdiso --> cluster8
+	    entity sapdidevqasiso as "SAP DI"
+	    sapdidevqasiso --> cluster7
+	  }
+	}
+4a90bd2b47c3409100e3c4ffccfcdb46|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|2|1|V|plantuml
+	<style>
+	collections {
+	  LineThickness 2
+	  LineColor Black
+	  BackgroundColor RoyalBlue
+	  FontSize 18
+	}
+	</style>
+	
+	' Distancing
+	' horizontal
+	skinparam nodesep 30
+	' vertical
+	skinparam ranksep 100
+	' distance between elements
+	skinparam padding 10
+	
+	' Beautfy
+	skinparam title {
+	  backgroundColor APPLICATION
+	}
+	
+	skinparam component<<vm>> {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam node<<k8s cluster>> {
+	  backgroundColor LightGreen
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	skinparam package<<helm chart>> {
+	  backgroundColor LightCyan
+	}
+	
+	skinparam storage<<bucket>> {
+	  backgroundColor LightSteelBlue
+	}
+	
+	skinparam storage<<environment>> {
+	  backgroundColor Snow
+	}
+	
+	title
+	  Dependency infra
+	end title
+	
+	storage BDRIT <<environment>> as "BDR IT"{
+	  folder Isilon as "BDR IT Isilon S3"{
+	    storage s3prd <<bucket>> as "s3-fdz-prd-public"
+	  }
+	}
+	
+	storage TIR <<environment>> as "TIR" {
+	  entity tirfirewall as "pfsense Firewall"
+	  entity tirproxy as "TIR Proxy"
+	}
+	
+	storage vSphere <<environment>> {
+	  ' NFS
+	  folder "sap-hana-nfs-backup" {
+	    component hananfsbackup as "fdz-nfs-02" <<vm>>
+	  }
+	
+	  ' SAP Hana
+	  folder "devqas-integrated-storage" {
+	    component devqasHanaStorage as "fdz-nfs-devqas-int-01" <<vm>>
+	  }
+	  folder "devqas-integrated-hana" {
+	    component devqasHanaCockpit as "fdz-hana-cockpit-devqas-int01" <<vm>>
+	    component devqasHanaDB as "fdz-hanadb-devqas-int01" <<vm>>
+	    devqasHanaDB -- devqasHanaCockpit
+	    devqasHanaDB --> devqasHanaStorage
+	  }
+	
+	  folder "prd-integrated-storage" {
+	    component prdHanaStorage as "fdz-nfs-prd-int-01" <<vm>>
+	  }
+	  folder "prd-integrated-hana" {
+	    component prdHanaCockpit as "fdz-hana-cockpit-prd-int01" <<vm>>
+	    component prdHanaDB as "fdz-hanadb-prd-int01" <<vm>>
+	    prdHanaDB -- prdHanaCockpit
+	    prdHanaDB --> prdHanaStorage
+	  }
+	
+	  ' Rancher clusters
+	  node local <<k8s cluster>> as "Local cluster"{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  node cluster1 <<k8s cluster>> as "ds-devqas-integrated"
+	  node cluster2 <<k8s cluster>> as "ds-devqas-isolated"
+	  node cluster3 <<k8s cluster>> as "infra-devqas-integrated"
+	  node cluster4 <<k8s cluster>> as "infra-devqas-isolated"
+	  node cluster5 <<k8s cluster>> as "infra-mgmt"
+	  node cluster6 <<k8s cluster>> as "infra-prd-integrated"
+	  node cluster7 <<k8s cluster>> as "sapdi-devqas-isolated"
+	  node cluster8 <<k8s cluster>> as "sapdi-prd-isolated"
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	
+	  ' Helm charts
+	  together {
+	    package vault<<helm chart>>
+	    note top of vault: https://vault.infra.mgmt.fdz.tir.bdr.de
+	    vault -l-> s3prd : "backup"
+	    vault -u-> cluster5
+	    package minio<<helm chart>>
+	    minio -u-> cluster5
+	    package postgresql<<helm chart>>
+	    postgresql -u-> cluster5
+	  }
+	
+	  ' Individual components
+	  component ipa <<vm>> as "IPA DNS Server"
+	  note top of ipa: https://ipa.mgmt.fdz.tir.bdr.de
+	
+	  component firewall <<vm>> as "pfsense Firewall"
+	
+	  component gitlab <<vm>> as "Gitlab runner"
+	
+	  component reverseproxy <<vm>> as "Reverse Proxy"
+	
+	  ' VDI (Windows)
+	  together {
+	    folder "vdi-devqas" {
+	      folder "vdi-dev"{
+	        component vdi1 <<vm>> as "fdz-tsdev01"
+	        component vdi2 <<vm>> as "fdz-tsdev02"
+	      }
+	      folder "vdi-qas" {
+	        component vdi3 <<vm>> as "fdz-tsqas01"
+	        component vdi4 <<vm>> as "fdz-tsqas02"
+	      }
+	    }
+	    folder "vdi-domain" {
+	      component vdi5 <<vm>> as "fdz-subca01"
+	    }
+	    folder "vdi-infra" {
+	      component vdi5 <<vm>> as "fdz-ctxcon01"
+	      component vdi6 <<vm>> as "fdz-ctxcon02"
+	      component vdi7 <<vm>> as "fdz-file01"
+	    }
+	    folder "vdi-prd" {
+	      component vdi8 <<vm>> as "fdz-tsprd01"
+	      component vdi9 <<vm>> as "fdz-tsprd02"
+	    }
+	
+	    entity sapdiprdiso as "SAP DI"
+	    sapdiprdiso -u-> cluster8
+	    entity sapdidevqasiso as "SAP DI"
+	    sapdidevqasiso -u-> cluster7
+	  }
+	}
+fac632bdedd7fa005794921a438bea69|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|93|26|v|plantuml
+	https://rancher.mgmt.fdz.tir.bdr.de
+e5907fafd05d84f4e849ba5302b7d6b0|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|126|24|v|plantuml
+	as "IPA DNS Server"
+e39c199370f2183aa534cc11f76184f4|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|127|20|v|plantuml
+	https://ipa.mgmt.fdz.tir.bdr.de
+e6b8fcb035eb38260634f03fc8c4967a|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|149|1|V|plantuml
+	      component vdi6 <<vm>> as "fdz-dc1"
+abd465ca348a995fd4af97c2ce656125|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|158|1|V|plantuml
+	      component vdi12 <<vm>> as "fdz-rdgw"
+1cf2a6b6b88bde6188b01c89e305f9ad|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|2|1|V|plantuml
+	<style>
+	collections {
+	  LineThickness 2
+	  LineColor Black
+	  BackgroundColor RoyalBlue
+	  FontSize 18
+	}
+	</style>
+	
+	' Distancing
+	' horizontal
+	skinparam nodesep 20
+	' vertical
+	skinparam ranksep 10
+	' distance between elements
+	skinparam padding 10
+	
+	' Beautfy
+	skinparam title {
+	  backgroundColor APPLICATION
+	}
+	
+	skinparam component<<vm>> {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam node<<k8s cluster>> {
+	  backgroundColor LightGreen
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	skinparam package<<helm chart>> {
+	  backgroundColor LightCyan
+	}
+	
+	skinparam storage<<bucket>> {
+	  backgroundColor LightSteelBlue
+	}
+	
+	skinparam storage<<environment>> {
+	  backgroundColor Snow
+	}
+	
+	title
+	  Dependency infra
+	end title
+	
+	storage BDRIT <<environment>> as "BDR IT"{
+	  folder Isilon as "BDR IT Isilon S3"{
+	    storage s3prd <<bucket>> as "s3-fdz-prd-public"
+	  }
+	}
+	
+	storage TIR <<environment>> as "TIR" {
+	  entity tirfirewall as "pfsense Firewall"
+	  entity tirproxy as "TIR Proxy"
+	}
+	
+	storage vSphere <<environment>> {
+	  ' NFS
+	  folder "sap-hana-nfs-backup" {
+	    component hananfsbackup as "fdz-nfs-02" <<vm>>
+	  }
+	
+	  ' SAP Hana
+	  folder "devqas-integrated-storage" {
+	    component devqasHanaStorage as "fdz-nfs-devqas-int-01" <<vm>>
+	  }
+	  folder "devqas-integrated-hana" {
+	    component devqasHanaCockpit as "fdz-hana-cockpit-devqas-int01" <<vm>>
+	    component devqasHanaDB as "fdz-hanadb-devqas-int01" <<vm>>
+	    devqasHanaDB -- devqasHanaCockpit
+	    devqasHanaDB --> devqasHanaStorage
+	  }
+	
+	  folder "prd-integrated-storage" {
+	    component prdHanaStorage as "fdz-nfs-prd-int-01" <<vm>>
+	  }
+	  folder "prd-integrated-hana" {
+	    component prdHanaCockpit as "fdz-hana-cockpit-prd-int01" <<vm>>
+	    component prdHanaDB as "fdz-hanadb-prd-int01" <<vm>>
+	    prdHanaDB -- prdHanaCockpit
+	    prdHanaDB --> prdHanaStorage
+	  }
+	
+	  ' Rancher clusters
+	  node local <<k8s cluster>> as "Local cluster"{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  node cluster1 <<k8s cluster>> as "ds-devqas-integrated"
+	  node cluster2 <<k8s cluster>> as "ds-devqas-isolated"
+	  node cluster3 <<k8s cluster>> as "infra-devqas-integrated"
+	  node cluster4 <<k8s cluster>> as "infra-devqas-isolated"
+	  node cluster5 <<k8s cluster>> as "infra-mgmt"
+	  node cluster6 <<k8s cluster>> as "infra-prd-integrated"
+	  node cluster7 <<k8s cluster>> as "sapdi-devqas-isolated"
+	  node cluster8 <<k8s cluster>> as "sapdi-prd-isolated"
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	
+	  ' Helm charts
+	  together {
+	    package vault<<helm chart>>
+	    note top of vault: https://vault.infra.mgmt.fdz.tir.bdr.de
+	    vault -l-> s3prd : "backup"
+	    vault -u-> cluster5
+	    package minio<<helm chart>>
+	    minio -u-> cluster5
+	    package postgresql<<helm chart>>
+	    postgresql -u-> cluster5
+	  }
+	
+	  ' Individual components
+	  component ipa <<vm>> as "IPA DNS Server"
+	  note top of ipa: https://ipa.mgmt.fdz.tir.bdr.de
+	
+	  component firewall <<vm>> as "pfsense Firewall"
+	
+	  component gitlab <<vm>> as "Gitlab runner"
+	
+	  component reverseproxy <<vm>> as "Reverse Proxy"
+	
+	  ' VDI (Windows)
+	  together {
+	    folder "vdi-devqas" {
+	      folder "vdi-dev"{
+	        component vdi1 <<vm>> as "fdz-tsdev01"
+	        component vdi2 <<vm>> as "fdz-tsdev02"
+	      }
+	      folder "vdi-qas" {
+	        component vdi3 <<vm>> as "fdz-tsqas01"
+	        component vdi4 <<vm>> as "fdz-tsqas02"
+	      }
+	    }
+	    folder "vdi-domain" {
+	      component vdi5 <<vm>> as "fdz-subca01"
+	      component vdi6 <<vm>> as "fdz-dc1"
+	      component vdi7 <<vm>> as "fdz-dc2"
+	      component vdi8 <<vm>> as "fdz-rdcb"
+	    }
+	    folder "vdi-infra" {
+	      component vdi9 <<vm>> as "fdz-ctxcon01"
+	      component vdi10 <<vm>> as "fdz-ctxcon02"
+	      component vdi11 <<vm>> as "fdz-file01"
+	      component vdi12 <<vm>> as "fdz-rdgw"
+	      component vdi13 <<vm>> as "fdz-rdweb"
+	    }
+	    folder "vdi-prd" {
+	      component vdi14 <<vm>> as "fdz-tsprd01"
+	      component vdi15 <<vm>> as "fdz-tsprd02"
+	    }
+	
+	    entity sapdiprdiso as "SAP DI"
+	    sapdiprdiso -u-> cluster8
+	    entity sapdidevqasiso as "SAP DI"
+	    sapdidevqasiso -u-> cluster7
+	  }
+	}
+66696d656ea849170ae9d983f289864a|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|1|1|V|plantuml
+	@startuml
+	<style>
+	collections {
+	  LineThickness 2
+	  LineColor Black
+	  BackgroundColor RoyalBlue
+	  FontSize 18
+	}
+	</style>
+	
+	!include <cloudogu/tools/k8s.puml>
+	
+	' Distancing
+	' horizontal
+	skinparam nodesep 20
+	' vertical
+	skinparam ranksep 10
+	' distance between elements
+	skinparam padding 10
+	
+	' Beautfy
+	skinparam title {
+	  backgroundColor APPLICATION
+	}
+	
+	skinparam rectangle<<vm>> {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam node<<k8s cluster>> {
+	  backgroundColor LightGreen
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	skinparam package<<helm chart>> {
+	  backgroundColor LightCyan
+	}
+	
+	skinparam storage<<bucket>> {
+	  backgroundColor LightSteelBlue
+	}
+	
+	skinparam storage<<environment>> {
+	  backgroundColor Snow
+	}
+	
+	title
+	  Dependency infra
+	end title
+	
+	storage BDRIT <<environment>> as "BDR IT"{
+	  folder Isilon as "BDR IT Isilon S3"{
+	    storage s3prd <<bucket>> as "s3-fdz-prd-public"
+	  }
+	}
+	
+	storage TIR <<environment>> as "TIR" {
+	  entity tirfirewall as "pfsense Firewall"
+	  entity tirproxy as "TIR Proxy"
+	}
+	
+	storage vSphere <<environment>> {
+	  ' NFS
+	  folder "sap-hana-nfs-backup" {
+	    rectangle hananfsbackup as "fdz-nfs-02" <<vm>>
+	  }
+	
+	  ' SAP Hana
+	  folder "devqas-integrated-storage" {
+	    rectangle devqasHanaStorage as "fdz-nfs-devqas-int-01" <<vm>>
+	  }
+	  folder "devqas-integrated-hana" {
+	    rectangle devqasHanaCockpit as "fdz-hana-cockpit-devqas-int01" <<vm>>
+	    rectangle devqasHanaDB as "fdz-hanadb-devqas-int01" <<vm>>
+	    devqasHanaDB -- devqasHanaCockpit
+	    devqasHanaDB --> devqasHanaStorage
+	  }
+	
+	  folder "prd-integrated-storage" {
+	    rectangle prdHanaStorage as "fdz-nfs-prd-int-01" <<vm>>
+	  }
+	  folder "prd-integrated-hana" {
+	    rectangle prdHanaCockpit as "fdz-hana-cockpit-prd-int01" <<vm>>
+	    rectangle prdHanaDB as "fdz-hanadb-prd-int01" <<vm>>
+	    prdHanaDB -- prdHanaCockpit
+	    prdHanaDB --> prdHanaStorage
+	  }
+	
+	  ' Rancher clusters
+	  TOOL_K8S(k8s, Test) #ffffff
+	  node local <<k8s cluster>> as "Local cluster"{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  node cluster1 <<k8s cluster>> as "ds-devqas-integrated"
+	  node cluster2 <<k8s cluster>> as "ds-devqas-isolated"
+	  node cluster3 <<k8s cluster>> as "infra-devqas-integrated"
+	  node cluster4 <<k8s cluster>> as "infra-devqas-isolated"
+	  node cluster5 <<k8s cluster>> as "infra-mgmt"
+	  node cluster6 <<k8s cluster>> as "infra-prd-integrated"
+	  node cluster7 <<k8s cluster>> as "sapdi-devqas-isolated"
+	  node cluster8 <<k8s cluster>> as "sapdi-prd-isolated"
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	
+	  ' Helm charts
+	  together {
+	    package vault<<helm chart>>
+	    note top of vault: https://vault.infra.mgmt.fdz.tir.bdr.de
+	    vault -l-> s3prd : "backup"
+	    vault -u-> cluster5
+	    package minio<<helm chart>>
+	    minio -u-> cluster5
+	    package postgresql<<helm chart>>
+	    postgresql -u-> cluster5
+	  }
+	
+	  ' Individual rectangles
+	  rectangle ipa <<vm>> as "IPA DNS Server"
+	  note top of ipa: https://ipa.mgmt.fdz.tir.bdr.de
+	
+	  rectangle firewall <<vm>> as "pfsense Firewall"
+	
+	  rectangle gitlab <<vm>> as "Gitlab runner"
+	
+	  rectangle reverseproxy <<vm>> as "Reverse Proxy"
+	
+	  ' VDI (Windows)
+	  together {
+	    folder "vdi-devqas" {
+	      folder "vdi-dev"{
+	        rectangle vdi1 <<vm>> as "fdz-tsdev01"
+	        rectangle vdi2 <<vm>> as "fdz-tsdev02"
+	      }
+	      folder "vdi-qas" {
+	        rectangle vdi3 <<vm>> as "fdz-tsqas01"
+	        rectangle vdi4 <<vm>> as "fdz-tsqas02"
+	      }
+	    }
+	    folder "vdi-domain" {
+	      rectangle vdi5 <<vm>> as "fdz-subca01"
+	      rectangle vdi6 <<vm>> as "fdz-dc1"
+	      rectangle vdi7 <<vm>> as "fdz-dc2"
+	      rectangle vdi8 <<vm>> as "fdz-rdcb"
+	    }
+	    folder "vdi-infra" {
+	      rectangle vdi9 <<vm>> as "fdz-ctxcon01"
+	      rectangle vdi10 <<vm>> as "fdz-ctxcon02"
+	      rectangle vdi11 <<vm>> as "fdz-file01"
+	      rectangle vdi12 <<vm>> as "fdz-rdgw"
+	      rectangle vdi13 <<vm>> as "fdz-rdweb"
+	    }
+	    folder "vdi-prd" {
+	      rectangle vdi14 <<vm>> as "fdz-tsprd01"
+	      rectangle vdi15 <<vm>> as "fdz-tsprd02"
+	    }
+	
+	    entity sapdiprdiso as "SAP DI"
+	    sapdiprdiso -u-> cluster8
+	    entity sapdidevqasiso as "SAP DI"
+	    sapdidevqasiso -u-> cluster7
+	  }
+	}
+	@enduml
+	
+a94a35b43a6480ba4d82d294717ca6f5|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|11|1|V|plantuml
+	!include <cloudogu/tools/k8s.puml>
+0c3f4ff0147e1a1c2c80c953e6b62390|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|12|63|V|plantuml
+	IoTRule(iotRule, "Action Error Rule", "error if Kinesis fails")
+40c00cc1ff662422887928955aa1e158|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|2|1|V|plantuml
+	!include <awslib/AWSCommon>
+76253e71b1bed2c8dcd18e299767e022|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|2|96|V|plantuml
+	!define KubernetesPuml https://raw.githubusercontent.com/dcasati/kubernetes-PlantUML/master/dist
+e4e3de7c7c86bfde116c14436ffc26c0|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|91|8|v|plantuml
+	local <<k8s cluster>> as "Local cluster"
+a6280d8342c1370e66d6e08a6ff1fac2|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|7|20|v|plantuml
+	gitlab1
+36c4536996ca5615dcf9911f068786dc|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|7|34|v|plantuml
+	node
+a7aeac2096c92826cc897faf06bfc05d|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|7|44|v|plantuml
+	 #White
+056fac7ba7a64bd04ae5dd86859ea866|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|7|43|v|plantuml
+	,<<vm>>
+602d313ece3e82662c9773f1d6c7ebe3|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|7|5|V|plantuml
+	FA5_GITLAB(gitlab1,gitlab runner,rectangle)
+1c4f0df0893680c3101c22913851e1d5|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|138|23|V|plantuml
+	  rectangle gitlab <<vm>> as "Gitlab runner"
+36eb98fc240022f0088800e784b61465|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|6|1|V|plantuml
+	!include ICONURL/font-awesome-5/cubs.puml
+36a80100a81a7aa139bc561d39bc76bc|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|7|1|V|plantuml
+	!include ICONURL/devicons/linux.puml
+e206a54e97690cce50cc872dd70ee896|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|8|27|v|plantuml
+	linux
+3345662b6235a29cdab59e6826b3f847|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|10|27|v|plantuml
+	image-redhat 	
+d406ae7def754951876be915617f1024|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|11|1|V|plantuml
+	!include ICONURL/devicons2/kubernetes_wordpark.puml
+a19bd823424645b6b686d9eca4f2a995|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|11|38|v|plantuml
+	_wordpark
+da9a6349ca2606035431a858379a0c9d|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|6|38|V|plantuml
+	!include ICONURL/font-awesome-5/cubes.puml
+fdb72a58b55d0679802463d73963d173|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|108|3|v|plantuml
+	FA5_CUBES
+b67a507fc95c6d5d31c4c59d37cb0739|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|108|3|^v|plantuml
+	node 
+	node 
+	node 
+	node 
+	node 
+	node 
+	node 
+df5d4ca5f236739f64c3ce4356b4efc3|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|108|36|^v|plantuml
+	 <<k8s cluster>> as "
+	 <<k8s cluster>> as "
+	 <<k8s cluster>> as "
+	 <<k8s cluster>> as "
+	 <<k8s cluster>> as "
+	 <<k8s cluster>> as "
+	 <<k8s cluster>> as "
+9f27410725ab8cc8854a2769c7a516b8|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|103|53|v|plantuml
+	green
+60f4335c1183b5269bca73b59a3c1d95|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|12|18|v|plantuml
+	font-awesome-5
+3684a4cf39ed9a0f641c44b56afef454|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|41|1|V|plantuml
+	skinparam node<<k8s cluster>> {
+	  backgroundColor LightGreen
+	}
+6d94f5d33861f182aa2d47bf7abfca18|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|104|3|v|plantuml
+	DEV2_KUBERNETES_WORDMARK
+aa9012044f4f80308f9bbe2bd938412c|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|108|68|v|plantuml
+	 #LightGreen
+6e52d70e571ec127c81035dd8b7a3286|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|41|1|V|plantuml
+	skinparam DEV2_KUBERNETES_WORDMARK<<k8s cluster>> {
+	  backgroundColor LightGreen
+	}
+	
+d6f627bce6477977ac6096ca05057246|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|148|9|^v|plantuml
+	rectangle 
+	rectangle 
+c37be82aa60f0984e128618f16b741a5|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|148|37|v|plantuml
+	,DeepSkyBlue
+8ea97365a648c5d232d0f5dcf087fcbf|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|148|1|V|plantuml
+	        DEV_WINDOWS(vdi1,fdz-tsdev01) #DeepSkyBlue
+cf2ffc7d56083ffb2d76259914e11369|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|150|36|V|plantuml
+	        vdi2 <<vm>> as "fdz-tsdev02"
+31b5074cf2fc313cd863200b7846dd60|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|157|7|^v|plantuml
+	rectangle 
+	rectangle 
+	rectangle 
+	rectangle 
+dcae0da866c7622ecbd037808d57c996|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|157|23|^v|plantuml
+	 <<vm>> as "
+	 <<vm>> as "
+	 <<vm>> as "
+	 <<vm>> as "
+71a026bc13c4e38141a3c5c6e7e7b2fd|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|163|7|^v|plantuml
+	rectangle 
+	rectangle 
+	rectangle 
+	rectangle 
+	rectangle 
+b984d767f8eaee2be4f0f3b4b58a3886|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|157|7|^v|plantuml
+	DEV_WINDOWS(
+	DEV_WINDOWS(
+	DEV_WINDOWS(
+	DEV_WINDOWS(
+883e024312da9cbe113a7e9f39ab0b69|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|163|23|v|plantuml
+	 <<vm>> as "
+559cf57fba2ea3f75d2e29cad50f147e|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|170|24|^v|plantuml
+	 <<vm>> as "
+	 <<vm>> as "
+cd35029717c72f236516c8fb037c7996|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|142|3|v|plantuml
+	rectangle 
+025557ae1ad699f01af9d927c9ef8540|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|142|3|v|plantuml
+	reverseproxy <<vm>> as "Reverse Proxy"
+99920688ef65d31ca51fc2ee66a96fd1|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|9|1|V|plantuml
+	!include ICONURL/devicons2/redhat_wordmark.puml
+86280aba440c13e480f5a9956cb8ca3d|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|9|34|v|plantuml
+	_wordmark
+e8fbc859cd90aa8cfba7fd34b4a31e7a|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|139|14|v|plantuml
+	_WORDMARK
+89394ebbf081b935986ee9d8b0c00f59|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|1|1|V|plantuml
+	@startuml
+	
+	!define ICONURL https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/v2.4.0
+	!includeurl ICONURL/common.puml
+	!include ICONURL/font-awesome-5/gitlab.puml
+	!include ICONURL/devicons/linux.puml
+	!include ICONURL/devicons2/nginx_original.puml
+	!include ICONURL/devicons/postgresql.puml
+	!include ICONURL/devicons2/redhat.puml
+	!include ICONURL/devicons2/kubernetes.puml
+	!include ICONURL/devicons2/kubernetes_wordmark.puml
+	!include ICONURL/devicons/windows.puml
+	
+	
+	<style>
+	collections {
+	  LineThickness 2
+	  LineColor Black
+	  BackgroundColor RoyalBlue
+	  FontSize 18
+	}
+	</style>
+	
+	' Distancing
+	' horizontal
+	skinparam nodesep 20
+	' vertical
+	skinparam ranksep 10
+	' distance between elements
+	skinparam padding 10
+	
+	' Beautfy
+	skinparam title {
+	  backgroundColor APPLICATION
+	}
+	
+	skinparam rectangle<<vm>> {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	skinparam package<<helm chart>> {
+	  backgroundColor LightCyan
+	}
+	
+	skinparam storage<<bucket>> {
+	  backgroundColor LightSteelBlue
+	}
+	
+	skinparam storage<<environment>> {
+	  backgroundColor Snow
+	}
+	
+	title
+	  Dependency infra
+	end title
+	
+	storage BDRIT <<environment>> as "BDR IT"{
+	  folder Isilon as "BDR IT Isilon S3"{
+	    storage s3prd <<bucket>> as "s3-fdz-prd-public"
+	  }
+	}
+	
+	storage TIR <<environment>> as "TIR" {
+	  entity tirfirewall as "pfsense Firewall"
+	  entity tirproxy as "TIR Proxy"
+	}
+	
+	storage vSphere <<environment>> {
+	  ' NFS
+	  folder "sap-hana-nfs-backup" {
+	    rectangle hananfsbackup as "fdz-nfs-02" <<vm>>
+	  }
+	
+	  ' SAP Hana
+	  folder "devqas-integrated-storage" {
+	    rectangle devqasHanaStorage as "fdz-nfs-devqas-int-01" <<vm>>
+	  }
+	  folder "devqas-integrated-hana" {
+	    rectangle devqasHanaCockpit as "fdz-hana-cockpit-devqas-int01" <<vm>>
+	    rectangle devqasHanaDB as "fdz-hanadb-devqas-int01" <<vm>>
+	    devqasHanaDB -- devqasHanaCockpit
+	    devqasHanaDB --> devqasHanaStorage
+	  }
+	
+	  folder "prd-integrated-storage" {
+	    rectangle prdHanaStorage as "fdz-nfs-prd-int-01" <<vm>>
+	  }
+	  folder "prd-integrated-hana" {
+	    rectangle prdHanaCockpit as "fdz-hana-cockpit-prd-int01" <<vm>>
+	    rectangle prdHanaDB as "fdz-hanadb-prd-int01" <<vm>>
+	    prdHanaDB -- prdHanaCockpit
+	    prdHanaDB --> prdHanaStorage
+	  }
+	
+	  ' Rancher clusters
+	  DEV2_KUBERNETES_WORDMARK(local,Local cluster,node,blue) #LightGreen{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  DEV2_KUBERNETES_WORDMARK(cluster1,ds-devqas-integrated,node,blue) #LightGreen
+	  DEV2_KUBERNETES_WORDMARK(cluster2,ds-devqas-isolated,node,blue) #LightGreen
+	  DEV2_KUBERNETES_WORDMARK(cluster3,infra-devqas-integrated,node,blue) #LightGreen
+	  DEV2_KUBERNETES_WORDMARK(cluster4,infra-devqas-isolated,node,blue) #LightGreen
+	  DEV2_KUBERNETES_WORDMARK(cluster5,infra-mgmt,node,blue) #LightGreen
+	  DEV2_KUBERNETES_WORDMARK(cluster6,infra-prd-integrated,node,blue) #LightGreen
+	  DEV2_KUBERNETES_WORDMARK(cluster7,sapdi-devqas-isolated,node,blue) #LightGreen
+	  DEV2_KUBERNETES_WORDMARK(cluster8,sapdi-prd-isolated,node,blue) #LightGreen
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	
+	  ' Helm charts
+	  together {
+	    package vault<<helm chart>>
+	    note top of vault: https://vault.infra.mgmt.fdz.tir.bdr.de
+	    vault -l-> s3prd : "backup"
+	    vault -u-> cluster5
+	    package minio<<helm chart>>
+	    minio -u-> cluster5
+	    package postgresql<<helm chart>>
+	    postgresql -u-> cluster5
+	  }
+	
+	  ' Individual rectangles
+	  DEV2_REDHAT(ipa,IPA DNS Server)
+	  note top of ipa: https://ipa.mgmt.fdz.tir.bdr.de
+	
+	  DEV2_REDHAT(firewall,pfsense Firewall)
+	
+	  FA5_GITLAB(gitlab1,Gitlab runner,rectangle)
+	
+	  DEV2_NGINX_ORIGINAL(reverseproxy,Reverse Proxy)
+	
+	  ' VDI (Windows)
+	  together {
+	    folder "vdi-devqas" {
+	      folder "vdi-dev"{
+	        DEV_WINDOWS(vdi1,fdz-tsdev01) #DeepSkyBlue
+	        DEV_WINDOWS(vdi2,fdz-tsdev02) #DeepSkyBlue
+	      }
+	      folder "vdi-qas" {
+	        DEV_WINDOWS(vdi3,fdz-tsqas01) #DeepSkyBlue
+	        DEV_WINDOWS(vdi4,fdz-tsqas02) #DeepSkyBlue
+	      }
+	    }
+	    folder "vdi-domain" {
+	      DEV_WINDOWS(vdi5,fdz-subca01) #DeepSkyBlue
+	      DEV_WINDOWS(vdi6,fdz-dc1) #DeepSkyBlue
+	      DEV_WINDOWS(vdi7,fdz-dc2) #DeepSkyBlue
+	      DEV_WINDOWS(vdi8,fdz-rdcb) #DeepSkyBlue
+	    }
+	    folder "vdi-infra" {
+	      DEV_WINDOWS(vdi9,fdz-ctxcon01) #DeepSkyBlue
+	      DEV_WINDOWS(vdi10,fdz-ctxcon02) #DeepSkyBlue
+	      DEV_WINDOWS(vdi11,fdz-file01) #DeepSkyBlue
+	      DEV_WINDOWS(vdi12,fdz-rdgw) #DeepSkyBlue
+	      DEV_WINDOWS(vdi13,fdz-rdweb) #DeepSkyBlue
+	    }
+	    folder "vdi-prd" {
+	      DEV_WINDOWS(vdi14,fdz-tsprd01) #DeepSkyBlue
+	      DEV_WINDOWS(vdi15,fdz-tsprd02) #DeepSkyBlue
+	    }
+	
+	    entity sapdiprdiso as "SAP DI"
+	    sapdiprdiso -u-> cluster8
+	    entity sapdidevqasiso as "SAP DI"
+	    sapdidevqasiso -u-> cluster7
+	  }
+	}
+	@enduml
+	
+53e6c4687f42530fb6ecbc4d8f33213e|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|37|20|v|plantuml
+	<<vm>>
+bac4f877ac2080414673548c2669b002|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|100|39|v|plantuml
+	 cluster
+1ad1575a3ab305852debb5f6b3b2efff|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|75|41|v|plantuml
+	" <<vm>>
+c472e302e8b8b9fc3a3c3afb30b47f3c|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|76|42|v|plantuml
+	 : <img:https://www.suse.com/c/wp-content/uploads/2018/10/SAP_HANA-768x256.jpg>
+0fea1e97f597e836ba67189b1b2f34a7|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|2|1|V|plantuml
+	
+	!define ICONURL https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/v2.4.0
+	!includeurl ICONURL/common.puml
+	!include ICONURL/font-awesome-5/gitlab.puml
+	!include ICONURL/devicons/linux.puml
+	!include ICONURL/devicons2/nginx_original.puml
+	!include ICONURL/devicons/postgresql.puml
+	!include ICONURL/devicons2/redhat.puml
+	!include ICONURL/devicons2/kubernetes.puml
+	!include ICONURL/devicons2/kubernetes_wordmark.puml
+	!include ICONURL/devicons/windows.puml
+	
+	
+	<style>
+	collections {
+	  LineThickness 2
+	  LineColor Black
+	  BackgroundColor RoyalBlue
+	  FontSize 18
+	}
+	</style>
+	
+	' Distancing
+	' horizontal
+	skinparam nodesep 20
+	' vertical
+	skinparam ranksep 10
+	' distance between elements
+	skinparam padding 10
+	
+	' Beautfy
+	skinparam title {
+	  backgroundColor APPLICATION
+	}
+	
+	skinparam rectangle {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	skinparam package<<helm chart>> {
+	  backgroundColor LightCyan
+	}
+	
+	skinparam storage<<bucket>> {
+	  backgroundColor LightSteelBlue
+	}
+	
+	skinparam storage<<environment>> {
+	  backgroundColor Snow
+	}
+	
+	title
+	  Dependency infra
+	end title
+	
+	storage BDRIT <<environment>> as "BDR IT"{
+	  folder Isilon as "BDR IT Isilon S3"{
+	    storage s3prd <<bucket>> as "s3-fdz-prd-public"
+	  }
+	}
+	
+	storage TIR <<environment>> as "TIR" {
+	  entity tirfirewall as "pfsense Firewall"
+	  entity tirproxy as "TIR Proxy"
+	  entity keycloak as "Keycloak"
+	}
+	
+	storage vSphere <<environment>> {
+	  ' NFS
+	  folder "sap-hana-nfs-backup" {
+	    DEV2_REDHAT(hananfsbackup,fdz-nfs-02)
+	  }
+	
+	  ' SAP Hana
+	  folder "devqas-integrated-storage" {
+	    DEV2_REDHAT(devqasHanaStorage,fdz-nfs-devqas-int-01)
+	  }
+	  folder "devqas-integrated-hana" {
+	    DEV2_REDHAT(devqasHanaCockpit,fdz-hana-cockpit-devqas-int01)
+	    DEV2_REDHAT(devqasHanaDB,fdz-hanadb-devqas-int01)
+	    devqasHanaDB -- devqasHanaCockpit
+	    devqasHanaDB --> devqasHanaStorage
+	  }
+	
+	  folder "prd-integrated-storage" {
+	    DEV2_REDHAT(prdHanaStorage,fdz-nfs-prd-int-01)
+	  }
+	  folder "prd-integrated-hana" {
+	    DEV2_REDHAT(prdHanaCockpit,fdz-hana-cockpit-prd-int01)
+	    DEV2_REDHAT(prdHanaDB,fdz-hanadb-prd-int01)
+	    prdHanaDB -- prdHanaCockpit
+	    prdHanaDB --> prdHanaStorage
+	  }
+	
+	  ' Rancher clusters
+	  DEV2_KUBERNETES_WORDMARK(local,local,node,blue) #LightGreen{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  DEV2_KUBERNETES_WORDMARK(cluster1,ds-devqas-integrated,node,blue) #LightGreen
+	  DEV2_KUBERNETES_WORDMARK(cluster2,ds-devqas-isolated,node,blue) #LightGreen
+	  DEV2_KUBERNETES_WORDMARK(cluster3,infra-devqas-integrated,node,blue) #LightGreen
+	  DEV2_KUBERNETES_WORDMARK(cluster4,infra-devqas-isolated,node,blue) #LightGreen
+	  DEV2_KUBERNETES_WORDMARK(cluster5,infra-mgmt,node,blue) #LightGreen
+	  DEV2_KUBERNETES_WORDMARK(cluster6,infra-prd-integrated,node,blue) #LightGreen
+	  DEV2_KUBERNETES_WORDMARK(cluster7,sapdi-devqas-isolated,node,blue) #LightGreen
+	  DEV2_KUBERNETES_WORDMARK(cluster8,sapdi-prd-isolated,node,blue) #LightGreen
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	
+	  ' Helm charts
+	  together {
+	    package vault<<helm chart>>
+	    note top of vault: https://vault.infra.mgmt.fdz.tir.bdr.de
+	    vault -l-> s3prd : "backup"
+	    vault -u-> cluster5
+	    package minio<<helm chart>>
+	    minio -u-> cluster5
+	    package postgresql<<helm chart>>
+	    postgresql -u-> cluster5
+	  }
+	
+	  ' Individual rectangles
+	  DEV2_REDHAT(ipa,IPA DNS Server)
+	  note top of ipa: https://ipa.mgmt.fdz.tir.bdr.de
+	
+	  DEV2_REDHAT(firewall,pfsense Firewall)
+	
+	  FA5_GITLAB(gitlab1,Gitlab runner,rectangle)
+	
+	  DEV2_NGINX_ORIGINAL(reverseproxy,Reverse Proxy)
+	
+	  ' VDI (Windows)
+	  together {
+	    folder "vdi-devqas" {
+	      folder "vdi-dev"{
+	        DEV_WINDOWS(vdi1,fdz-tsdev01) #DeepSkyBlue
+	        DEV_WINDOWS(vdi2,fdz-tsdev02) #DeepSkyBlue
+	      }
+	      folder "vdi-qas" {
+	        DEV_WINDOWS(vdi3,fdz-tsqas01) #DeepSkyBlue
+	        DEV_WINDOWS(vdi4,fdz-tsqas02) #DeepSkyBlue
+	      }
+	    }
+	    folder "vdi-domain" {
+	      DEV_WINDOWS(vdi5,fdz-subca01) #DeepSkyBlue
+	      DEV_WINDOWS(vdi6,fdz-dc1) #DeepSkyBlue
+	      DEV_WINDOWS(vdi7,fdz-dc2) #DeepSkyBlue
+	      DEV_WINDOWS(vdi8,fdz-rdcb) #DeepSkyBlue
+	    }
+	    folder "vdi-infra" {
+	      DEV_WINDOWS(vdi9,fdz-ctxcon01) #DeepSkyBlue
+	      DEV_WINDOWS(vdi10,fdz-ctxcon02) #DeepSkyBlue
+	      DEV_WINDOWS(vdi11,fdz-file01) #DeepSkyBlue
+	      DEV_WINDOWS(vdi12,fdz-rdgw) #DeepSkyBlue
+	      DEV_WINDOWS(vdi13,fdz-rdweb) #DeepSkyBlue
+	    }
+	    folder "vdi-prd" {
+	      DEV_WINDOWS(vdi14,fdz-tsprd01) #DeepSkyBlue
+	      DEV_WINDOWS(vdi15,fdz-tsprd02) #DeepSkyBlue
+	    }
+	
+	    entity sapdiprdiso as "SAP DI"
+	    sapdiprdiso -u-> cluster8
+	    entity sapdidevqasiso as "SAP DI"
+	    sapdidevqasiso -u-> cluster7
+	  }
+	}
+2e0b1c4f374eec3adf4a56d9d5ef05e9|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|2|1|V|plantuml
+	
+	!define ICONURL https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/v2.4.0
+	!include ICONURL/common.puml
+	!include ICONURL/font-awesome-5/gitlab.puml
+	!include ICONURL/devicons/linux.puml
+	!include ICONURL/devicons2/nginx_original.puml
+	!include ICONURL/devicons/postgresql.puml
+	!include ICONURL/devicons2/redhat.puml
+	!include ICONURL/devicons2/kubernetes.puml
+	!include ICONURL/devicons2/kubernetes_wordmark.puml
+	!include ICONURL/devicons/windows.puml
+	
+	
+	<style>
+	collections {
+	  LineThickness 2
+	  LineColor Black
+	  BackgroundColor RoyalBlue
+	  FontSize 18
+	}
+	</style>
+	
+	' Distancing
+	' horizontal
+	skinparam nodesep 20
+	' vertical
+	skinparam ranksep 10
+	' distance between elements
+	skinparam padding 10
+	
+	' Beautfy
+	skinparam title {
+	  backgroundColor APPLICATION
+	}
+	
+	skinparam rectangle {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	skinparam package<<helm chart>> {
+	  backgroundColor LightCyan
+	}
+	
+	skinparam storage<<bucket>> {
+	  backgroundColor LightSteelBlue
+	}
+	
+	skinparam storage<<environment>> {
+	  backgroundColor Snow
+	}
+	
+	title
+	  Dependency infra
+	end title
+	
+	storage BDRIT <<environment>> as "BDR IT"{
+	  folder Isilon as "BDR IT Isilon S3"{
+	    storage s3prd <<bucket>> as "s3-fdz-prd-public"
+	  }
+	}
+	
+	storage TIR <<environment>> as "TIR" {
+	  entity tirfirewall as "pfsense Firewall"
+	  entity tirproxy as "TIR Proxy"
+	  entity keycloak as "Keycloak"
+	}
+	
+	storage vSphere <<environment>> {
+	  ' NFS
+	  folder "sap-hana-nfs-backup" {
+	    DEV2_REDHAT(hananfsbackup,fdz-nfs-02)
+	  }
+	
+	  ' SAP Hana
+	  folder "devqas-integrated-storage" {
+	    DEV2_REDHAT(devqasHanaStorage,fdz-nfs-devqas-int-01)
+	  }
+	  folder "devqas-integrated-hana" {
+	    DEV2_REDHAT(devqasHanaCockpit,fdz-hana-cockpit-devqas-int01)
+	    DEV2_REDHAT(devqasHanaDB,fdz-hanadb-devqas-int01)
+	    devqasHanaDB -- devqasHanaCockpit
+	    devqasHanaDB --> devqasHanaStorage
+	  }
+	
+	  folder "prd-integrated-storage" {
+	    DEV2_REDHAT(prdHanaStorage,fdz-nfs-prd-int-01)
+	  }
+	  folder "prd-integrated-hana" {
+	    DEV2_REDHAT(prdHanaCockpit,fdz-hana-cockpit-prd-int01)
+	    DEV2_REDHAT(prdHanaDB,fdz-hanadb-prd-int01)
+	    prdHanaDB -- prdHanaCockpit
+	    prdHanaDB --> prdHanaStorage
+	  }
+	
+	  ' Rancher clusters
+	  DEV2_KUBERNETES_WORDMARK(local,local,node,blue) #LightGreen{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  DEV2_KUBERNETES_WORDMARK(cluster1,ds-devqas-integrated,node,blue) #LightGreen
+	  DEV2_KUBERNETES_WORDMARK(cluster2,ds-devqas-isolated,node,blue) #LightGreen
+	  DEV2_KUBERNETES_WORDMARK(cluster3,infra-devqas-integrated,node,blue) #LightGreen
+	  DEV2_KUBERNETES_WORDMARK(cluster4,infra-devqas-isolated,node,blue) #LightGreen
+	  DEV2_KUBERNETES_WORDMARK(cluster5,infra-mgmt,node,blue) #LightGreen
+	  DEV2_KUBERNETES_WORDMARK(cluster6,infra-prd-integrated,node,blue) #LightGreen
+	  DEV2_KUBERNETES_WORDMARK(cluster7,sapdi-devqas-isolated,node,blue) #LightGreen
+	  DEV2_KUBERNETES_WORDMARK(cluster8,sapdi-prd-isolated,node,blue) #LightGreen
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	
+	  ' Helm charts
+	  together {
+	    package vault<<helm chart>>
+	    note top of vault: https://vault.infra.mgmt.fdz.tir.bdr.de
+	    vault -l-> s3prd : "backup"
+	    vault -u-> cluster5
+	    package minio<<helm chart>>
+	    minio -u-> cluster5
+	    package postgresql<<helm chart>>
+	    postgresql -u-> cluster5
+	  }
+	
+	  ' Individual rectangles
+	  DEV2_REDHAT(ipa,IPA DNS Server)
+	  note top of ipa: https://ipa.mgmt.fdz.tir.bdr.de
+	
+	  DEV2_REDHAT(firewall,pfsense Firewall)
+	
+	  FA5_GITLAB(gitlab1,Gitlab runner,rectangle)
+	
+	  DEV2_NGINX_ORIGINAL(reverseproxy,Reverse Proxy)
+	
+	  ' VDI (Windows)
+	  together {
+	    folder "vdi-devqas" {
+	      folder "vdi-dev"{
+	        DEV_WINDOWS(vdi1,fdz-tsdev01) #DeepSkyBlue
+	        DEV_WINDOWS(vdi2,fdz-tsdev02) #DeepSkyBlue
+	      }
+	      folder "vdi-qas" {
+	        DEV_WINDOWS(vdi3,fdz-tsqas01) #DeepSkyBlue
+	        DEV_WINDOWS(vdi4,fdz-tsqas02) #DeepSkyBlue
+	      }
+	    }
+	    folder "vdi-domain" {
+	      DEV_WINDOWS(vdi5,fdz-subca01) #DeepSkyBlue
+	      DEV_WINDOWS(vdi6,fdz-dc1) #DeepSkyBlue
+	      DEV_WINDOWS(vdi7,fdz-dc2) #DeepSkyBlue
+	      DEV_WINDOWS(vdi8,fdz-rdcb) #DeepSkyBlue
+	    }
+	    folder "vdi-infra" {
+	      DEV_WINDOWS(vdi9,fdz-ctxcon01) #DeepSkyBlue
+	      DEV_WINDOWS(vdi10,fdz-ctxcon02) #DeepSkyBlue
+	      DEV_WINDOWS(vdi11,fdz-file01) #DeepSkyBlue
+	      DEV_WINDOWS(vdi12,fdz-rdgw) #DeepSkyBlue
+	      DEV_WINDOWS(vdi13,fdz-rdweb) #DeepSkyBlue
+	    }
+	    folder "vdi-prd" {
+	      DEV_WINDOWS(vdi14,fdz-tsprd01) #DeepSkyBlue
+	      DEV_WINDOWS(vdi15,fdz-tsprd02) #DeepSkyBlue
+	    }
+	
+	    entity sapdiprdiso as "SAP DI"
+	    sapdiprdiso -u-> cluster8
+	    entity sapdidevqasiso as "SAP DI"
+	    sapdidevqasiso -u-> cluster7
+	  }
+	}
+e4e27fbe91799be4d34ff419aadebecf|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|2|1|V|plantuml
+	<style>
+	collections {
+	  LineThickness 2
+	  LineColor Black
+	  BackgroundColor RoyalBlue
+	  FontSize 18
+	}
+	</style>
+	
+	' Distancing
+	' horizontal
+	skinparam nodesep 20
+	' vertical
+	skinparam ranksep 10
+	' distance between elements
+	skinparam padding 10
+	
+	' Beautfy
+	skinparam title {
+	  backgroundColor APPLICATION
+	}
+	
+	skinparam rectangle<<vm>> {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam node<<k8s cluster>> {
+	  backgroundColor LightGreen
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	skinparam package<<helm chart>> {
+	  backgroundColor LightCyan
+	}
+	
+	skinparam storage<<bucket>> {
+	  backgroundColor LightSteelBlue
+	}
+	
+	skinparam storage<<environment>> {
+	  backgroundColor Snow
+	}
+	
+	title
+	  Dependency infra
+	end title
+	
+	storage BDRIT <<environment>> as "BDR IT"{
+	  folder Isilon as "BDR IT Isilon S3"{
+	    storage s3prd <<bucket>> as "s3-fdz-prd-public"
+	  }
+	}
+	
+	storage TIR <<environment>> as "TIR" {
+	  entity tirfirewall as "pfsense Firewall"
+	  entity tirproxy as "TIR Proxy"
+	}
+	
+	storage vSphere <<environment>> {
+	  ' NFS
+	  folder "sap-hana-nfs-backup" {
+	    rectangle hananfsbackup as "fdz-nfs-02" <<vm>>
+	  }
+	
+	  ' SAP Hana
+	  folder "devqas-integrated-storage" {
+	    rectangle devqasHanaStorage as "fdz-nfs-devqas-int-01" <<vm>>
+	  }
+	  folder "devqas-integrated-hana" {
+	    rectangle devqasHanaCockpit as "fdz-hana-cockpit-devqas-int01" <<vm>>
+	    rectangle devqasHanaDB as "fdz-hanadb-devqas-int01" <<vm>>
+	    devqasHanaDB -- devqasHanaCockpit
+	    devqasHanaDB --> devqasHanaStorage
+	  }
+	
+	  folder "prd-integrated-storage" {
+	    rectangle prdHanaStorage as "fdz-nfs-prd-int-01" <<vm>>
+	  }
+	  folder "prd-integrated-hana" {
+	    rectangle prdHanaCockpit as "fdz-hana-cockpit-prd-int01" <<vm>>
+	    rectangle prdHanaDB as "fdz-hanadb-prd-int01" <<vm>>
+	    prdHanaDB -- prdHanaCockpit
+	    prdHanaDB --> prdHanaStorage
+	  }
+	
+	  ' Rancher clusters
+	  node local <<k8s cluster>> as "Local cluster"{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  node cluster1 <<k8s cluster>> as "ds-devqas-integrated"
+	  node cluster2 <<k8s cluster>> as "ds-devqas-isolated"
+	  node cluster3 <<k8s cluster>> as "infra-devqas-integrated"
+	  node cluster4 <<k8s cluster>> as "infra-devqas-isolated"
+	  node cluster5 <<k8s cluster>> as "infra-mgmt"
+	  node cluster6 <<k8s cluster>> as "infra-prd-integrated"
+	  node cluster7 <<k8s cluster>> as "sapdi-devqas-isolated"
+	  node cluster8 <<k8s cluster>> as "sapdi-prd-isolated"
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	
+	  ' Helm charts
+	  together {
+	    package vault<<helm chart>>
+	    note top of vault: https://vault.infra.mgmt.fdz.tir.bdr.de
+	    vault -l-> s3prd : "backup"
+	    vault -u-> cluster5
+	    package minio<<helm chart>>
+	    minio -u-> cluster5
+	    package postgresql<<helm chart>>
+	    postgresql -u-> cluster5
+	  }
+	
+	  ' Individual rectangles
+	  rectangle ipa <<vm>> as "IPA DNS Server"
+	  note top of ipa: https://ipa.mgmt.fdz.tir.bdr.de
+	
+	  rectangle firewall <<vm>> as "pfsense Firewall"
+	
+	  rectangle gitlab <<vm>> as "Gitlab runner"
+	
+	  rectangle reverseproxy <<vm>> as "Reverse Proxy"
+	
+	  ' VDI (Windows)
+	  together {
+	    folder "vdi-devqas" {
+	      folder "vdi-dev"{
+	        rectangle vdi1 <<vm>> as "fdz-tsdev01"
+	        rectangle vdi2 <<vm>> as "fdz-tsdev02"
+	      }
+	      folder "vdi-qas" {
+	        rectangle vdi3 <<vm>> as "fdz-tsqas01"
+	        rectangle vdi4 <<vm>> as "fdz-tsqas02"
+	      }
+	    }
+	    folder "vdi-domain" {
+	      rectangle vdi5 <<vm>> as "fdz-subca01"
+	      rectangle vdi6 <<vm>> as "fdz-dc1"
+	      rectangle vdi7 <<vm>> as "fdz-dc2"
+	      rectangle vdi8 <<vm>> as "fdz-rdcb"
+	    }
+	    folder "vdi-infra" {
+	      rectangle vdi9 <<vm>> as "fdz-ctxcon01"
+	      rectangle vdi10 <<vm>> as "fdz-ctxcon02"
+	      rectangle vdi11 <<vm>> as "fdz-file01"
+	      rectangle vdi12 <<vm>> as "fdz-rdgw"
+	      rectangle vdi13 <<vm>> as "fdz-rdweb"
+	    }
+	    folder "vdi-prd" {
+	      rectangle vdi14 <<vm>> as "fdz-tsprd01"
+	      rectangle vdi15 <<vm>> as "fdz-tsprd02"
+	    }
+	
+	    entity sapdiprdiso as "SAP DI"
+	    sapdiprdiso -u-> cluster8
+	    entity sapdidevqasiso as "SAP DI"
+	    sapdidevqasiso -u-> cluster7
+	  }
+	}
+3e1719bddd562c80b92172e25df88e18|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|61|1|V|markdown
+	  entity keycloak as "Keycloak"
+2c7ac5f836b563eb1026d897cf1b3713|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|90|1|V|markdown
+	    prdHanaDB --> sapdiprdiso
+5967d509534dd7ce22b56afdb739fa85|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|79|1|V|markdown
+	    devqasHanaDB --> sapdidevqasiso
+0c3de2b95f5aa68fb6311dd6832508a5|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|166|1|V|plantuml
+	    entity sapdiprdiso as "SAP DI"
+	    sapdiprdiso -u-> cluster8
+	    entity sapdidevqasiso as "SAP DI"
+	    sapdidevqasiso -u-> cluster7
+13bcbd1ed7c77c74150be438325ddf74|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|70|1|V|plantuml
+	  ' SAP DI
+	  entity sapdiprdiso as "SAP DI"
+	  sapdiprdiso -u-> cluster8
+	  entity sapdidevqasiso as "SAP DI"
+	  sapdidevqasiso -u-> cluster7
+	
+0af58711a28d0934e19faf252697115a|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|62|1|V|plantuml
+	    entity prdkeycloak as "Keycloak PRD"
+f796b91b52602c0a7219c0e78a09f346|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|2|1|V|markdown
+	<style>
+	collections {
+	  LineThickness 2
+	  LineColor Black
+	  BackgroundColor RoyalBlue
+	  FontSize 18
+	}
+	</style>
+	
+	' Distancing
+	' horizontal
+	skinparam nodesep 20
+	' vertical
+	skinparam ranksep 10
+	' distance between elements
+	skinparam padding 10
+	
+	' Beautfy
+	skinparam title {
+	  backgroundColor APPLICATION
+	}
+	
+	skinparam rectangle<<vm>> {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam node<<k8s cluster>> {
+	  backgroundColor LightGreen
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	skinparam package<<helm chart>> {
+	  backgroundColor LightCyan
+	}
+	
+	skinparam storage<<bucket>> {
+	  backgroundColor LightSteelBlue
+	}
+	
+	skinparam storage<<environment>> {
+	  backgroundColor Snow
+	}
+	
+	title
+	  Dependency infra
+	end title
+	
+	storage BDRIT <<environment>> as "BDR IT"{
+	  folder Isilon as "BDR IT Isilon S3"{
+	    storage s3prd <<bucket>> as "s3-fdz-prd-public"
+	  }
+	}
+	
+	storage TIR <<environment>> as "TIR" {
+	  entity tirfirewall as "pfsense Firewall"
+	  entity tirproxy as "TIR Proxy"
+	  entity keycloak as "Keycloak"
+	}
+	
+	storage vSphere <<environment>> {
+	  ' NFS
+	  folder "sap-hana-nfs-backup" {
+	    rectangle hananfsbackup as "fdz-nfs-02" <<vm>>
+	  }
+	
+	  ' SAP Hana
+	  folder "devqas-integrated-storage" {
+	    rectangle devqasHanaStorage as "fdz-nfs-devqas-int-01" <<vm>>
+	  }
+	  folder "devqas-integrated-hana" {
+	    rectangle devqasHanaCockpit as "fdz-hana-cockpit-devqas-int01" <<vm>>
+	    rectangle devqasHanaDB as "fdz-hanadb-devqas-int01" <<vm>>
+	    devqasHanaDB -- devqasHanaCockpit
+	    devqasHanaDB --> devqasHanaStorage
+	  }
+	
+	  folder "prd-integrated-storage" {
+	    rectangle prdHanaStorage as "fdz-nfs-prd-int-01" <<vm>>
+	  }
+	  folder "prd-integrated-hana" {
+	    rectangle prdHanaCockpit as "fdz-hana-cockpit-prd-int01" <<vm>>
+	    rectangle prdHanaDB as "fdz-hanadb-prd-int01" <<vm>>
+	    prdHanaDB -- prdHanaCockpit
+	    prdHanaDB --> prdHanaStorage
+	  }
+	
+	  ' Rancher clusters
+	  node local <<k8s cluster>> as "Local cluster"{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  node cluster1 <<k8s cluster>> as "ds-devqas-integrated"
+	  node cluster2 <<k8s cluster>> as "ds-devqas-isolated"
+	  node cluster3 <<k8s cluster>> as "infra-devqas-integrated"
+	  node cluster4 <<k8s cluster>> as "infra-devqas-isolated"
+	  node cluster5 <<k8s cluster>> as "infra-mgmt"
+	  node cluster6 <<k8s cluster>> as "infra-prd-integrated"
+	  node cluster7 <<k8s cluster>> as "sapdi-devqas-isolated"
+	  node cluster8 <<k8s cluster>> as "sapdi-prd-isolated"
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	
+	  ' Helm charts
+	  together {
+	    package vault<<helm chart>>
+	    note top of vault: https://vault.infra.mgmt.fdz.tir.bdr.de
+	    vault -l-> s3prd : "backup"
+	    vault -u-> cluster5
+	    package minio<<helm chart>>
+	    minio -u-> cluster5
+	    package postgresql<<helm chart>>
+	    postgresql -u-> cluster5
+	  }
+	
+	  ' Individual rectangles
+	  rectangle ipa <<vm>> as "IPA DNS Server"
+	  note top of ipa: https://ipa.mgmt.fdz.tir.bdr.de
+	
+	  rectangle firewall <<vm>> as "pfsense Firewall"
+	
+	  rectangle gitlab <<vm>> as "Gitlab runner"
+	
+	  rectangle reverseproxy <<vm>> as "Reverse Proxy"
+	
+	  ' VDI (Windows)
+	  together {
+	    folder "vdi-devqas" {
+	      folder "vdi-dev"{
+	        rectangle vdi1 <<vm>> as "fdz-tsdev01"
+	        rectangle vdi2 <<vm>> as "fdz-tsdev02"
+	      }
+	      folder "vdi-qas" {
+	        rectangle vdi3 <<vm>> as "fdz-tsqas01"
+	        rectangle vdi4 <<vm>> as "fdz-tsqas02"
+	      }
+	    }
+	    folder "vdi-domain" {
+	      rectangle vdi5 <<vm>> as "fdz-subca01"
+	      rectangle vdi6 <<vm>> as "fdz-dc1"
+	      rectangle vdi7 <<vm>> as "fdz-dc2"
+	      rectangle vdi8 <<vm>> as "fdz-rdcb"
+	    }
+	    folder "vdi-infra" {
+	      rectangle vdi9 <<vm>> as "fdz-ctxcon01"
+	      rectangle vdi10 <<vm>> as "fdz-ctxcon02"
+	      rectangle vdi11 <<vm>> as "fdz-file01"
+	      rectangle vdi12 <<vm>> as "fdz-rdgw"
+	      rectangle vdi13 <<vm>> as "fdz-rdweb"
+	    }
+	    folder "vdi-prd" {
+	      rectangle vdi14 <<vm>> as "fdz-tsprd01"
+	      rectangle vdi15 <<vm>> as "fdz-tsprd02"
+	    }
+	
+	    entity sapdiprdiso as "SAP DI"
+	    sapdiprdiso -u-> cluster8
+	    entity sapdidevqasiso as "SAP DI"
+	    sapdidevqasiso -u-> cluster7
+	  }
+	}
+51857a7e58687e221f88ca76b5bb4903|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|2|1|V|plantuml
+	<style>
+	collections {
+	  LineThickness 2
+	  LineColor Black
+	  BackgroundColor RoyalBlue
+	  FontSize 18
+	}
+	</style>
+	
+	' Distancing
+	' horizontal
+	skinparam nodesep 20
+	' vertical
+	skinparam ranksep 10
+	' distance between elements
+	skinparam padding 10
+	
+	' Beautfy
+	skinparam title {
+	  backgroundColor APPLICATION
+	}
+	
+	skinparam rectangle<<vm>> {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam node<<k8s cluster>> {
+	  backgroundColor LightGreen
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	skinparam package<<helm chart>> {
+	  backgroundColor LightCyan
+	}
+	
+	skinparam storage<<bucket>> {
+	  backgroundColor LightSteelBlue
+	}
+	
+	skinparam storage<<environment>> {
+	  backgroundColor Snow
+	}
+	
+	title
+	  Dependency infra
+	end title
+	
+	storage BDRIT <<environment>> as "BDR IT"{
+	  folder Isilon as "BDR IT Isilon S3"{
+	    storage s3prd <<bucket>> as "s3-fdz-prd-public"
+	  }
+	}
+	
+	storage TIR <<environment>> as "TIR" {
+	  entity tirfirewall as "pfsense Firewall"
+	  entity tirproxy as "TIR Proxy"
+	  folder keycloak as "Keycloak" {
+	    entity prd_keycloak as "Keycloak PRD"
+	    entity dev_keycloak as "Keycloak DEV"
+	    entity qas_keycloak as "Keycloak QAS"
+	  }
+	}
+	
+	storage BOP <<environment>> as "BOP" {
+	  entity dev_portal as "Antragsportal DEV"
+	  entity test_portal as "Antragsportal TEST"
+	  entity preprod_portal as "Antragsportal PREPROD"
+	  entity prod_portal as "Antragsportal PROD"
+	}
+	
+	storage vSphere <<environment>> {
+	  ' NFS
+	  folder "sap-hana-nfs-backup" {
+	    rectangle hananfsbackup as "fdz-nfs-02" <<vm>>
+	  }
+	
+	  ' SAP Hana
+	  folder "devqas-integrated-storage" {
+	    rectangle devqasHanaStorage as "fdz-nfs-devqas-int-01" <<vm>>
+	  }
+	  folder "devqas-integrated-hana" {
+	    rectangle devqasHanaCockpit as "fdz-hana-cockpit-devqas-int01" <<vm>>
+	    rectangle devqasHanaDB as "fdz-hanadb-devqas-int01" <<vm>>
+	    devqasHanaDB -- devqasHanaCockpit
+	    devqasHanaDB <--> devqasHanaStorage
+	  }
+	
+	  folder "prd-integrated-storage" {
+	    rectangle prdHanaStorage as "fdz-nfs-prd-int-01" <<vm>>
+	  }
+	  folder "prd-integrated-hana" {
+	    rectangle prdHanaCockpit as "fdz-hana-cockpit-prd-int01" <<vm>>
+	    rectangle prdHanaDB as "fdz-hanadb-prd-int01" <<vm>>
+	    prdHanaDB -- prdHanaCockpit
+	    prdHanaDB <--> prdHanaStorage
+	  }
+	
+	  ' Rancher clusters
+	  node local <<k8s cluster>> as "Local cluster"{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  node cluster1 <<k8s cluster>> as "ds-devqas-integrated"
+	  node cluster2 <<k8s cluster>> as "ds-devqas-isolated"
+	  node cluster3 <<k8s cluster>> as "infra-devqas-integrated"
+	  node cluster4 <<k8s cluster>> as "infra-devqas-isolated"
+	  node cluster5 <<k8s cluster>> as "infra-mgmt"
+	  node cluster6 <<k8s cluster>> as "infra-prd-integrated"
+	  node cluster7 <<k8s cluster>> as "sapdi-devqas-isolated"
+	  node cluster8 <<k8s cluster>> as "sapdi-prd-isolated"
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	
+	  ' SAP DI
+	  entity sapdiprdiso as "SAP DI"
+	  sapdiprdiso -u-> cluster8
+	  prdHanaDB -u-> sapdiprdiso
+	  entity sapdidevqasiso as "SAP DI"
+	  sapdidevqasiso -u-> cluster7
+	  devqasHanaDB -u-> sapdidevqasiso
+	
+	  ' Helm charts
+	  together {
+	    package vault<<helm chart>>
+	    note top of vault: https://vault.infra.mgmt.fdz.tir.bdr.de
+	    vault -l-> s3prd : "backup"
+	    vault -u-> cluster5
+	    package minio<<helm chart>>
+	    minio -u-> cluster5
+	    package postgresql<<helm chart>>
+	    postgresql -u-> cluster5
+	  }
+	
+	  ' Individual rectangles
+	  rectangle ipa <<vm>> as "IPA DNS Server"
+	  note top of ipa: https://ipa.mgmt.fdz.tir.bdr.de
+	
+	  rectangle firewall <<vm>> as "pfsense Firewall"
+	
+	  rectangle gitlab <<vm>> as "Gitlab runner"
+	
+	  rectangle reverseproxy <<vm>> as "Reverse Proxy"
+	
+	  ' VDI (Windows)
+	  together {
+	    folder "vdi-devqas" {
+	      folder "vdi-dev"{
+	        rectangle vdi1 <<vm>> as "fdz-tsdev01"
+	        rectangle vdi2 <<vm>> as "fdz-tsdev02"
+	      }
+	      folder "vdi-qas" {
+	        rectangle vdi3 <<vm>> as "fdz-tsqas01"
+	        rectangle vdi4 <<vm>> as "fdz-tsqas02"
+	      }
+	    }
+	    folder "vdi-domain" {
+	      rectangle vdi5 <<vm>> as "fdz-subca01"
+	      rectangle vdi6 <<vm>> as "fdz-dc1"
+	      rectangle vdi7 <<vm>> as "fdz-dc2"
+	      rectangle vdi8 <<vm>> as "fdz-rdcb"
+	    }
+	    folder "vdi-infra" {
+	      rectangle vdi9 <<vm>> as "fdz-ctxcon01"
+	      rectangle vdi10 <<vm>> as "fdz-ctxcon02"
+	      rectangle vdi11 <<vm>> as "fdz-file01"
+	      rectangle vdi12 <<vm>> as "fdz-rdgw"
+	      rectangle vdi13 <<vm>> as "fdz-rdweb"
+	    }
+	    folder "vdi-prd" {
+	      rectangle vdi14 <<vm>> as "fdz-tsprd01"
+	      rectangle vdi15 <<vm>> as "fdz-tsprd02"
+	    }
+	  }
+	}
+96e1b27c28ff8201961b4fd31acef384|file:///Users/ovidiuvisan/code/localrole.yml|1|1|V|yaml
+	- hosts: windows
+	  # connection: local
+	  gather_facts: yes
+	  roles:
+	    - ansible-role-promtail
+bc079098974ee8bb808f3957351436c4|file:///Users/ovidiuvisan/code/inventory.yml|1|1|V|yaml
+	all:
+	  children:
+	    windows:
+	      hosts:
+	        192.168.0.200:
+	      vars:
+	        ansible_user: User
+	        ansible_password: ""
+	        ansible_port: 5986
+	        ansible_connection: winrm
+	        ansible_winrm_server_cert_validation: ignore
+92635640d90420835dbe52e3f4057a95|file:///Users/ovidiuvisan/code/ansible-role-promtail/tasks/Windows/01_install-promtail.yml|102|1|V|yaml
+	  ansible.windows.win_service:
+8f9bfe9d1345237cb3b2b205864da075|file:///Users/ovidiuvisan/code/inventory.yml|7|23|v|yaml
+	User
+dcd91aef1d8bb2d05c2830aca6da197b|file:///Users/ovidiuvisan/code/ansible-role-promtail/tasks/Windows/01_install-promtail.yml|31|1|v|yaml
+	/lwq
+46accee02f6d8b5ffab22aefbb3cb599|file:///Users/ovidiuvisan/code/ansible-role-promtail/tasks/setup-windows.yml|29|3|v|yaml
+	community.windows.win_psmodule
+cf93a254a5156cb1e6c6ac70e1278cfc|file:///Users/ovidiuvisan/code/ansible-role-promtail/tasks/setup-windows.yml|32|16|V|yaml
+	    allow_clobber: yes
+2e1bfef816ab6ec2acb119af808867e8|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|145|1|V|plantuml
+	  package intercom_dev as "Intercom DEV"
+0add676be5e782ce955be807c59144cb|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|145|23|v|plantuml
+	 as "Intercom DEV"
+2b00affdd934a993b6ce7f486343f727|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|146|18|v|plantuml
+	intercom_dev
+d1ea874b82afd669aed6e869cd169f5c|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|2|1|V|plantuml
+	<style>
+	collections {
+	  LineThickness 2
+	  LineColor Black
+	  BackgroundColor RoyalBlue
+	  FontSize 18
+	}
+	</style>
+	
+	' Distancing
+	' horizontal
+	skinparam nodesep 20
+	' vertical
+	skinparam ranksep 10
+	' distance between elements
+	skinparam padding 10
+	
+	' Beautfy
+	skinparam title {
+	  backgroundColor APPLICATION
+	}
+	
+	skinparam rectangle<<vm>> {
+	  backgroundColor LightCoral
+	}
+	
+	skinparam node<<k8s cluster>> {
+	  backgroundColor LightGreen
+	}
+	
+	skinparam folder {
+	  backgroundColor Ivory
+	}
+	
+	skinparam package<<helm chart>> {
+	  backgroundColor LightCyan
+	}
+	
+	skinparam storage<<bucket>> {
+	  backgroundColor LightSteelBlue
+	}
+	
+	skinparam storage<<environment>> {
+	  backgroundColor Snow
+	}
+	
+	title
+	  Dependency infra
+	end title
+	
+	storage BDRIT <<environment>> as "BDR IT"{
+	  folder Isilon as "BDR IT Isilon S3"{
+	    storage s3prd <<bucket>> as "s3-fdz-prd-public"
+	  }
+	  entity bdr_it_postgresql as "PostgreSQL"
+	}
+	
+	storage TIR <<environment>> as "TIR" {
+	  entity tirfirewall as "pfsense Firewall"
+	  entity tirproxy as "TIR Proxy"
+	  folder keycloak as "Keycloak" {
+	    entity prd_keycloak as "Keycloak PRD"
+	    entity dev_keycloak as "Keycloak DEV"
+	    entity qas_keycloak as "Keycloak QAS"
+	  }
+	}
+	
+	storage BOP <<environment>> as "BOP" {
+	  entity dev_portal as "Antragsportal DEV"
+	  entity test_portal as "Antragsportal TEST"
+	  entity preprod_portal as "Antragsportal PREPROD"
+	  entity prod_portal as "Antragsportal PROD"
+	}
+	
+	storage vSphere <<environment>> {
+	  ' NFS
+	  folder "sap-hana-nfs-backup" {
+	    rectangle hananfsbackup as "fdz-nfs-02" <<vm>>
+	  }
+	
+	  ' SAP Hana
+	  folder "devqas-integrated-storage" {
+	    rectangle devqasHanaStorage as "fdz-nfs-devqas-int-01" <<vm>>
+	  }
+	  folder "devqas-integrated-hana" {
+	    rectangle devqasHanaCockpit as "fdz-hana-cockpit-devqas-int01" <<vm>>
+	    rectangle devqasHanaDB as "fdz-hanadb-devqas-int01" <<vm>>
+	    devqasHanaDB -- devqasHanaCockpit
+	    devqasHanaDB <--> devqasHanaStorage
+	  }
+	
+	  folder "prd-integrated-storage" {
+	    rectangle prdHanaStorage as "fdz-nfs-prd-int-01" <<vm>>
+	  }
+	  folder "prd-integrated-hana" {
+	    rectangle prdHanaCockpit as "fdz-hana-cockpit-prd-int01" <<vm>>
+	    rectangle prdHanaDB as "fdz-hanadb-prd-int01" <<vm>>
+	    prdHanaDB -- prdHanaCockpit
+	    prdHanaDB <--> prdHanaStorage
+	  }
+	
+	  ' Rancher clusters
+	  node local <<k8s cluster>> as "Local cluster"{
+	    collections rancher
+	    note top of rancher: https://rancher.mgmt.fdz.tir.bdr.de
+	  }
+	  node cluster1 <<k8s cluster>> as "ds-devqas-integrated"
+	  node cluster2 <<k8s cluster>> as "ds-devqas-isolated"
+	  node cluster3 <<k8s cluster>> as "infra-devqas-integrated"
+	  node cluster4 <<k8s cluster>> as "infra-devqas-isolated"
+	  node cluster5 <<k8s cluster>> as "infra-mgmt"
+	  node cluster6 <<k8s cluster>> as "infra-prd-integrated"
+	  node cluster7 <<k8s cluster>> as "sapdi-devqas-isolated"
+	  node cluster8 <<k8s cluster>> as "sapdi-prd-isolated"
+	
+	  rancher -- cluster1
+	  rancher -- cluster2
+	  rancher -- cluster3
+	  rancher -- cluster4
+	  rancher -- cluster5
+	  rancher -- cluster6
+	  rancher -- cluster7
+	  rancher -- cluster8
+	
+	  ' SAP DI
+	  entity sapdiprdiso as "SAP DI"
+	  sapdiprdiso -u-> cluster8
+	  prdHanaDB -u-> sapdiprdiso
+	  entity sapdidevqasiso as "SAP DI"
+	  sapdidevqasiso -u-> cluster7
+	  devqasHanaDB -u-> sapdidevqasiso
+	
+	  ' Helm charts
+	  together {
+	    package vault<<helm chart>>
+	    note bottom of vault: https://vault.infra.mgmt.fdz.tir.bdr.de
+	    vault -l-> s3prd : "backup"
+	    vault -u-> cluster5
+	    package minio<<helm chart>>
+	    minio -u-> cluster5
+	    package postgresql<<helm chart>>
+	    postgresql -u-> cluster5
+	  }
+	  package dev_intercom as "Intercom DEV" <<helm chart>>
+	  dev_portal --> dev_intercom
+	  dev_intercom --> cluster4
+	  package qas_intercom as "Intercom QAS" <<helm chart>>
+	  preprod_portal --> qas_intercom
+	  qas_intercom --> cluster4
+	
+	  ' Individual rectangles
+	  rectangle ipa <<vm>> as "IPA DNS Server"
+	  note top of ipa: https://ipa.mgmt.fdz.tir.bdr.de
+	
+	  rectangle firewall <<vm>> as "pfsense Firewall"
+	
+	  rectangle gitlab <<vm>> as "Gitlab runner"
+	
+	  rectangle reverseproxy <<vm>> as "Reverse Proxy"
+	
+	  ' VDI (Windows)
+	  together {
+	    folder "vdi-devqas" {
+	      folder "vdi-dev"{
+	        rectangle vdi1 <<vm>> as "fdz-tsdev01"
+	        rectangle vdi2 <<vm>> as "fdz-tsdev02"
+	      }
+	      folder "vdi-qas" {
+	        rectangle vdi3 <<vm>> as "fdz-tsqas01"
+	        rectangle vdi4 <<vm>> as "fdz-tsqas02"
+	      }
+	    }
+	    folder "vdi-domain" {
+	      rectangle vdi5 <<vm>> as "fdz-subca01"
+	      rectangle vdi6 <<vm>> as "fdz-dc1"
+	      rectangle vdi7 <<vm>> as "fdz-dc2"
+	      rectangle vdi8 <<vm>> as "fdz-rdcb"
+	    }
+	    folder "vdi-infra" {
+	      rectangle vdi9 <<vm>> as "fdz-ctxcon01"
+	      rectangle vdi10 <<vm>> as "fdz-ctxcon02"
+	      rectangle vdi11 <<vm>> as "fdz-file01"
+	      rectangle vdi12 <<vm>> as "fdz-rdgw"
+	      rectangle vdi13 <<vm>> as "fdz-rdweb"
+	    }
+	    folder "vdi-prd" {
+	      rectangle vdi14 <<vm>> as "fdz-tsprd01"
+	      rectangle vdi15 <<vm>> as "fdz-tsprd02"
+	    }
+	  }
+	}
+e8fb0250937678b10c84259ec174d162|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|152|16|v|plantuml
+	rectangles
+fc7f9d4595752f81842c63f3ebd8d8cd|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|197|3|v|plantuml
+	cluster4
+653b3a112baa01c00fe08a939f0d08f2|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|195|26|v|plantuml
+	Data Service
+8d777f385d3dfec8815d20f7496026dc|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|195|10|v|plantuml
+	data
+c1240cbb489c2ea1abe39cf19835815c|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|196|3|^v|plantuml
+	data
+	data
+	data
+726a11b949638bde981c0bb9d1011138|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|193|1|V|plantuml
+	  ' Individual components
+	  ' CR001
+	  entity pullservice as "pull-service"
+	  pullservice --> cluster4
+	  pullservice --> vault: "PKI"
+	  pullprovider --> cluster4
+0194e867247393af0a31dcb82315e1f5|file:///Users/ovidiuvisan/code/diagrams/infrastructure.puml|74|1|V|plantuml
+	  entity dataprovider as "etl-dataprovider-service"
+ea036523b2f31c87e41e66a1a6cd3e69|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|198|4|V|markdown
+	  pullprovider --> cluster4
+098f6bcd4621d373cade4e832627b4f6|file:///Users/ovidiuvisan/code/inventory.yml|8|28|v|yaml
+	test
+e43069d586046cebad8b48d84e6466a1|file:///Users/ovidiuvisan/code/localrole.yml|5|20|v|yaml
+	promtail
+f7790f5fdc7198207b60919487ddcc55|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|18|111|v|yaml
+	0.20.0
+8c1223f93cade603d6aa038c8f4f2073|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|18|113|v|yaml
+	 prometheus_exporters_windows_version 
+ca8273672e033533e2712e5ef75e0440|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|5|14|v|yaml
+	 prometheus_exporters_windows_config_file_path 
+00f20e15264938a5fcc91921ff8d1167|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|18|10|v|yaml
+	"https://github.com/prometheus-community/windows_exporter/releases/download/v{{ prometheus_exporters_windows_version }}/windows_exporter-{{ prometheus_exporters_windows_version }}-amd64.msi"
+	
+230fa10aa86fb29a9de92d92be8d855a|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|40|22|v|yaml
+	--config.file={{ prometheus_exporters_windows_config_file_path }}/{{ prometheus_exporters_windows_config_file_name }}
+7cbd9833ed5966880b7850fd88eb3fa4|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|16|1|V|yaml
+	- name: Download Prometheus Windows Exporter
+	  win_get_url:
+	    url: "https://github.com/prometheus-community/windows_exporter/releases/download/v{{ prometheus_exporters_windows_version }}/windows_exporter-{{ prometheus_exporters_windows_version }}-amd64.msi"
+	    dest: "{{ prometheus_exporters_windows_config_file_path }}/windows_exporter_{{ prometheus_exporters_windows_version }}.msi"
+	
+0740e93d1c7e2d5eda4d6e2fce158c0c|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|23|1|V|yaml
+	
+	
+	- name: Install Prometheus Windows Exporter
+	  win_chocolatey:
+	    name: prometheus-windows-exporter.install
+	    version: '{{ prometheus_exporters_windows_version }}'
+	    state: present
+	    package_params:
+	      '"/ExtraFlags: --config.file={{ prometheus_exporters_windows_config_file_path }}/{{ prometheus_exporters_windows_config_file_name }}"'
+39075d6cea2000408ed3901d7a6b6ede|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|14|1|V|yaml
+	- name: Install Prometheus Windows Exporter
+	  win_package:
+	    path: "https://github.com/prometheus-community/windows_exporter/releases/download/v{{ prometheus_exporters_windows_version }}/windows_exporter-{{ prometheus_exporters_windows_version }}-amd64.msi"
+	    arguments:
+	      - /install
+	      - /quiet
+	      - /norestart
+	      - "--% EXTRA_FLAGS=\"--config.file={{ prometheus_exporters_windows_config_file_path }}/{{ prometheus_exporters_windows_config_file_name }}\""
+	    log_path: "{{ prometheus_exporters_windows_config_file_path  }}/install.log"
+	    state: present
+bd88de903180f7f8e36657164e534558|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|16|130|v|yaml
+	windows_exporter-{{ prometheus_exporters_windows_version }}-amd64.msi
+dd3f4f2dc2fa529dfcd6f2451e785634|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|21|10|v|yaml
+	"https://github.com/prometheus-community/windows_exporter/releases/download/v{{ prometheus_exporters_windows_version }}/windows_exporter-{{ prometheus_exporters_windows_version }}-amd64.msi"
+0cad7912824cd99a5c806f2ce390ec4e|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|17|11|v|yaml
+	"{{ prometheus_exporters_windows_config_file_path }}/windows_exporter-{{ prometheus_exporters_windows_version }}-amd64.msi"
+a59ffcba1df1ef37d432a025861b3faa|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|21|129|v|yaml
+	.msi
+7bd7665be2db6be66784032fb7f45f1d|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|29|20|V|yaml
+	    register: output
+426f5897dd61d42d5e37f5cf68b25ec3|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|31|1|V|yaml
+	- debug:
+	    var: output.stderr
+b9c79f9ceb5d02ff18e298aed5ea6d83|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|22|12|v|yaml
+	{{ prometheus_exporters_windows_config_file_path }}\\windows_exporter-{{ prometheus_exporters_windows_version }}-amd64.msi
+012ffc7082eed291ace301b0ebf4a9be|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|22|15|v|yaml
+	windows_exporter/
+e081791823b99f5dc362aeba70a87b94|file:///Users/ovidiuvisan/code/localrole.yml|4|1|V|yaml
+	s become: true
+8c6a523edfea18acd5e0134df549aad5|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|26|14|v|yaml
+	windows_exporter-0.2.0-amd64
+e725fd1f6078dcd935acf47d9540fb45|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|26|11|v|yaml
+	C:\1.msi
+deded92d9e0cefb4ab6d501bdd37106f|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|26|131|v|yaml
+	windows_exporter-{{ prometheus_exporters_windows_version }}-amd64
+bf65a56b7aa509b1d059230d166f94b4|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|17|11|v|yaml
+	"{{ prometheus_exporters_windows_config_file_path }}/exporter.msi"
+	
+d113cb9e6c5ddc7e65c6ec88ed523cf0|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|18|18|V|yaml
+	    state: presens
+ed780287e302ec3b9fd3c5e78771919f|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|17|64|v|yaml
+	exporter
+fd07002424181149a0b3f28707c989bd|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|19|1|V|yaml
+	- name: Check my user name
+	  ansible.windows.win_whoami:
+	  become: true
+9546255e29e91b69024ca5c3c4dc3173|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|25|12|v|yaml
+	{{ prometheus_exporters_windows_config_file_path }}\\
+0df123ec1e00523deb33e755415bda50|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|25|11|v|yaml
+	C:\windows_exporter\1.msi
+412fc6e843d278b11a73e91cee4dc778|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|20|13|v|yaml
+	https://github.com/prometheus-community/windows_exporter/releases/download/v{{ prometheus_exporters_windows_version }}/windows_exporter-{{ prometheus_exporters_windows_version }}-amd64.msi
+47ed49958e2500d72e305f85ed316c91|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|32|12|v|yaml
+	present
+250b2dbb29e8994e7c7fe40c01d56d93|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|23|1|v|yaml
+	- name: Install Prometheus Windows Exporter
+e5671794bf87ebab2a0d5e0ded530e68|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|32|14|v|yaml
+	absent
+2e4edf079ba64c350150c7ecc002c0cc|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|14|1|V|yaml
+	- name: Check my user name
+	  ansible.windows.win_whoami:
+	  become: true
+	
+7558b84c6afd6a3f2b8ec68f3087ab8b|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|23|1|V|yaml
+	      - /install
+	      # - /quiet
+c855a9dd5934cbdff6ab91ea445696cc|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|23|11|v|yaml
+	nstall
+00b58a3270e6405f439eab938cf6e1b0|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|23|10|V|yaml
+	      - /i
+b62540d58c604e090a6e51ec7fc5d8bc|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|25|9|v|yaml
+	--% EXTRA_FLAGS='
+890b518d77a4ddad45303b211d74de65|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|25|40|v|yaml
+	{{ prometheus_exporters_windows_config_file_path }}/{{ prometheus_exporters_windows_config_file_name }}
+fd5a47d35751de99976b60a4fc086cb5|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|25|9|v|yaml
+	--% 
+6c3a140a46da8b06865c81a0eb968eb8|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|25|35|v|yaml
+	c:/windows_exporter/windows_exporter.yml
+af452a09ff1399d9f815169329b65473|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|17|14|v|yaml
+	{{ prometheus_exporters_windows_config_file_path }}/
+55f6061c8937dd72f9d135cbe7947c80|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|21|130|v|yaml
+	windows_exporter-{{ prometheus_exporters_windows_version }}-amd64.msi
+	
+00f58b74716c0d933123103cbb4779cc|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|25|103|v|yaml
+	-{{ prometheus_exporters_windows_version }}-amd64.msi
+435da5bfba727143f640f54a2a7956d9|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/defaults/main.yml|51|38|V|yaml.ansible
+	prometheus_exporters_windows_product_id: {EDD0CDE3-4519-4C1A-9FB4-C8C067615698}
+7a2b7363fed136285347ffa3956dd0de|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|25|87|v|yaml
+	windows_exporter.yml
+d6fe1d0be6347b8ef2427fa629c04485|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|25|131|v|yaml
+	path
+5a9ff8598a73cd6eba4fec5191353474|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|14|1|V|yaml
+	# - name: Download package
+	#   win_get_url:
+	#     url: "https://github.com/prometheus-community/windows_exporter/releases/download/v{{ prometheus_exporters_windows_version }}/windows_exporter-{{ prometheus_exporters_windows_version }}-amd64.msi"
+	#     dest: "{{ prometheus_exporters_windows_config_file_path }}/1.msi"
+f5e4d5bf7c55a711cc049df4ba93ac0d|file:///Users/ovidiuvisan/code/ansible-role-prometheus-exporter/tasks/Windows/01_install-windows-exporter.yml|19|5|v|yaml
+	package_params
+1842099998c6bc2f3afaad5892730c31|file:///Users/ovidiuvisan/code/inventory.yml|5|9|v|yaml
+	192.168.0.200
+b2b393a5125d964827a5444a504608bb|file:///Users/ovidiuvisan/code/inventory.yml|5|19|V|yaml
+	       172.16.202.128:
+2a2c39fff10ad1727847aca05f132d6c|file:///Users/ovidiuvisan/code/inventory.yml|8|28|v|yaml
+	ovidiu79
+b32f5537dd4064e410d278a30f2455c5|file:///Users/ovidiuvisan/code/helm-rancher-templates/charts/rancher-vsphere-cluster-template/templates/cluster.yaml|30|11|v|helm
+	cloud-provider-name
+55947b35d27fb7246fb92f03e0cb8919|file:///Users/ovidiuvisan/code/helm-rancher-templates/charts/rancher-vsphere-cluster-template/templates/cluster.yaml|30|10|v|helm
+	 cloud-provider-name: rancher-vsphere
+7cc974f3d3d25b70bc37262cf3e9a6a1|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|164|3|V|markdown
+	  together {
+f5ddaf0ca7929578b408c909429f68f2|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|109|3|v|markdown
+	local
+341105396409ad77af6f3d6cc23bc8fa|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|144|1|V|markdown
+	    package postgresql<<helm chart>>
+	    postgresql -u-> cluster5
+cedaa3620703b28d5b70fcd22dfee5a7|file:///Users/ovidiuvisan/.zshrc|188|1|V|zsh
+	# fd - cd to selected directory
+	fdd() {
+	  local dir
+	  if [[ $@ ]]
+	  then
+	    dir=$(find $@ -d | fzf-tmux)
+	  else
+	    dir=$(find ~ -d | fzf-tmux)
+	  fi
+	  cd "$dir"
+	}
+517f0d7c9dc169b7d34e265aec702c63|file:///Users/ovidiuvisan/o.yml|128|24|v|yaml
+	beta.
+f3c4723dcdf139dae6ab5bd4efdeb336|untitled:1|2|13|v|
+	<YOUR NAMESPACE>
+3b3ce878fc0162db88b508af3538a470|untitled:1|4|45|v|
+	<FULL PATH TO FILE>
+6891207d49127bf8bb72723dccebc94d|untitled:1|5|30|v|
+	<PROVIDER NAME>
+f56932adc27f140ac03d377f30d0b8a6|untitled:1|6|48|v|
+	<BACKUP STORAGE LOCATION NAME>
+f15eac85372cf0b4841be55714097891|untitled:1|7|50|v|
+	<BUCKET NAME>
+98ec641d4f89625fa0f315f43dd9a960|untitled:1|8|57|v|
+	<REGION>
+cd32d6c978a30158b28bcb846c45f9db|untitled:1|12|60|v|
+	<PROVIDER PLUGIN TAG>
+3636f51d0778f375d859c188c6a7170f|untitled:1|9|49|v|
+	<VOLUME SNAPSHOT LOCATION NAME>
+6c582fb681fd37874f34d4c0744ab5da|untitled:1|1|1|V|
+	helm install velero vmware-tanzu/velero \
+	--namespace velero \
+	--create-namespace \
+	--set-file credentials.secretContents.cloud=minio.credential \
+	--set configuration.provider=aws \
+	--set configuration.backupStorageLocation.name=default \
+	--set configuration.backupStorageLocation.bucket=velero \
+	--set configuration.backupStorageLocation.config.region=us-east-1 \
+	--set configuration.volumeSnapshotLocation.name=snapshot \
+	--set configuration.volumeSnapshotLocation.config.region=us-east-1 \
+	--set initContainers[0].name=velero-plugin-for-aws \
+	--set initContainers[0].image=velero/velero-plugin-for-aws:v1.5.2 \
+	--set initContainers[0].volumeMounts[0].mountPath=/target \
+	--set initContainers[0].volumeMounts[0].name=plugins
+b59e542b096b9ce3ed2284223a76275b|file:///Users/ovidiuvisan/minikube.sh|1|1|^v|sh
+	 6100* 
+	 6101* 
+	 6102* 
+	 6103* 
+	 6104* 
+c7f3f71c1d86891e3b24e96cd50d16e1|file:///Users/ovidiuvisan/minikube.sh|4|1|V|sh
+	minikube start --driver=podman --help
+97ab50455dcd5b6b080659fe99549d8e|file:///Users/ovidiuvisan/antragsportal.puml|25|1|V|plantuml
+	{{mindmap
+	title CCC
+	* r
+	** 1
+	** 2
+	}}
+2d45912abfff08479d733445e7ae4036|file:///Users/ovidiuvisan/antragsportal.puml|8|1|V|plantuml
+	***_ Bucket Antragsportal_prd
+861f630587d5ca4ce95fc9d3802b5ca8|file:///Users/ovidiuvisan/antragsportal.puml|12|1|V|plantuml
+	***_ Kibana
+5228fdd6f613af63fc73ee7c02ef8fb5|file:///Users/ovidiuvisan/antragsportal.puml|13|6|v|plantuml
+	Kibana
+d8bf221ebc55d0894009fcc959c65db3|file:///Users/ovidiuvisan/antragsportal.puml|13|1|V|plantuml
+	***_ Grafana
+13d976ec915aee59afabcef6291764b8|file:///Users/ovidiuvisan/antragsportal.puml|14|6|v|plantuml
+	Grafana
+353075c6fb68d3f52f2581d813432b7b|file:///Users/ovidiuvisan/antragsportal.puml|19|6|v|plantuml
+	a deer, a female deer
+c8867f84567c3606bb4be1347d93f379|file:///Users/ovidiuvisan/antragsportal.puml|20|13|v|plantuml
+	a drop of golden sun
+8d0ae94fb64b15d8e97ff0dbb0513121|file:///Users/ovidiuvisan/antragsportal.puml|21|9|v|plantuml
+	``3`.14159
+03a901cc3891b08375ca076e8835ce2d|file:///Users/ovidiuvisan/antragsportal.puml|20|14|V|plantuml
+	  Antragsportal_prd: "Production code"
+5796afd64d1496eaca80f0c4584b0575|file:///Users/ovidiuvisan/antragsportal.puml|22|1|V|plantuml
+	xmas: true
+	french-hens: 3
+	calling-birds:
+		- huey
+		- dewey
+		- louie
+		- fred
+	xmas-fifth-day:
+		calling-birds: four
+		french-hens: 3
+		golden-rings: 5
+		partridges:
+			count: 1
+			location: "a pear tree"
+		turtle-doves: two
+06cadc0e7cf2ef3ce799f3c106594264|file:///Users/ovidiuvisan/antragsportal.puml|5|7|v|plantuml
+	Antragsportal depdendency beispiel
+470c4b959ae3466b360fe472f188fb6c|file:///Users/ovidiuvisan/antragsportal.puml|6|4|v|plantuml
+	Antragsportal
+081c936c66dcd0fa97567401ead0c2e6|file:///Users/ovidiuvisan/antragsportal.puml|10|1|V|plantuml
+	***_ Bucket Antragsportal_features
+	***_ Bucket Antragsportal_connectors
+	**_ OpenShift
+	***_ Kibana
+	***_ Grafana
+	***_ ClamAV
+	**_ PostgreSQL
+31df52a9114a511bdd6611c8b56a4fb2|file:///Users/ovidiuvisan/antragsportal.puml|11|17|V|plantuml
+	***_ Bucket Antragsportal_core_components
+ca988e68e82cbabbd81d5c8fe6c458c2|file:///Users/ovidiuvisan/antragsportal.puml|17|1|v|plantuml
+	OpenShift
+e70c866191677e30c0753d87b5f2284f|file:///Users/ovidiuvisan/antragsportal.puml|17|15|v|plantuml
+	Openshift provided by BOP
+2583f84e076c1c2eb83fc500b53601dd|file:///Users/ovidiuvisan/antragsportal.puml|16|9|v|plantuml
+	 S3 is provided by BDR IT Isilon
+2541698d00125bb655f4e4b7f126e771|file:///Users/ovidiuvisan/antragsportal.puml|17|1|v|plantuml
+	K8S Cluster
+01bfb7cee63f3f7110bb412ec628f5cc|file:///Users/ovidiuvisan/antragsportal.puml|18|27|V|plantuml
+	Kibana: "Integrated in BOP"
+94ad0192f76d22eef8119cb3c3f4b76c|file:///Users/ovidiuvisan/antragsportal.puml|16|1|V|plantuml
+	<style>
+	yamlDiagram {
+	  node {
+	    BackGroundColor lightblue
+	    LineColor lightblue
+	    FontName Helvetica
+	    FontColor red
+	    FontSize 12
+	    FontStyle bold
+	    BackGroundColor Khaki
+	    RoundCorner 0
+	    LineThickness 2
+	    LineStyle 10-5
+	    separator {
+	      LineThickness 0.5
+	      LineColor black
+	      LineStyle 1-5
+	    }
+	  }
+	  arrow {
+	    BackGroundColor lightblue
+	    LineColor green
+	    LineThickness 2
+	    LineStyle 2-5
+	  }
+	}
+	</style>
+c896be6eb9f22fba00493e3026092a17|file:///Users/ovidiuvisan/antragsportal.puml|7|7|V|plantuml
+	**_ vSphere
+f765cc38332644e77024b5e97fb1b8c9|file:///Users/ovidiuvisan/antragsportal.puml|7|6|V|plantuml
+	***_ Rancher
+87210e98bfdabfc6423e2a13342bf7c3|file:///Users/ovidiuvisan/antragsportal.puml|10|1|V|plantuml
+	**_ NFS_VM
+	**_ Hana
+306d904f1252cbfac8e562e2cfb9231a|file:///Users/ovidiuvisan/antragsportal.puml|10|1|V|plantuml
+	/' ****_ MinIO '/
+	/' ****_ CSI PVC volumes '/
+9c24bb7ac998920be18bd8e3fb039678|file:///Users/ovidiuvisan/sapdi.puml|1|1|V|plantuml
+	@startuml
+	label embedd [
+	
+	{{mindmap
+	title SAP DI
+	*_ SAP DI
+	**_ K8S Cluster
+	***_ MinIO
+	***_ CSI PVC volumes
+	**_ NFS_VM
+	**_ SAP_HANA
+	}}
+	
+	{{yaml
+	MinIO: "SAP DI is backed up in a s3 bucket offered by MinIO"
+	NFS_VM: "The underlaying storage of MinIO is on a NFS VM"
+	SAP_HANA: "SAP DI is loading data into SAP HANA"
+	}}
+	
+	]
+	@enduml
+717428b1d4eb523f03cad5fc6627e2c8|file:///Users/ovidiuvisan/sapdi.puml|13|4|V|plantuml
+	**_ SAP_HANA
+37492f24aaf564a9aa4af7201899b36e|file:///Users/ovidiuvisan/sapdi.puml|13|20|V|plantuml
+	***_ CSI PVC volumes
+0a385ca1677ec4456c821cd015fca7cc|file:///Users/ovidiuvisan/sapdi.puml|13|10|V|plantuml
+	**_ NFS_VM
+7ada4a9251133a9fe9b4fd30c8912a4b|file:///Users/ovidiuvisan/sapdi.puml|7|1|V|plantuml
+	/' - Isolated system '/
+d4628145964b215653474497d21c0ac8|file:///Users/ovidiuvisan/sapdi.puml|6|1|V|plantuml
+	- Isolated system
+70a3267fc523d6cdca0eb60708faf578|file:///Users/ovidiuvisan/sapdi.puml|1|1|V|plantuml
+	@startuml
+	label embedd [
+	
+	{{mindmap
+	title SAP DI
+	+_ SAP DI
+	++_ Configuration Data
+	+++ NFS_VM
+	+++ Kubernetes Cluster
+	/' ++ Application Data '/
+	/' +++ Kubernetes CSI Persistent Volumes '/
+	/' +++ SAP_HANA '/
+	/' +++ MinIO '/
+	- Isolated system
+	}}
+	
+	{{yaml
+	MinIO: "SAP DI is backed up in a s3 bucket offered by MinIO"
+	NFSVM: "The underlaying storage of MinIO is on a NFS VM"
+	SAPHANA: "SAP DI is loading data into SAP HANA"
+	}}
+	
+	]
+	@enduml
+f6c47ef3a408572172ee77dce9c8c10a|file:///Users/ovidiuvisan/sapdi.puml|15|1|V|plantuml
+	+++_ MinIO
+1c67aab85c67646ffe3148a701ae4d41|file:///Users/ovidiuvisan/sapdi.puml|18|1|V|plantuml
+	+++_ Kibana
+ca15fd43dfaeb80eb8c125735e0479b0|file:///Users/ovidiuvisan/sapdi.puml|18|17|v|plantuml
+	nodes
+b6a741dec6101a7f85f4efe8d22ab8b2|file:///Users/ovidiuvisan/sapdi.puml|6|13|V|plantuml
+	right to left
+e67035263427e5acfb001d2b2fa1bedc|file:///Users/ovidiuvisan/sapdi.puml|2|1|v|plantuml
+	top to bottom
+eb9279982226a42afdf2860dbdc29b45|file:///Users/ovidiuvisan/sapdi.puml|2|1|v|plantuml
+	rrrr
+014c9e1a291a9324df80b53d535d6686|file:///Users/ovidiuvisan/sapdi.puml|2|13|V|plantuml
+	right to left direction
+2c48b263a965f633d396860a78ef5d21|file:///Users/ovidiuvisan/sapdi.puml|9|4|V|plantuml
+	+++_ NFS_VM
+126ae2e8d5a280f830f8b537a24ee27d|file:///Users/ovidiuvisan/sapdi.puml|8|1|V|plantuml
+	**_ Configuration Data
+	***_ Kubernetes Cluster
+	
+	**_ Application Data
+	***_ Kubernetes CSI Persistent Volumes
+	***_ SAP_HANA
+	***_ MinIO
+	***_ NFS_VM
+	
+	**_ Logging Data
+	***_ Kubernetes pods
+	***_ Database
+5528b3513bdba613843c0971a8327a22|file:///Users/ovidiuvisan/sapdi.puml|11|4|V|plantuml
+	***_ Isolated system
+5c048222209ced7f354227fe543ede91|file:///Users/ovidiuvisan/sapdi.puml|24|3|V|plantuml
+	*_ Isolated system
+7bf04e37da93055b02fc96617c464afb|file:///Users/ovidiuvisan/sapdi.puml|10|1|V|plantuml
+	**_ Isolated system
+e8c2f2ac60f18fc77361b1641591057c|file:///Users/ovidiuvisan/code/diagrams/infrastructure.md|1|1|V|markdown
+	```plantuml
+8fa8c7380f28e47f774a33ea89ab172a|file:///Users/ovidiuvisan/code/diagrams/sap_hana.md|6|4|v|markdown
+	SAP DI
+4de49b5fab86a9023f6511a1c3a1f875|file:///Users/ovidiuvisan/code/diagrams/sap_hana.md|12|6|v|markdown
+	Kubernetes Cluster
+acfe10ad3ef4b55181acacd134131c6b|file:///Users/ovidiuvisan/code/diagrams/sap_hana.md|16|6|V|markdown
+	***_ SAP_HANA
+6f2b64fb27020f026960692a31ef41e9|file:///Users/ovidiuvisan/code/diagrams/sap_hana.md|15|6|V|markdown
+	***_ Kubernetes CSI Persistent Volumes
+e7eca79b4839deae82e48392f4ef6d99|file:///Users/ovidiuvisan/code/diagrams/sap_di.md|13|1|V|markdown
+	****_ Container Registry
+0e7278cda02a9c0446dcc75a4df34eb2|file:///Users/ovidiuvisan/code/diagrams/sap_di.md|14|7|v|markdown
+	Container
+07bd9f7c674588d5d179c518482ac41b|file:///Users/ovidiuvisan/code/diagrams/sap_di.md|14|16|V|markdown
+	****_ Docker Registry
+7469b9ae8ff08384a3b0fdef1527281b|file:///Users/ovidiuvisan/code/diagrams/sap_hana.md|13|1|V|markdown
+	****_ Terraform terraform-hana-preparation
+303e96f80576360d0c7b07ae7528fa4b|file:///Users/ovidiuvisan/code/diagrams/sap_hana.md|14|7|v|markdown
+	Terraform
+1b1ed905d54c18e3dd8828986c14be17|file:///Users/ovidiuvisan/code/diagrams/sap_hana.md|14|15|v|markdown
+	terraform
+57797144dca852b7777d575767c90491|file:///Users/ovidiuvisan/code/diagrams/sap_hana.md|21|6|v|markdown
+	Kubernetes pods
+531a4356f6f10b5a199f9a2376cff9ff|file:///Users/ovidiuvisan/code/diagrams/sap_hana.md|28|12|V|markdown
+	SAP_HANA: "SAP DI is loading data into SAP HANA"
+7bfc43070ae01a8e26513a1a74a4f0ca|file:///Users/ovidiuvisan/code/diagrams/sap_hana.md|29|10|v|markdown
+	daily scheduled at midnight
+f219e0b350a6bae759c65ca3bf47f8cf|file:///Users/ovidiuvisan/code/diagrams/sap_hana.md|31|3|^v|markdown
+	  
+	  
+	  
+c2db3161fefe30cdb9630ca2988ff06f|file:///Users/ovidiuvisan/code/diagrams/sap_hana.md|34|11|v|markdown
+	Reinstall or system copy [[https://help.sap.com/docs/SAP_DATA_INTELLIGENCE_ON-PREMISE/a8d90a56d61a49718ebcb5f65014bbe7/43769908e94648d893cff9ec050982b2.html?locale=en-US SAP DI Restore]]
+c3c34339443125d0522a8e9aefc613af|file:///Users/ovidiuvisan/code/diagrams/sap_di.md|26|1|V|markdown
+	**_ Software Data
+	***_ Installation kit from SAP
+23dd01854ca04c78078588a436d16b5a|file:///Users/ovidiuvisan/code/diagrams/sap_hana.md|26|1|V|markdown
+	***_ Installation kit from SAP for HANA DB
+710088c50815853d300b91664fe477f4|file:///Users/ovidiuvisan/code/diagrams/sap_di.md|34|38|v|markdown
+	https://help.sap.com/docs/SAP_DATA_INTELLIGENCE_ON-PREMISE/a8d90a56d61a49718ebcb5f65014bbe7/43769908e94648d893cff9ec050982b2.html?locale=en-US SAP DI Restore]]"
+	}}
+	
+	]
+	```
+128389bcb9bff07776ad7abd6e7a1e6a|file:///Users/ovidiuvisan/.skhdrc|95|38|v|conf
+	kitty.app/Contents/MacOS/kitty --single-instance -d
+e287d228968f1ff55a21f27311cafa94|file:///Users/ovidiuvisan/.skhdrc|37|1|V|conf
+	alt - 1: yabai -m space --focus --space 1
+37febb268cdd8b9f37b51500ef45a121|file:///Users/ovidiuvisan/.skhdrc|37|33|^v|conf
+	--space 
+	--space 
+1818d506396d77b3d035f719885c4cd1|file:///Users/ovidiuvisan/.skhdrc|37|27|v|conf
+	focus
+ff2364a0be3d20e46cc69efb36afe9a5|file:///Users/ovidiuvisan/.skhdrc|37|19|v|conf
+	space
+88b85964642a4f73d43422ecdafafa32|file:///Users/ovidiuvisan/.skhdrc|38|19|v|conf
+	space --display 2
+f1b8dcfd4778f54b1374c17ae369e32e|file:///Users/ovidiuvisan/code/ansible-mac/roles/mac_conf/tasks/system.yml|8|1|V|yaml
+	- name: generate fish completions
+	  shell: fish_update_completions
+3658753df00fbe5f1071d7b210dda709|file:///Users/ovidiuvisan/code/ansible-mac/roles/mac_conf/tasks/homebrew.yml|7|1|V|yaml
+	- name: Install vifm
+	  homebrew:
+	    name: vifm
+	    state: latest
+	
+	- name: Install fish
+	  homebrew:
+	    name: fish
+	    state: latest
+	

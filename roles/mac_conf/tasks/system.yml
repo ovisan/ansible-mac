@@ -5,5 +5,8 @@
     url: https://raw.github.com/ovisan/dotfiles/master/home/.vimrc
     dest: ~/.vimrc
 
-- name: generate fish completions
-  shell: fish_update_completions
+- name: Copy .config
+  copy:
+    src: files/.config
+    dest: ~/
+    directory_mode:
