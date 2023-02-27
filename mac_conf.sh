@@ -2,7 +2,7 @@
 
 if [[ !$(which brew) ]]; then
     echo "Install homebrew"
-    /bin/bash -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" </dev/null
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" </dev/null
 else echo "Homebrew already installed"
 fi
 
