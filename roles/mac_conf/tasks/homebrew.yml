@@ -9,24 +9,9 @@
     name: zsh-completions
     state: latest
 
-- name: Install yabai (i3 for MacOS)
-  homebrew:
-    name: koekeishiya/formulae/yabai
-    state: latest
-
-- name: Install skhd (hotkey daemon)
-  homebrew:
-    name: koekeishiya/formulae/skhd
-    state: latest
-
 - name: Install Starship (Rust prompt)
   homebrew:
     name: starship
-    state: latest
-
-- name: Install cask
-  homebrew:
-    name: cask
     state: latest
 
 - name: Install tmux
@@ -120,7 +105,7 @@
 
 - name: Install bat (better cat)
   homebrew:
-    name: cat
+    name: bat
     state: latest
 
 - name: Install dust (better du)

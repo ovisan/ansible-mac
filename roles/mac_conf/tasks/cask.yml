@@ -10,11 +10,6 @@
     name: hazel
     state: present
 
-- name: Install BetterTouchTool
-  homebrew_cask:
-    name: bettertouchtool
-    state: present
-
 - name: Install AppCleaner
   homebrew_cask:
     name: appcleaner
@@ -48,12 +43,4 @@
 - name: Install VLC
   homebrew_cask:
     name: vlc
-    state: present
-
-- homebrew_tap:
-    name: buo/cask-upgrade
-
-- name: Install brew-cask-upgrade
-  homebrew_cask:
-    name: brew-cask-upgrade
     state: present

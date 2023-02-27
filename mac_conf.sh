@@ -1,13 +1,13 @@
 #! /bin/bash
 
-if "which brew" == 1; then
+if [[ !$(which brew) ]]; then
     echo "Install homebrew"
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" </dev/null
+    /bin/bash -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" </dev/null
 else echo "Homebrew already installed"
 fi
 
 echo "Install ansible"
-if ! brew install ansible ; then
+if [[ !$(brew install ansible) ]]; then
     echo "Upgrade instead"
     brew upgrade ansible
 fi
