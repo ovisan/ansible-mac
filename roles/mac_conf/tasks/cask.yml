@@ -1,10 +1,4 @@
 ---
-#TODO: with ansible 2.5.0 the bug is fixed https://github.com/ansible/ansible/issues/33975
-
-- name: Install wezterm
-  homebrew_cask:
-    name: wezterm
-    state: present
 
 - name: Install Alfred
   homebrew_cask:
@@ -36,11 +30,6 @@
     name: dropbox
     state: present
 
-- name: Install LibreOffice
-  homebrew_cask:
-    name: libreoffice
-    state: present
-
 - name: Install TeamViewer
   homebrew_cask:
     name: teamviewer
@@ -59,16 +48,6 @@
 - name: Install VLC
   homebrew_cask:
     name: vlc
-    state: present
-
-- name: Install SlowQuitApps
-  homebrew_cask:
-    name: slowquitapps
-    state: present
-
-- name: Install Inconsolata font patched
-  homebrew_cask:
-    name: homebrew/cask-fonts/font-inconsolata-nerd-font
     state: present
 
 - homebrew_tap:
