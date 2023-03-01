@@ -1,5 +1,10 @@
 ---
 
+- name: Install Karabiner
+  homebrew_cask:
+    name: karabiner-elements
+    state: present
+
 - name: Install Alfred
   homebrew_cask:
     name: alfred
